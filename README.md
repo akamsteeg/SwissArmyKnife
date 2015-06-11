@@ -74,9 +74,9 @@ if (value.IsBetween(lower, upper))
 {
     // Do something
 }
+```
 
 #### StringBuilder.AppendFormatLine()
-
 ```csharp
 
 StringBuilder sb = new StringBuilder();

@@ -18,10 +18,8 @@ namespace SwissArmyKnife
         /// A copy of the string in which any format items are replaced by the
         /// string representation of arg0
         /// </returns>
-        public static string FormatThis(this string source, object arg0)
-        {
-            return string.Format(source, arg0);
-        }
+        public static string FormatThis(this string source, object arg0) =>
+            string.Format(source, arg0);
 
         /// <summary>
         /// Replaces the format items in a specified string with the string
@@ -40,10 +38,8 @@ namespace SwissArmyKnife
         /// A copy of the string in which any format items are replaced by the
         /// string representation of arg0 and arg1
         /// </returns>
-        public static string FormatThis(this string source, object arg0, object arg1)
-        {
-            return string.Format(source, arg0, arg1);
-        }
+        public static string FormatThis(this string source, object arg0, object arg1) =>
+            string.Format(source, arg0, arg1);
 
         /// <summary>
         /// Replaces the format items in a specified string with the string
@@ -65,10 +61,8 @@ namespace SwissArmyKnife
         /// A copy of the string in which any format items are replaced by the
         /// string representation of arg0, arg1 and arg2
         /// </returns>
-        public static string FormatThis(this string source, object arg0, object arg1, object arg2)
-        {
-            return string.Format(source, arg0, arg1, arg2);
-        }
+        public static string FormatThis(this string source, object arg0, object arg1, object arg2) =>
+            string.Format(source, arg0, arg1, arg2);
 
         /// <summary>
         /// Replaces the format item in a specified string with the string
@@ -84,10 +78,8 @@ namespace SwissArmyKnife
         /// A copy of the string in which the format items have been replaced by
         /// the string representation of the corresponding objects in args
         /// </returns>
-        public static string FormatThis(this string source, params object[] args)
-        {
-            return string.Format(source, args);
-        }
+        public static string FormatThis(this string source, params object[] args) =>
+            string.Format(source, args);
 
         /// <summary>
         /// Replaces the format item in a specified string with the string
@@ -106,9 +98,7 @@ namespace SwissArmyKnife
         /// A copy of the string in which the format items have been replaced by
         /// the string representation of the corresponding objects in args
         /// </returns>
-        public static string FormatThis(this string source, IFormatProvider formatProvider, params object[] args)
-        {
-            return string.Format(formatProvider, source, args);
-        }
+        public static string FormatThis(this string source, IFormatProvider formatProvider, params object[] args) =>
+            string.Format(formatProvider, source, args);
     }
 }

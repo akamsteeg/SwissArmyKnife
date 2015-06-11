@@ -98,11 +98,11 @@ The main project.
 
 ### src\SwissArmyKnife.Tests
 
-The unit tests, using (NUnit)[http://www.nunit.org].
+The unit tests, using [NUnit](http://www.nunit.org).
 
 ### src\SwissArmyKnife.Benchmarks
 
-Benchmarks, using the awesome (Minibench.skeet)[https://github.com/akamsteeg/minibench.skeet].
+Benchmarks, using the awesome [Minibench.skeet](https://github.com/akamsteeg/minibench.skeet).
 
 ## Build it
 

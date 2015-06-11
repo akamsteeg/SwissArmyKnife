@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Benches\GenericExtensionsBenchmarks.cs" />
     <Compile Include="Benches\StringBuilderExtensionsBenchmarks.cs" />
     <Compile Include="Benches\StringExtensionsBenchmarks.cs" />
     <Compile Include="Program.cs" />

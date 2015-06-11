@@ -54,7 +54,7 @@ if (value.IsAnyOf("a", "b", "c"))
 int value = 1;
 
 /// Replaces this:
-/// if (value > 0 &&  value < 2)
+/// if (value > 0 &amp;&amp;  value < 2)
 /// {
 ///     // Do something
 /// }

@@ -17,7 +17,7 @@ namespace SwissArmyKnife.Benchmarks
             sw.Stop();
 
             Console.WriteLine();
-            Console.WriteLine("Running all tests took {0} seconds".FormatThis(sw.Elapsed.TotalSeconds));
+            Console.WriteLine("Running all tests took {0} seconds".FormatWith(sw.Elapsed.TotalSeconds));
             Console.WriteLine("Press a key to exit");
             Console.ReadKey();
 

@@ -18,7 +18,7 @@ namespace SwissArmyKnife
         /// A copy of the string in which any format items are replaced by the
         /// string representation of arg0
         /// </returns>
-        public static string FormatThis(this string source, object arg0) =>
+        public static string FormatWith(this string source, object arg0) =>
             string.Format(source, arg0);
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace SwissArmyKnife
         /// A copy of the string in which any format items are replaced by the
         /// string representation of arg0 and arg1
         /// </returns>
-        public static string FormatThis(this string source, object arg0, object arg1) =>
+        public static string FormatWith(this string source, object arg0, object arg1) =>
             string.Format(source, arg0, arg1);
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace SwissArmyKnife
         /// A copy of the string in which any format items are replaced by the
         /// string representation of arg0, arg1 and arg2
         /// </returns>
-        public static string FormatThis(this string source, object arg0, object arg1, object arg2) =>
+        public static string FormatWith(this string source, object arg0, object arg1, object arg2) =>
             string.Format(source, arg0, arg1, arg2);
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace SwissArmyKnife
         /// A copy of the string in which the format items have been replaced by
         /// the string representation of the corresponding objects in args
         /// </returns>
-        public static string FormatThis(this string source, params object[] args) =>
+        public static string FormatWith(this string source, params object[] args) =>
             string.Format(source, args);
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace SwissArmyKnife
         /// A copy of the string in which the format items have been replaced by
         /// the string representation of the corresponding objects in args
         /// </returns>
-        public static string FormatThis(this string source, IFormatProvider formatProvider, params object[] args) =>
+        public static string FormatWith(this string source, IFormatProvider formatProvider, params object[] args) =>
             string.Format(formatProvider, source, args);
     }
 }

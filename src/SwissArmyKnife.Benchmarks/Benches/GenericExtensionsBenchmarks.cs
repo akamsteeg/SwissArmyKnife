@@ -9,6 +9,8 @@ namespace SwissArmyKnife.Benchmarks.Benches
 {
     internal class GenericExtensionsBenchmarks
     {
+        #region IsAnyOf()
+
         [Benchmark]
         public void StringIsAnyOfSingleValue()
         {
@@ -81,6 +83,6 @@ namespace SwissArmyKnife.Benchmarks.Benches
             var t1 = 0.IsAnyOf(1, 2, 3, 4, 5);
         }
 
-
+        #endregion
     }
 }

@@ -6,6 +6,8 @@ namespace SwissArmyKnife.Tests
     [TestFixture]
     internal class GenericExtensionsTests
     {
+        #region IsAnyOf()
+
         [Test]
         public void StringIsAnyOfSingleValue_Successful()
         {
@@ -105,5 +107,6 @@ namespace SwissArmyKnife.Tests
             Assert.IsFalse(t2);
         }
 
+        #endregion
     }
 }

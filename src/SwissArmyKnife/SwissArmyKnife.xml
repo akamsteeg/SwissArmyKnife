@@ -1,0 +1,250 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SwissArmyKnife</name>
+    </assembly>
+    <members>
+        <member name="T:SwissArmyKnife.GenericExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SwissArmyKnife.GenericExtensions.IsAnyOf``1(``0,``0)">
+            <summary>
+            Checks if the object is equal to the supplied value
+            </summary>
+            <param name="source"></param>
+            <param name="value">The value to check the object against</param>
+            <returns>True if the object is equal to the value, false otherwise</returns>
+        </member>
+        <member name="M:SwissArmyKnife.GenericExtensions.IsAnyOf``1(``0,``0,``0)">
+            <summary>
+            Checks if the object is equal to the supplied values
+            </summary>
+            <param name="source"></param>
+            <param name="value0">The first value to check the object against</param>
+            <param name="value1">The second value to check the object against</param>
+            <returns>True if the object is equal to any of the values, false otherwise</returns>
+        </member>
+        <member name="M:SwissArmyKnife.GenericExtensions.IsAnyOf``1(``0,``0,``0,``0)">
+            <summary>
+            Checks if the object is equal to the supplied values
+            </summary>
+            <param name="source"></param>
+            <param name="value0">The first value to check the object against</param>
+            <param name="value1">The second value to check the object against</param>
+            <param name="value2">The second value to check the object against</param>
+            <returns>True if the object is equal to any of the values, false otherwise</returns>
+        </member>
+        <member name="M:SwissArmyKnife.GenericExtensions.IsAnyOf``1(``0,``0,``0,``0,``0)">
+            <summary>
+            Checks if the object is equal to the supplied values
+            </summary>
+            <param name="source"></param>
+            <param name="value0">The first value to check the object against</param>
+            <param name="value1">The second value to check the object against</param>
+            <param name="value2">The second value to check the object against</param>
+            <param name="value3">The second value to check the object against</param>
+            <returns>True if the object is equal to any of the values, false otherwise</returns>
+        </member>
+        <member name="M:SwissArmyKnife.GenericExtensions.IsAnyOf``1(``0,``0[])">
+            <summary>
+            Checks if the object is equal to any of the supplied values
+            </summary>
+            <param name="source"></param>
+            <param name="values">The values to check the object against</param>
+            <returns>True if the object is equal to any of the values, false otherwise</returns>
+        </member>
+        <member name="M:SwissArmyKnife.GenericExtensions.IsBetween``1(``0,``0,``0)">
+            <summary>
+            Checks whether the object is between the supplied upper and lower values
+            </summary>
+            <param name="value"></param>
+            <param name="lower">The lower bound</param>
+            <param name="upper">The upper bound</param>
+            <returns>True if the value is between or equal to the lower or upper value, false otherwise</returns>
+        </member>
+        <member name="T:SwissArmyKnife.StringBuilderExtensions">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:SwissArmyKnife.StringBuilderExtensions.AppendFormatLine(System.Text.StringBuilder,System.IFormatProvider,System.String,System.Object[])">
+            <summary>
+            Appends a line by processing a composite format string, which
+            contains zero of more format items
+            </summary>
+            <param name="sb">
+            </param>
+            <param name="provider">
+            An object that supplies culture-specific formatting information
+            </param>
+            <param name="format">
+            A composite format string
+            </param>
+            <param name="args">
+            An object array that contains zero or more objects to format
+            </param>
+        </member>
+        <member name="M:SwissArmyKnife.StringBuilderExtensions.AppendFormatLine(System.Text.StringBuilder,System.String,System.Object)">
+            <summary>
+            Appends a line by processing a composite format string, which
+            contains zero of more format items
+            </summary>
+            <param name="sb">
+            </param>
+            <param name="format">
+            A composite format string
+            </param>
+            <param name="arg0">
+            The object to format
+            </param>
+        </member>
+        <member name="M:SwissArmyKnife.StringBuilderExtensions.AppendFormatLine(System.Text.StringBuilder,System.String,System.Object,System.Object)">
+            <summary>
+            Appends a line by processing a composite format string, which
+            contains zero of more format items
+            </summary>
+            <param name="sb">
+            </param>
+            <param name="format">
+            A composite format string
+            </param>
+            <param name="arg0">
+            The first object to format
+            </param>
+            <param name="arg1">
+            The second object to format
+            </param>
+        </member>
+        <member name="M:SwissArmyKnife.StringBuilderExtensions.AppendFormatLine(System.Text.StringBuilder,System.String,System.Object,System.Object,System.Object)">
+            <summary>
+            Appends a line by processing a composite format string, which
+            contains zero of more format items
+            </summary>
+            <param name="sb">
+            </param>
+            <param name="format">
+            A composite format string
+            </param>
+            <param name="arg0">
+            The first object to format
+            </param>
+            <param name="arg1">
+            The second object to format
+            </param>
+            <param name="arg2">
+            The third object to format
+            </param>
+        </member>
+        <member name="M:SwissArmyKnife.StringBuilderExtensions.AppendFormatLine(System.Text.StringBuilder,System.String,System.Object[])">
+            <summary>
+            Appends a line by processing a composite format string, which
+            contains zero of more format items
+            </summary>
+            <param name="sb"></param>
+            <param name="format">
+            A composite format string
+            </param>
+            <param name="args">
+            An object array that contains zero or more objects to format
+            </param>
+        </member>
+        <member name="T:SwissArmyKnife.StringExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SwissArmyKnife.StringExtensions.FormatWith(System.String,System.Object)">
+            <summary>
+            Replaces the format item in a specified string with the string
+            representation of the specified object
+            </summary>
+            <param name="source">
+            A composite format string
+            </param>
+            <param name="arg0">
+            The object to format
+            </param>
+            <returns>
+            A copy of the string in which any format items are replaced by the
+            string representation of arg0
+            </returns>
+        </member>
+        <member name="M:SwissArmyKnife.StringExtensions.FormatWith(System.String,System.Object,System.Object)">
+            <summary>
+            Replaces the format items in a specified string with the string
+            representation of two specified objects
+            </summary>
+            <param name="source">
+            A composite format string
+            </param>
+            <param name="arg0">
+            The first object to format
+            </param>
+            <param name="arg1">
+            The second object to format
+            </param>
+            <returns>
+            A copy of the string in which any format items are replaced by the
+            string representation of arg0 and arg1
+            </returns>
+        </member>
+        <member name="M:SwissArmyKnife.StringExtensions.FormatWith(System.String,System.Object,System.Object,System.Object)">
+            <summary>
+            Replaces the format items in a specified string with the string
+            representation of three specified objects
+            </summary>
+            <param name="source">
+            A composite format string
+            </param>
+            <param name="arg0">
+            The first object to format
+            </param>
+            <param name="arg1">
+            The second object to format
+            </param>
+            <param name="arg2">
+            The third object to format
+            </param>
+            <returns>
+            A copy of the string in which any format items are replaced by the
+            string representation of arg0, arg1 and arg2
+            </returns>
+        </member>
+        <member name="M:SwissArmyKnife.StringExtensions.FormatWith(System.String,System.Object[])">
+            <summary>
+            Replaces the format item in a specified string with the string
+            representation of a corresponding object in a specified array
+            </summary>
+            <param name="source">
+            A composite format string
+            </param>
+            <param name="args">
+            An object array that contains zero or more objects to format
+            </param>
+            <returns>
+            A copy of the string in which the format items have been replaced by
+            the string representation of the corresponding objects in args
+            </returns>
+        </member>
+        <member name="M:SwissArmyKnife.StringExtensions.FormatWith(System.String,System.IFormatProvider,System.Object[])">
+            <summary>
+            Replaces the format item in a specified string with the string
+            representation of a corresponding object in a specified array
+            </summary>
+            <param name="source">
+            A composite format string
+            </param>
+            <param name="formatProvider">
+            An object that supplies culture-specific formatting information
+            </param>
+            <param name="args">
+            An object array that contains zero or more objects to format
+            </param>
+            <returns>
+            A copy of the string in which the format items have been replaced by
+            the string representation of the corresponding objects in args
+            </returns>
+        </member>
+    </members>
+</doc>

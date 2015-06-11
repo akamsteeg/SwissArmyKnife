@@ -2,6 +2,9 @@
 
 namespace SwissArmyKnife
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class StringExtensions
     {
         /// <summary>

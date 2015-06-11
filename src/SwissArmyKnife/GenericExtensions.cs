@@ -5,6 +5,9 @@ using System.Text;
 
 namespace SwissArmyKnife
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class GenericExtensions
     {
         #region IsAnyOf()
@@ -12,6 +15,7 @@ namespace SwissArmyKnife
         /// <summary>
         /// Checks if the object is equal to the supplied value
         /// </summary>
+        /// <param name="source"></param>
         /// <param name="value">The value to check the object against</param>
         /// <returns>True if the object is equal to the value, false otherwise</returns>
         public static bool IsAnyOf<T>(this T source, T value) =>
@@ -20,6 +24,7 @@ namespace SwissArmyKnife
         /// <summary>
         /// Checks if the object is equal to the supplied values
         /// </summary>
+        /// <param name="source"></param>
         /// <param name="value0">The first value to check the object against</param>
         /// <param name="value1">The second value to check the object against</param>
         /// <returns>True if the object is equal to any of the values, false otherwise</returns>
@@ -29,6 +34,7 @@ namespace SwissArmyKnife
         /// <summary>
         /// Checks if the object is equal to the supplied values
         /// </summary>
+        /// <param name="source"></param>
         /// <param name="value0">The first value to check the object against</param>
         /// <param name="value1">The second value to check the object against</param>
         /// <param name="value2">The second value to check the object against</param>
@@ -41,6 +47,7 @@ namespace SwissArmyKnife
         /// <summary>
         /// Checks if the object is equal to the supplied values
         /// </summary>
+        /// <param name="source"></param>
         /// <param name="value0">The first value to check the object against</param>
         /// <param name="value1">The second value to check the object against</param>
         /// <param name="value2">The second value to check the object against</param>
@@ -55,6 +62,7 @@ namespace SwissArmyKnife
         /// <summary>
         /// Checks if the object is equal to any of the supplied values
         /// </summary>
+        /// <param name="source"></param>
         /// <param name="values">The values to check the object against</param>
         /// <returns>True if the object is equal to any of the values, false otherwise</returns>
         public static bool IsAnyOf<T>(this T source, params T[] values) =>
@@ -67,6 +75,7 @@ namespace SwissArmyKnife
         /// <summary>
         /// Checks whether the object is between the supplied upper and lower values
         /// </summary>
+        /// <param name="value"></param>
         /// <param name="lower">The lower bound</param>
         /// <param name="upper">The upper bound</param>
         /// <returns>True if the value is between or equal to the lower or upper value, false otherwise</returns>

@@ -11,6 +11,8 @@ namespace SwissArmyKnife
         /// Appends a line by processing a composite format string, which
         /// contains zero of more format items
         /// </summary>
+        /// <param name="sb">
+        /// </param>
         /// <param name="provider">
         /// An object that supplies culture-specific formatting information
         /// </param>
@@ -30,6 +32,8 @@ namespace SwissArmyKnife
         /// Appends a line by processing a composite format string, which
         /// contains zero of more format items
         /// </summary>
+        /// <param name="sb">
+        /// </param>
         /// <param name="format">
         /// A composite format string
         /// </param>
@@ -46,6 +50,8 @@ namespace SwissArmyKnife
         /// Appends a line by processing a composite format string, which
         /// contains zero of more format items
         /// </summary>
+        /// <param name="sb">
+        /// </param>
         /// <param name="format">
         /// A composite format string
         /// </param>
@@ -65,6 +71,8 @@ namespace SwissArmyKnife
         /// Appends a line by processing a composite format string, which
         /// contains zero of more format items
         /// </summary>
+        /// <param name="sb">
+        /// </param>
         /// <param name="format">
         /// A composite format string
         /// </param>
@@ -87,9 +95,7 @@ namespace SwissArmyKnife
         /// Appends a line by processing a composite format string, which
         /// contains zero of more format items
         /// </summary>
-        /// <param name="provider">
-        /// An object that supplies culture-specific formatting information
-        /// </param>
+        /// <param name="sb"></param>
         /// <param name="format">
         /// A composite format string
         /// </param>

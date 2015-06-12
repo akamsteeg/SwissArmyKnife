@@ -4,6 +4,8 @@ namespace SwissArmyKnife.Benchmarks.Benches
 {
     internal class StringExtensionsBenchmarks
     {
+        #region FormatWith()
+
         [Benchmark]
         public void FormatStringWithOneArg()
         {
@@ -55,5 +57,23 @@ namespace SwissArmyKnife.Benchmarks.Benches
         }
 
         #endregion Types
+
+        #endregion FormatWith()
+
+        #region Truncate()
+
+        [Benchmark]
+        public void Truncate()
+        {
+            var truncatedText = "Lorem ipsum".Truncate(5);
+        }
+
+        [Benchmark]
+        public void TruncateWithSuffix()
+        {
+            var truncatedText = "Lorem ipsum".Truncate(5, "...");
+        }
+
+        #endregion
     }
 }

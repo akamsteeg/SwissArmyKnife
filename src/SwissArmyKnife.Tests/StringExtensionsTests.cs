@@ -103,6 +103,14 @@ namespace SwissArmyKnife.Tests
             Assert.AreEqual("Lorem", truncatedText);
         }
 
+        [Test]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void TruncateStringWithLengthBeyondSourceStringLength_Throws()
+        {
+            const string text = "Lorem ipsum";
+
+            var truncatedText = text.Truncate(int.MaxValue);
+        }
 
         [Test]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
@@ -150,6 +158,15 @@ namespace SwissArmyKnife.Tests
             const string text = "Lorem ipsum";
 
             var truncatedText = text.Truncate(-1, "...");
+        }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void TruncateStringWithSuffixAndLengthBeyondSourceStringLength_Throws()
+        {
+            const string text = "Lorem ipsum";
+
+            var truncatedText = text.Truncate(int.MaxValue, "...");
         }
 
         #endregion

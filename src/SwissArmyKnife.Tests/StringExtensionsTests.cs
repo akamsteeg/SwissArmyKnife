@@ -89,5 +89,69 @@ namespace SwissArmyKnife.Tests
         }
 
         #endregion
+
+        #region Truncate()
+
+        [Test]
+        public void TruncateString_Successful()
+        {
+            const string text = "Lorem ipsum";
+
+            var truncatedText = text.Truncate(5);
+
+            Assert.IsNotNull(truncatedText);
+            Assert.AreEqual("Lorem", truncatedText);
+        }
+
+
+        [Test]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void TruncateStringToZeroLength_Throws()
+        {
+            const string text = "Lorem ipsum";
+
+            var truncatedText = text.Truncate(0);
+        }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void TruncateStringToNegativeLength_Throws()
+        {
+            const string text = "Lorem ipsum";
+
+            var truncatedText = text.Truncate(-1);
+        }
+
+        [Test]
+        public void TruncateStringWithSuffix_Successful()
+        {
+            const string text = "Lorem ipsum";
+
+            var truncatedText = text.Truncate(5, "...");
+
+            Assert.IsNotNull(truncatedText);
+            Assert.AreEqual("Lorem...", truncatedText);
+        }
+
+
+        [Test]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void TruncateStringToZeroLengthWithSuffix_Throws()
+        {
+            const string text = "Lorem ipsum";
+
+            var truncatedText = text.Truncate(0, "...");
+        }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void TruncateStringToNegativeLengthWithSuffix_Throws()
+        {
+            const string text = "Lorem ipsum";
+
+            var truncatedText = text.Truncate(-1, "...");
+        }
+
+        #endregion
     }
 }

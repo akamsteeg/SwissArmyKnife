@@ -111,6 +111,7 @@ var truncatedText = text.Truncate(5); // "Lorem"
 
 ```csharp
 var truncatedTextWithSuffix = "Lorem ipsum".Truncate(5, "..."); // "Lorem..."
+```
 
 ### Data structures
 

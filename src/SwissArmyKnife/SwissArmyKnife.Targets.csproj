@@ -6,7 +6,7 @@
 	<TargetFrameworkVersion Condition=" '$(TargetFrameworkVersionEx)' != '' ">$(TargetFrameworkVersionEx)</TargetFrameworkVersion>
 	<TargetFrameworkProfile Condition=" '$(BuildMode)' != 'portable' "></TargetFrameworkProfile>
 	<TargetFrameworkProfile Condition=" '$(TargetFrameworkProfileEx)' != '' ">$(TargetFrameworkProfileEx)</TargetFrameworkProfile>
-	<DocumentationFile Condition=" '$(DocumentationFile)' != ''">$(OutputPath)\CommonMark.xml</DocumentationFile>
+	<DocumentationFile Condition=" '$(DocumentationFile)' != ''">$(OutputPath)\SwissArmyKnife.xml</DocumentationFile>
     <DefineConstants>$(DefineConstants);$(BuildMode.Replace('.', '_'));$(DefineConstantsEx)</DefineConstants>
   </PropertyGroup>
 

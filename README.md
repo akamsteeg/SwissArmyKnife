@@ -98,7 +98,7 @@ string formattedString = "Employee: {0} (status: {1})".FormatWith("Donald Duck",
 
 A generic last in, first out stack.
 
-``csharp
+```csharp
 var s = new Stack();
 s.Push("first");
 s.Push("second");

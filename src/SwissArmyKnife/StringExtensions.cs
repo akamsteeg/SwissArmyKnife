@@ -120,6 +120,8 @@ namespace SwissArmyKnife
         {
             if (length < 1)
                 throw new ArgumentOutOfRangeException(nameof(length));
+            if (length > source.Length)
+                throw new ArgumentOutOfRangeException(nameof(length), "Length must refer to a location within the string");
 
             return source.Substring(0, length);
         }

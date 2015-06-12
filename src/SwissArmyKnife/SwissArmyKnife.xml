@@ -4,6 +4,45 @@
         <name>SwissArmyKnife</name>
     </assembly>
     <members>
+        <member name="T:SwissArmyKnife.DataStructures.Stack">
+            <summary>
+            A stack
+            </summary>
+        </member>
+        <member name="M:SwissArmyKnife.DataStructures.Stack.Push(System.Object)">
+            <summary>
+            Push a new value onto the <see cref="T:SwissArmyKnife.DataStructures.Stack"/>
+            </summary>
+            <param name="value">
+            The new value to push onto 
+            the <see cref="T:SwissArmyKnife.DataStructures.Stack"/>
+            </param>
+        </member>
+        <member name="M:SwissArmyKnife.DataStructures.Stack.Pop">
+            <summary>
+            Pop the current item from
+            the <see cref="T:SwissArmyKnife.DataStructures.Stack"/>
+            </summary>
+            <returns>
+            The topmost value on
+            the <see cref="T:SwissArmyKnife.DataStructures.Stack"/>
+            </returns>
+        </member>
+        <member name="T:SwissArmyKnife.DataStructures.StackItem">
+            <summary>
+            Represents an item on the <see cref="T:SwissArmyKnife.DataStructures.Stack"/>
+            </summary>
+        </member>
+        <member name="P:SwissArmyKnife.DataStructures.StackItem.Parent">
+            <summary>
+            The parent of the current item
+            </summary>
+        </member>
+        <member name="P:SwissArmyKnife.DataStructures.StackItem.Value">
+            <summary>
+            The value of the item
+            </summary>
+        </member>
         <member name="T:SwissArmyKnife.GenericExtensions">
             <summary>
             

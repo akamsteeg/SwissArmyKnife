@@ -128,7 +128,7 @@ var popFirst = s.Pop(); // "second"
 var popSecond = s.Pop(); // "first"
 ```
 
-## Project structures
+## Project structure
 
 ### src\SwissArmyKnife
 

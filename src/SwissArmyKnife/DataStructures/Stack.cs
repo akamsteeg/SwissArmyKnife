@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace SwissArmyKnife.DataStructures
+﻿namespace SwissArmyKnife.DataStructures
 {
     /// <summary>
-    /// A stack
+    /// A last in, first out data structure
     /// </summary>
     public class Stack
     {

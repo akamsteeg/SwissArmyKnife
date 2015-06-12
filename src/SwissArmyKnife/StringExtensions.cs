@@ -7,6 +7,8 @@ namespace SwissArmyKnife
     /// </summary>
     public static class StringExtensions
     {
+        #region FormatWith()
+
         /// <summary>
         /// Replaces the format item in a specified string with the string
         /// representation of the specified object
@@ -103,5 +105,35 @@ namespace SwissArmyKnife
         /// </returns>
         public static string FormatWith(this string source, IFormatProvider formatProvider, params object[] args) =>
             string.Format(formatProvider, source, args);
+
+        #endregion
+
+        #region Truncate()
+
+        /// <summary>
+        /// Truncates this instance to the specified length
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="length">The length to truncate to</param>
+        /// <returns>The truncated <see cref="string"/></returns>
+        public static string Truncate(this string source, int length)
+        {
+            if (length < 1)
+                throw new ArgumentOutOfRangeException(nameof(length));
+
+            return source.Substring(0, length);
+        }
+
+        /// <summary>
+        /// Truncates this instance to the specified length
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="length">The length to truncate to</param>
+        /// <param name="suffix">The suffix to append to the truncated <see cref="string"/></param>
+        /// <returns>The truncated <see cref="string"/></returns>
+        public static string Truncate(this string source, int length, string suffix) =>
+            "{0}{1}".FormatWith(source.Truncate(length), suffix);
+
+        #endregion
     }
 }

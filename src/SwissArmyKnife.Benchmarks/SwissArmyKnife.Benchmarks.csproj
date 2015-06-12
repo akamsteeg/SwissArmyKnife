@@ -63,9 +63,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SwissArmyKnife\SwissArmyKnife.csproj">
+    <ProjectReference Include="..\SwissArmyKnife\SwissArmyKnife.Base.csproj">
       <Project>{755f796c-d8df-4592-a9b2-0beb761aa107}</Project>
-      <Name>SwissArmyKnife</Name>
+      <Name>SwissArmyKnife.Base</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("SwissArmyKnife")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("A collection of utilities for general purposes")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("SwissArmyKnife")]

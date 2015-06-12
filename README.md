@@ -13,6 +13,7 @@ Done:
  * `StringBuilder.AppendFormatLine()`
  * `string.FormatWith()`
 * Data structures
+ * Stack
 
 Todo:
 * Collections & data structures
@@ -89,6 +90,21 @@ sb.AppendFormatLine("{0}: {1}", "test", 1);
 
 ```csharp
 string formattedString = "Employee: {0} (status: {1})".FormatWith("Donald Duck", "Fired");
+```
+
+### Data structures
+
+#### Stack
+
+A generic last in, first out stack.
+
+``csharp
+var s = new Stack();
+s.Push("first");
+s.Push("second");
+
+var popFirst = s.Pop(); // "second"
+var popSecond = s.Pop(); // "first"
 ```
 
 ## Project structures

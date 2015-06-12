@@ -12,6 +12,7 @@ Done:
  * `IComparable.IsBetween()`
  * `StringBuilder.AppendFormatLine()`
  * `string.FormatWith()`
+ * `string.Truncate()`
 * Data structures
  * `Stack`
 
@@ -91,6 +92,25 @@ sb.AppendFormatLine("{0}: {1}", "test", 1);
 ```csharp
 string formattedString = "Employee: {0} (status: {1})".FormatWith("Donald Duck", "Fired");
 ```
+
+```csharp
+var employeeName = "{0} {1}";
+string formattedString = employeeName.FormatWith("Donald", "Duck");
+```
+
+#### string.Truncate()
+
+```csharp
+var text = "Lorem ipsum".Truncate(5); // "Lorem"
+```
+
+```csharp
+var text = "Lorem ipsum";
+var truncatedText = text.Truncate(5); // "Lorem"
+```
+
+```csharp
+var truncatedTextWithSuffix = "Lorem ipsum".Truncate(5, "..."); // "Lorem..."
 
 ### Data structures
 

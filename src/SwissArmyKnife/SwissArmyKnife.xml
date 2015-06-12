@@ -285,5 +285,22 @@
             the string representation of the corresponding objects in args
             </returns>
         </member>
+        <member name="M:SwissArmyKnife.StringExtensions.Truncate(System.String,System.Int32)">
+            <summary>
+            Truncates this instance to the specified length
+            </summary>
+            <param name="source"></param>
+            <param name="length">The length to truncate to</param>
+            <returns>The truncated <see cref="T:System.String"/></returns>
+        </member>
+        <member name="M:SwissArmyKnife.StringExtensions.Truncate(System.String,System.Int32,System.String)">
+            <summary>
+            Truncates this instance to the specified length
+            </summary>
+            <param name="source"></param>
+            <param name="length">The length to truncate to</param>
+            <param name="suffix">The suffix to append to the truncated <see cref="T:System.String"/></param>
+            <returns>The truncated <see cref="T:System.String"/></returns>
+        </member>
     </members>
 </doc>

@@ -1,6 +1,11 @@
 # SwissArmyKnife
 
-SwissArmyKnife is my little utility library. Its target framework is 4.0, the only dependency is System (mscorlib), it doesn't cause warnings and it's fully CLS compliant.
+SwissArmyKnife is my little utility library. Its as lightweight, reliable & fast as possible, with extensive unit tests and benchmarks.
+
+Supported .NET frameworks:
+* .NET 3.5
+* .NET 4.0
+* .NET 4.5
 
 ## Current status
 

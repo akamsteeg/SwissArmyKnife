@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>SwissArmyKnife</id>
+	<title>SwissArmyKnife</title>
+    <version>1.0.0-dev</version>
+    <authors>Alex Kamsteeg</authors>
+    <owners>Alex Kamsteeg</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>SwissArmyKnife</description>
+    <releaseNotes>-</releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <tags>utility utitilies misc</tags>
+    <dependencies>
+    </dependencies>
+  </metadata>
+  <files>
+	<file src="..\src\SwissArmyKnife\bin\$configuration$\SwissArmyKnife.dll" target="lib\net40\" />
+    <file src="..\src\SwissArmyKnife\bin\$configuration$\SwissArmyKnife.pdb" target="lib\net40\" />
+    <file src="..\src\SwissArmyKnife\bin\$configuration$\SwissArmyKnife.xml" target="lib\net40\" />
+  </files>
+</package>

@@ -13,7 +13,7 @@ Done:
  * `StringBuilder.AppendFormatLine()`
  * `string.FormatWith()`
 * Data structures
- * Stack
+ * `Stack`
 
 Todo:
 * Collections & data structures

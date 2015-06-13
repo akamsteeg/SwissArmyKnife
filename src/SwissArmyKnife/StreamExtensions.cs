@@ -11,7 +11,7 @@ namespace SwissArmyKnife
     /// </summary>
     public static class StreamExtensions
     {
-#if NET35 // || DEBUG
+#if NET35  || DEBUG
 
         private const int _defaultBufferSize = 4096;
 
@@ -47,10 +47,12 @@ namespace SwissArmyKnife
                 throw new ArgumentOutOfRangeException("nameof(bufferSize), Buffer size must be 1 or higher");
 
             var buffer = new byte[bufferSize];
-            while (source.Position + bufferSize <= source.Length)
+
+            int read = -1;
+            while (read != 0)
             {
-                source.Read(buffer, 0, bufferSize);
-                destination.Write(buffer, 0, bufferSize);
+                read = source.Read(buffer, 0, bufferSize);
+                destination.Write(buffer, 0, read);
             }
         }
 #endif

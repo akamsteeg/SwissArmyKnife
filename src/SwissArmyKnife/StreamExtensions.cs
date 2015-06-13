@@ -11,7 +11,7 @@ namespace SwissArmyKnife
     /// </summary>
     public static class StreamExtensions
     {
-#if NET35  || DEBUG
+#if NET35 // || DEBUG
 
         private const int _defaultBufferSize = 4096;
 

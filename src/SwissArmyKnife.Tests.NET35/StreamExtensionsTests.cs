@@ -11,107 +11,108 @@ namespace SwissArmyKnife.Tests.NET35
     [TestFixture]
     internal class StreamExtensionsTests
     {
-        private const int SIZE = 1024;
-
-        private Stream SourceStream
-        {
-            get; set;
-        }
-
-        [SetUp]
-        public void SetUp()
-        {
-            var sourceStream = new MemoryStream();
-
-            var data = new byte[SIZE];
-
-            Random r = new Random();
-            r.NextBytes(data);
-
-            sourceStream.Write(data, 0, SIZE);
-            sourceStream.Seek(0, SeekOrigin.Begin);
-
-            this.SourceStream = sourceStream;
-        }
-
         [Test]
         public void CopyToEmptyStream_Sucessful()
         {
+            var source = GetStream();
             MemoryStream destination = new MemoryStream();
 
-            this.SourceStream.CopyTo(destination);
+            source.CopyTo(destination);
 
             Assert.IsNotNull(destination);
-            Assert.AreEqual(SIZE, destination.Length);
+            Assert.AreEqual(source.Length, destination.Length);
         }
 
         [Test]
         [ExpectedException(typeof(ArgumentNullException))]
         public void CopyToNullStream_Throws()
         {
+            var source = GetStream();
             MemoryStream destination = null;
 
-            this.SourceStream.CopyTo(destination);
+            source.CopyTo(destination);
         }
 
         [Test]
         [ExpectedException(typeof(ObjectDisposedException))]
         public void CopyToDisposedStream_Throws()
         {
+            var source = GetStream();
             MemoryStream destination = new MemoryStream();
             destination.Dispose();
 
-            this.SourceStream.CopyTo(destination);
+            source.CopyTo(destination);
         }
 
         [Test]
         [ExpectedException(typeof(ObjectDisposedException))]
         public void CopyToClosedStream_Throws()
         {
+            var source = GetStream();
             MemoryStream destination = new MemoryStream();
             destination.Close();
 
-            this.SourceStream.CopyTo(destination);
+            source.CopyTo(destination);
         }
 
         [Test]
         [ExpectedException(typeof(ObjectDisposedException))]
         public void CopyFromDisposedStream_Throws()
         {
+            var source = GetStream();
             MemoryStream destination = new MemoryStream();
 
-            this.SourceStream.Dispose();
+            source.Dispose();
 
-            this.SourceStream.CopyTo(destination);
+            source.CopyTo(destination);
         }
 
         [Test]
         [ExpectedException(typeof(ObjectDisposedException))]
         public void CopyFromClosedStream_Throws()
         {
+            var source = GetStream();
             MemoryStream destination = new MemoryStream();
             
-            this.SourceStream.Close();
+            source.Close();
 
-            this.SourceStream.CopyTo(destination);
+            source.CopyTo(destination);
         }
 
         [Test]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void CopyToWithZeroBufferSize_Throws()
         {
+            var source = GetStream();
             MemoryStream destination = new MemoryStream();
 
-            this.SourceStream.CopyTo(destination, 0);
+            source.CopyTo(destination, 0);
         }
 
         [Test]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void CopyToWithNegativeBufferSize_Throws()
         {
+            var source = GetStream();
             MemoryStream destination = new MemoryStream();
 
-            this.SourceStream.CopyTo(destination, -1);
+            source.CopyTo(destination, -1);
+        }
+
+        private static Stream GetStream()
+        {
+            const int size = 65535;
+
+            var newStream = new MemoryStream();
+
+            var data = new byte[size];
+
+            Random r = new Random();
+            r.NextBytes(data);
+
+            newStream.Write(data, 0, size);
+
+            return newStream;
         }
     }
 }

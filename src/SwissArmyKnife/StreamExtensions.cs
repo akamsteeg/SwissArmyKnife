@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 
 namespace SwissArmyKnife
 {
@@ -11,26 +8,38 @@ namespace SwissArmyKnife
     /// </summary>
     public static class StreamExtensions
     {
-#if NET35 // || DEBUG
+#if NET35  || DEBUG
 
         private const int _defaultBufferSize = 4096;
 
         /// <summary>
-        /// 
+        /// Reads the bytes from the current stream 
+        /// and writes them to another stream
         /// </summary>
         /// <param name="source"></param>
-        /// <param name="destination"></param>
+        /// <param name="destination">
+        /// The stream to which the contents of the 
+        /// current stream will be copied
+        /// </param>
         public static void CopyTo(this Stream source, Stream destination)
         {
             source.CopyTo(destination, _defaultBufferSize);
         }
 
         /// <summary>
-        /// 
+        /// Reads the bytes from the current stream 
+        /// and writes them to another stream, using 
+        /// a specified buffer size
         /// </summary>
         /// <param name="source"></param>
-        /// <param name="destination"></param>
-        /// <param name="bufferSize"></param>
+        /// <param name="destination">
+        /// The stream to which the contents of the 
+        /// current stream will be copied
+        /// </param>
+        /// <param name="bufferSize">
+        /// The size of the buffer. This value must 
+        /// be greater than zero
+        /// </param>
         public static void CopyTo(this Stream source, Stream destination, int bufferSize)
         {
             if (!source.CanRead && !source.CanWrite)

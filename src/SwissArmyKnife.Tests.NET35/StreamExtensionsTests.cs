@@ -21,16 +21,17 @@ namespace SwissArmyKnife.Tests.NET35
         [SetUp]
         public void SetUp()
         {
-            this.SourceStream = new MemoryStream();
+            var sourceStream = new MemoryStream();
 
             var data = new byte[SIZE];
 
             Random r = new Random();
             r.NextBytes(data);
 
-            this.SourceStream.Write(data, 0, SIZE);
+            sourceStream.Write(data, 0, SIZE);
+            sourceStream.Seek(0, SeekOrigin.Begin);
 
-            this.SourceStream.Seek(0, SeekOrigin.Begin);
+            this.SourceStream = sourceStream;
         }
 
         [Test]

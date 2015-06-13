@@ -111,6 +111,7 @@ namespace SwissArmyKnife.Tests.NET35
             r.NextBytes(data);
 
             newStream.Write(data, 0, size);
+            newStream.Reset();
 
             return newStream;
         }

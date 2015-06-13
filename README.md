@@ -18,6 +18,8 @@ Done:
  * `StringBuilder.AppendFormatLine()`
  * `string.FormatWith()`
  * `string.Truncate()`
+ * `stream.CopyTo()` (Backport to .NET 3.5 because it was introduced in the BCL in .NET 4.0)
+ * `stream.Reset()`
 * Data structures
  * `Stack`
 
@@ -132,20 +134,6 @@ s.Push("second");
 var popFirst = s.Pop(); // "second"
 var popSecond = s.Pop(); // "first"
 ```
-
-## Project structure
-
-### src\SwissArmyKnife
-
-The main project.
-
-### src\SwissArmyKnife.Tests
-
-The unit tests, using [NUnit](http://www.nunit.org).
-
-### src\SwissArmyKnife.Benchmarks
-
-Benchmarks, using the awesome [Minibench.skeet](https://github.com/akamsteeg/minibench.skeet).
 
 ## Build it
 

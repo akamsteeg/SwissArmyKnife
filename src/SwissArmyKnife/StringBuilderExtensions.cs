@@ -4,6 +4,7 @@ using System.Text;
 namespace SwissArmyKnife
 {
     /// <summary>
+    /// Extension methods for <see cref="StringBuilder"/>
     /// </summary>
     public static class StringBuilderExtensions
     {

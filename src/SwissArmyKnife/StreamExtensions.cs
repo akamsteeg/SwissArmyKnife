@@ -4,7 +4,7 @@ using System.IO;
 namespace SwissArmyKnife
 {
     /// <summary>
-    /// 
+    /// Extension methods for <see cref="Stream"/>
     /// </summary>
     public static class StreamExtensions
     {

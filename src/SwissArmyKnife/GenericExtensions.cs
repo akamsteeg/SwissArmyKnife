@@ -5,8 +5,8 @@ using System.Text;
 
 namespace SwissArmyKnife
 {
-    /// <summary>
-    /// 
+    /// <summary> 
+    /// Generic extension methods
     /// </summary>
     public static class GenericExtensions
     {

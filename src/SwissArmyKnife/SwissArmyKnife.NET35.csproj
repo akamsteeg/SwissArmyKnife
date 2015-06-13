@@ -4,7 +4,7 @@
     <BuildMode>v3.5</BuildMode>
     <ProjectGuid>{4F90D16F-4F6D-4ADE-BBA7-0476E0359A3B}</ProjectGuid>
     <TargetFrameworkVersionEx>v3.5</TargetFrameworkVersionEx>
-    <DefineConstantsEx>NET40</DefineConstantsEx>
+    <DefineConstantsEx>NET35</DefineConstantsEx>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

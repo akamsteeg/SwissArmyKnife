@@ -2,17 +2,24 @@
 <package>
   <metadata>
     <id>SwissArmyKnife</id>
-	<title>SwissArmyKnife</title>
+	  <title>SwissArmyKnife</title>
     <version>1.0.0-dev</version>
+    <description>A collection of utilities for general purposes</description>
+    <releaseNotes>-</releaseNotes>
+    
+    <tags>utility utitilies misc</tags>
+
+    <copyright>Copyright 2015 Alex Kamsteeg (https://atlex.nl)</copyright>
     <authors>Alex Kamsteeg</authors>
     <owners>Alex Kamsteeg</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>SwissArmyKnife</description>
-    <releaseNotes>-</releaseNotes>
-    <copyright>Copyright 2014</copyright>
-    <tags>utility utitilies misc</tags>
+    
     <dependencies>
     </dependencies>
+    
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System" />
+    </frameworkAssemblies>
   </metadata>
   <files>
     <!-- .NET 3.5 -->

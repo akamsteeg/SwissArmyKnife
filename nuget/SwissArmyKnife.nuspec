@@ -13,6 +13,9 @@
     <tags>utility utitilies misc</tags>
     <dependencies>
     </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System" />
+    </frameworkAssemblies>
   </metadata>
   <files>
     <!-- .NET 3.5 -->

@@ -64,6 +64,20 @@ namespace SwissArmyKnife.DataStructures
                 return result;
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public virtual object Peek()
+        {
+            lock (this._lock)
+            {
+                object result = this._current?.Value;
+
+                return result;
+            }
+        }
     }
 
     /// <summary>

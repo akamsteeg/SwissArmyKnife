@@ -52,7 +52,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Benches\DataStructures\StackBenchmarks.cs" />
     <Compile Include="Benches\GenericExtensionsBenchmarks.cs" />
     <Compile Include="Benches\StringBuilderExtensionsBenchmarks.cs" />
     <Compile Include="Benches\StringExtensionsBenchmarks.cs" />

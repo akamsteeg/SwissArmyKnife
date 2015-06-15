@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 namespace SwissArmyKnife.DataStructures
 {
     /// <summary>

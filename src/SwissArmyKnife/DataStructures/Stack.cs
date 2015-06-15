@@ -1,11 +1,29 @@
-﻿namespace SwissArmyKnife.DataStructures
+﻿
+namespace SwissArmyKnife.DataStructures
 {
     /// <summary>
     /// A last in, first out data structure
     /// </summary>
     public class Stack
     {
+        /// <summary>
+        /// The current, top most, item on the stack
+        /// </summary>
         private StackItem _current;
+
+        /// <summary>
+        /// A lock for thread safety
+        /// </summary>
+        private readonly object _lock;
+
+        /// <summary>
+        /// Initializes a new instance of 
+        /// the <see cref="Stack"/>
+        /// </summary>
+        public Stack()
+        {
+            this._lock = new object();
+        }
 
         /// <summary>
         /// Push a new value onto the <see cref="Stack"/>
@@ -16,13 +34,16 @@
         /// </param>
         public virtual void Push(object value)
         {
-            var newItem = new StackItem()
+            lock(this._lock)
             {
-                Parent = this._current,
-                Value = value,
-            };
+                var newItem = new StackItem()
+                {
+                    Parent = this._current,
+                    Value = value,
+                };
 
-            this._current = newItem;
+                this._current = newItem;
+            }
         }
 
         /// <summary>
@@ -35,10 +56,13 @@
         /// </returns>
         public virtual object Pop()
         {
-            object result = this._current?.Value;
-            this._current = this._current?.Parent;
+            lock (this._lock)
+            {
+                object result = this._current?.Value;
+                this._current = this._current?.Parent;
 
-            return result;
+                return result;
+            }
         }
     }
 

@@ -20,8 +20,6 @@ Done:
  * `string.Truncate()`
  * `stream.CopyTo()` (Backport to .NET 3.5 because it was introduced in the BCL in .NET 4.0)
  * `stream.Reset()`
-* Data structures
- * `Stack`
 
 Todo:
 * Collections & data structures
@@ -118,21 +116,6 @@ var truncatedText = text.Truncate(5); // "Lorem"
 
 ```csharp
 var truncatedTextWithSuffix = "Lorem ipsum".Truncate(5, "..."); // "Lorem..."
-```
-
-### Data structures
-
-#### Stack
-
-A generic last in, first out stack.
-
-```csharp
-var s = new Stack();
-s.Push("first");
-s.Push("second");
-
-var popFirst = s.Pop(); // "second"
-var popSecond = s.Pop(); // "first"
 ```
 
 ## Build it

@@ -26,6 +26,5 @@ namespace SwissArmyKnife
 
             return result;
         }
-
     }
 }

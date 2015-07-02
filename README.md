@@ -20,7 +20,7 @@ Done:
  * `string.Truncate()`
  * `Stream.CopyTo()` (Backport to .NET 3.5 because it was introduced in the BCL in .NET 4.0)
  * `Stream.Reset()`
- * Stopwatch.GetValueAndReset()`
+ * `Stopwatch.GetValueAndReset()`
 
 ## Examples
 

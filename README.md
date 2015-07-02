@@ -18,8 +18,8 @@ Done:
  * `StringBuilder.AppendFormatLine()`
  * `string.FormatWith()`
  * `string.Truncate()`
- * `stream.CopyTo()` (Backport to .NET 3.5 because it was introduced in the BCL in .NET 4.0)
- * `stream.Reset()`
+ * `Stream.CopyTo()` (Backport to .NET 3.5 because it was introduced in the BCL in .NET 4.0)
+ * `Stream.Reset()`
  * Stopwatch.GetValueAndReset()`
 
 Todo:

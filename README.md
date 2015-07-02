@@ -22,14 +22,6 @@ Done:
  * `Stream.Reset()`
  * Stopwatch.GetValueAndReset()`
 
-Todo:
-* Collections & data structures
- * `FixedList<T>`, a fixed capacity list
- * `BinaryTree`
-* IO namespace
-* Custom types
-* Loads more
-
 ## Examples
 
 ### Extension methods

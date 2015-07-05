@@ -18,16 +18,9 @@ Done:
  * `StringBuilder.AppendFormatLine()`
  * `string.FormatWith()`
  * `string.Truncate()`
- * `stream.CopyTo()` (Backport to .NET 3.5 because it was introduced in the BCL in .NET 4.0)
- * `stream.Reset()`
-
-Todo:
-* Collections & data structures
- * `FixedList<T>`, a fixed capacity list
- * `BinaryTree`
-* IO namespace
-* Custom types
-* Loads more
+ * `Stream.CopyTo()` (Backport to .NET 3.5 because it was introduced in the BCL in .NET 4.0)
+ * `Stream.Reset()`
+ * `Stopwatch.GetValueAndReset()`
 
 ## Examples
 
@@ -117,6 +110,18 @@ var truncatedText = text.Truncate(5); // "Lorem"
 ```csharp
 var truncatedTextWithSuffix = "Lorem ipsum".Truncate(5, "..."); // "Lorem..."
 ```
+
+#### Stopwatch.GetValueAndReset()
+
+```csharp
+
+var sw = Stopwatch.StartNew();
+
+// Replaces:
+// var elapsed = sw.Elapsed;
+// sw.Reset();
+var elapsed = sw.GetValueAndReset();
+````
 
 ## Build it
 

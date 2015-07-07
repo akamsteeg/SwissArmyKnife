@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using SwissArmyKnife.Extensions;
 using System;
 using System.IO;
 

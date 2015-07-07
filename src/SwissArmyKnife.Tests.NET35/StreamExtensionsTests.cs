@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using SwissArmyKnife;
+using SwissArmyKnife.Extensions;
 using System.IO;
 
 namespace SwissArmyKnife.Tests.NET35

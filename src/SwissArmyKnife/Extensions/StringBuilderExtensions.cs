@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace SwissArmyKnife
+namespace SwissArmyKnife.Extensions
 {
     /// <summary>
     /// Extension methods for <see cref="StringBuilder"/>

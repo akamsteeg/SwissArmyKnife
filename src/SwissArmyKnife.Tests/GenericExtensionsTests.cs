@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using SwissArmyKnife;
+using SwissArmyKnife.Extensions;
 
 namespace SwissArmyKnife.Tests
 {

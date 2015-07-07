@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SwissArmyKnife;
 using NUnit.Framework;
+using SwissArmyKnife.Extensions;
 
 namespace SwissArmyKnife.Tests
 {

@@ -23,16 +23,13 @@
   </metadata>
   <files>
     <!-- .NET 3.5 -->
-	  <file src="..\src\SwissArmyKnife\bin\v3.5\$configuration$\SwissArmyKnife.dll" target="lib\net35\" />
-    <file src="..\src\SwissArmyKnife\bin\v3.5\$configuration$\SwissArmyKnife.pdb" target="lib\net35\" />
+    <file src="..\src\SwissArmyKnife\bin\v3.5\$configuration$\SwissArmyKnife.dll" target="lib\net35\" />
     <file src="..\src\SwissArmyKnife\bin\v3.5\$configuration$\SwissArmyKnife.xml" target="lib\net35\" />
     <!-- .NET 4.0 -->
     <file src="..\src\SwissArmyKnife\bin\v4.0\$configuration$\SwissArmyKnife.dll" target="lib\net40\" />
-    <file src="..\src\SwissArmyKnife\bin\v4.0\$configuration$\SwissArmyKnife.pdb" target="lib\net40\" />
     <file src="..\src\SwissArmyKnife\bin\v4.0\$configuration$\SwissArmyKnife.xml" target="lib\net40\" />
     <!-- .NET 4.5 -->
     <file src="..\src\SwissArmyKnife\bin\v4.5\$configuration$\SwissArmyKnife.dll" target="lib\net45\" />
-    <file src="..\src\SwissArmyKnife\bin\v4.5\$configuration$\SwissArmyKnife.pdb" target="lib\net45\" />
     <file src="..\src\SwissArmyKnife\bin\v4.5\$configuration$\SwissArmyKnife.xml" target="lib\net45\" />
   </files>
 </package>

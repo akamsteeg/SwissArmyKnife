@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace SwissArmyKnife
+namespace SwissArmyKnife.Extensions
 {
     /// <summary> 
     /// Generic extension methods

@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 
-namespace SwissArmyKnife
+namespace SwissArmyKnife.Extensions
 {
     /// <summary>
     /// Extension methods for <see cref="Stopwatch"/>

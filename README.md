@@ -111,6 +111,18 @@ var truncatedText = text.Truncate(5); // "Lorem"
 var truncatedTextWithSuffix = "Lorem ipsum".Truncate(5, "..."); // "Lorem..."
 ```
 
+#### Stream.Reset()
+
+```csharp
+
+var s = new Stream();
+
+// Replaces:
+// if (s.CanSeek)
+//	s.Seek(0, SeekOrigin.Begin);
+s.Reset();
+````
+
 #### Stopwatch.GetValueAndReset()
 
 ```csharp

@@ -10,7 +10,11 @@ namespace SwissArmyKnife.Extensions
     {
 #if NET35 // || DEBUG
 
-        private const int _defaultBufferSize = 4096;
+        /// 81920 is the largest multiple of 4096 that's 
+        /// smaller than 85900 bytes. This makes the 
+        /// buffer as large as possible without the short
+        /// lived object ending up on the Large Object Heap
+        private const int _defaultBufferSize = 81920;
 
         /// <summary>
         /// Reads the bytes from the current stream 

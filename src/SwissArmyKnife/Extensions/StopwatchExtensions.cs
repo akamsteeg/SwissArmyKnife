@@ -17,7 +17,7 @@ namespace SwissArmyKnife.Extensions
         /// </summary>
         /// <param name="sw"></param>
         /// <returns></returns>
-        public static TimeSpan GetValueAndReset(this Stopwatch sw)
+        public static TimeSpan GetElapsedAndRestart(this Stopwatch sw)
         {
             sw.Stop();
             var result = sw.Elapsed;

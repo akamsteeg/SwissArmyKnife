@@ -20,7 +20,7 @@ Done:
  * `string.Truncate()`
  * `Stream.CopyTo()` (Backport to .NET 3.5 because it was introduced in the BCL in .NET 4.0)
  * `Stream.Reset()`
- * `Stopwatch.GetValueAndReset()`
+ * `Stopwatch.GetElapsedAndRestart()`
 
 ## Examples
 
@@ -123,7 +123,7 @@ var s = new Stream();
 s.Reset();
 ````
 
-#### Stopwatch.GetValueAndReset()
+#### Stopwatch.GetElapsedAndRestart()
 
 ```csharp
 
@@ -132,7 +132,7 @@ var sw = Stopwatch.StartNew();
 // Replaces:
 // var elapsed = sw.Elapsed;
 // sw.Reset();
-var elapsed = sw.GetValueAndReset();
+var elapsed = sw.GetElapsedAndRestart();
 ````
 
 ## Build it

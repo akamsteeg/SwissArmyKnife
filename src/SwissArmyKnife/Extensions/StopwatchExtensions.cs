@@ -21,8 +21,9 @@ namespace SwissArmyKnife.Extensions
         {
             sw.Stop();
             var result = sw.Elapsed;
-            
-            sw = Stopwatch.StartNew();
+
+            sw.Reset();
+            sw.Start();
 
             return result;
         }

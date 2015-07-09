@@ -14,17 +14,17 @@ namespace SwissArmyKnife.Tests
     public class StopwatchExtensionsTests
     {
         [Test]
-        public void GetValueAndReset_Successful()
+        public void GetElapsedAndRestart_Successful()
         {
             var sw = Stopwatch.StartNew();
 
             Thread.Sleep(500);
-            var elapsed = sw.GetValueAndReset();
+            var elapsed = sw.GetElapsedAndRestart();
 
             Assert.NotNull(elapsed);
             Assert.Greater(elapsed.TotalMilliseconds, 250);
 
-            Assert.Less(500, sw.Elapsed.TotalMilliseconds);
+            Assert.Less(sw.Elapsed.TotalMilliseconds, 500);
         }
     }
 }

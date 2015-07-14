@@ -3,7 +3,7 @@ using SwissArmyKnife.Extensions;
 using System;
 using System.IO;
 
-namespace SwissArmyKnife.Tests
+namespace SwissArmyKnife.Tests.Extensions
 {
     [TestFixture]
     internal class StreamExtensionTests

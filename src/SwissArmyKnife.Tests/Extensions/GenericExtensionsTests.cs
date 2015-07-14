@@ -2,7 +2,7 @@
 using SwissArmyKnife;
 using SwissArmyKnife.Extensions;
 
-namespace SwissArmyKnife.Tests
+namespace SwissArmyKnife.Tests.Extensions
 {
     [TestFixture]
     internal class GenericExtensionsTests

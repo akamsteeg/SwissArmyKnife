@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SwissArmyKnife.Tests
+namespace SwissArmyKnife.Tests.Extensions
 {
     [TestFixture]
     public class StopwatchExtensionsTests

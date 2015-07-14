@@ -7,7 +7,7 @@ using SwissArmyKnife;
 using NUnit.Framework;
 using SwissArmyKnife.Extensions;
 
-namespace SwissArmyKnife.Tests
+namespace SwissArmyKnife.Tests.Extensions
 {
     [TestFixture]
     class StringBuilderExtensionsTests

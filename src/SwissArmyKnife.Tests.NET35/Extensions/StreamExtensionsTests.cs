@@ -6,7 +6,7 @@ using System.Text;
 using SwissArmyKnife.Extensions;
 using System.IO;
 
-namespace SwissArmyKnife.Tests.NET35
+namespace SwissArmyKnife.Tests.NET35.Extensions
 {
     [TestFixture]
     internal class StreamExtensionsTests

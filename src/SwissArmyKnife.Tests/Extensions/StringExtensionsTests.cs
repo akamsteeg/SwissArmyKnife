@@ -9,7 +9,7 @@ using System.Threading;
 using System.Globalization;
 using SwissArmyKnife.Extensions;
 
-namespace SwissArmyKnife.Tests
+namespace SwissArmyKnife.Tests.Extensions
 {
     [TestFixture]
     class StringExtensionsTests

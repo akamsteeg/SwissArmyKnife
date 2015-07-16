@@ -39,6 +39,8 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cryptography\Fnv1a32.cs" />
+    <Compile Include="Cryptography\Fnv1aBase.cs" />
     <Compile Include="Extensions\GenericExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Extensions\StopwatchExtensions.cs" />

@@ -16,7 +16,6 @@
             : base(unchecked(14695981039346656037), unchecked(1099511628211))
         {
             this.HashSizeValue = 64;
-
         }
     }
 }

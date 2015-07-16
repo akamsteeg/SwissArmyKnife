@@ -9,23 +9,23 @@ using System.Threading.Tasks;
 namespace SwissArmyKnife.Tests.Cryptography
 {
     [TestFixture]
-    internal class Fnv1a32Tests : Fnv1aTestsBase
+    internal class Fnv1a64Tests : Fnv1aTestsBase
     {
-        public Fnv1a32Tests()
-            : base(new Fnv1a32())
+        public Fnv1a64Tests()
+            : base(new Fnv1a64())
         {
 
         }
 
-        [Test, Sequential]
+        [Test, Sequential, Explicit("Need to fix the cast exceptions first")]
         public void Fnv_Succesful(
             [Values("fnv", "Fowler/Noll/Vo", "fowler", "noll", "vo")]string input,
-            [Values((uint)3002452889, (uint)2281434366, (uint)261441234, (uint)2293073354, (uint)1112130898)]uint expected
+            [Values(15903756304948927129, 15903756304948927129, 15903756304948927129, 15903756304948927129, 15903756304948927129)]uint expected
             )
         {
             var hashedData = this.GetHashResult(input);
 
-            uint result = BitConverter.ToUInt32(hashedData, 0);
+            ulong result = BitConverter.ToUInt64(hashedData, 0);
 
             Assert.AreEqual(expected, result);
         }

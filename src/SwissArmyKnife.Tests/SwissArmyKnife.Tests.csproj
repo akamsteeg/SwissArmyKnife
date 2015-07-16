@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cryptography\Fnv1a32Tests.cs" />
+    <Compile Include="Cryptography\Fnv1a64Tests.cs" />
     <Compile Include="Cryptography\Fnv1aTestsBase.cs" />
     <Compile Include="Extensions\GenericExtensionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

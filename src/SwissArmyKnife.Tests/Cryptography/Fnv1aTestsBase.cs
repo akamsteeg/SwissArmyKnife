@@ -20,5 +20,12 @@ namespace SwissArmyKnife.Tests.Cryptography
             this.FnvHash = fnvHash;
         }
 
+        protected byte[] GetHashResult(string input)
+        {
+            byte[] dataToHash = Encoding.UTF8.GetBytes(input);
+            byte[] hashedData = this.FnvHash.ComputeHash(dataToHash);
+
+            return hashedData;
+        }
     }
 }

@@ -2,7 +2,7 @@
 using SwissArmyKnife.Extensions;
 using System.Text;
 
-namespace SwissArmyKnife.Benchmarks.Benches
+namespace SwissArmyKnife.Benchmarks.Benches.Extensions
 {
     internal class StringBuilderExtensionsBenchmarks
     {

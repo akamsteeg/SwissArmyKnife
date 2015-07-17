@@ -43,6 +43,16 @@ namespace SwissArmyKnife.Tests.Extensions
         }
 
         [Test]
+        public void AppendFormattedLineFourArgs_Successful()
+        {
+            var sb = new StringBuilder();
+            sb.AppendFormatLine("Test: {0} {1} {2} {3}", "0", "1", "2", "3");
+
+            var expected = string.Format("Test: 0 1 2 3{0}", Environment.NewLine);
+            Assert.AreEqual(expected, sb.ToString());
+        }
+
+        [Test]
         public void AppendFormattedLineManyArgs_Successful()
         {
             var sb = new StringBuilder();

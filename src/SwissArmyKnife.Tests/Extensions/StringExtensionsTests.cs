@@ -39,6 +39,14 @@ namespace SwissArmyKnife.Tests.Extensions
         }
 
         [Test]
+        public void FormatStringWithFourArgs_Successful()
+        {
+            var s = "Test: {0} {1} {2} {3}".FormatWith("1", "2", "3", "4");
+
+            Assert.AreEqual("Test: 1 2 3 4", s);
+        }
+
+        [Test]
         public void FormatStringWithManyArgs_Successful()
         {
             var s = "Test: {0} {1} {2} {3} {4} {5}".FormatWith("1", "2", "3", "4", "5", "6");

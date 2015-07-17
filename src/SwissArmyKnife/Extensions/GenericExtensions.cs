@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 
 namespace SwissArmyKnife.Extensions
 {
@@ -63,8 +62,20 @@ namespace SwissArmyKnife.Extensions
         /// <param name="source"></param>
         /// <param name="values">The values to check the object against</param>
         /// <returns>True if the object is equal to any of the values, false otherwise</returns>
-        public static bool IsAnyOf<T>(this T source, params T[] values) =>
-            values.Contains(source);
+        public static bool IsAnyOf<T>(this T source, params T[] values)
+        {
+            bool result = false;
+            
+            for (int i = 0; i < values.Length; i++)
+            {
+                result = source.Equals(values[i]);
+
+                if (result)
+                    break;
+            }
+
+            return result;
+        }
 
         #endregion
 

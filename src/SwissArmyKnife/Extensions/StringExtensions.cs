@@ -160,7 +160,7 @@ namespace SwissArmyKnife.Extensions
         /// <param name="suffix">The suffix to append to the truncated <see cref="string"/></param>
         /// <returns>The truncated <see cref="string"/></returns>
         public static string Truncate(this string source, int length, string suffix) =>
-            "{0}{1}".FormatWith(source.Truncate(length), suffix);
+            source.Truncate(length) + suffix;
 
         #endregion
     }

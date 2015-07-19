@@ -11,7 +11,8 @@ namespace SwissArmyKnife.DataStructures
         private const int BitSize = 64;
         private const int NumberOfHashes = 3;
 
-        private bool[] _buckets;
+        private readonly bool[] _buckets;
+        private readonly Fnv1aBase _fnvHash;
 
         /// <summary>
         /// Initializes a new instance of <see cref="BloomFilter"/>
@@ -26,6 +27,7 @@ namespace SwissArmyKnife.DataStructures
             var capacity = (uint)ceiledCapacity * BitSize;
 
             this._buckets = new bool[capacity];
+            this._fnvHash = new Fnv1a32();
         }
 
         /// <summary>
@@ -87,18 +89,16 @@ namespace SwissArmyKnife.DataStructures
         /// <returns></returns>
         private uint[] GetHashes(byte[] input)
         {
-            var hashResults = new uint[NumberOfHashes];
+            var hashResults = new uint[NumberOfHashes - 1];
 
-            var fnvHash = new Fnv1a32();
+            var hashedDataA = this._fnvHash.ComputeHash(input);
+            uint fnvResultA = BitConverter.ToUInt32(hashedDataA, 0);
 
-            var hashedData = fnvHash.ComputeHash(input);
-            uint fnvResultA = BitConverter.ToUInt32(hashedData, 0);
-            uint fnvResultB = BitConverter.ToUInt32(fnvHash.ComputeHash(BitConverter.GetBytes(fnvResultA)), 0);
-            uint fnvResultC = fnvResultA % fnvResultB;
-
+            var hashedDataB = this._fnvHash.ComputeHash(hashedDataA);
+            uint fnvResultB = BitConverter.ToUInt32(hashedDataB, 0);
+            
             hashResults[0] = fnvResultA;
             hashResults[1] = fnvResultB;
-            hashResults[2] = fnvResultC;
 
             return hashResults;
         }

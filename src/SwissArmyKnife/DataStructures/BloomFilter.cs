@@ -91,9 +91,11 @@ namespace SwissArmyKnife.DataStructures
 
             var fnvHash = new Fnv1a32();
 
-            var hashedData = fnvHash.ComputeHash(input);
-            uint fnvResultA = BitConverter.ToUInt32(hashedData, 0);
-            uint fnvResultB = BitConverter.ToUInt32(fnvHash.ComputeHash(BitConverter.GetBytes(fnvResultA)), 0);
+            var hashedDataA = fnvHash.ComputeHash(input);
+            uint fnvResultA = BitConverter.ToUInt32(hashedDataA, 0);
+
+            var hashedDataB = fnvHash.ComputeHash(hashedDataA);
+            uint fnvResultB = BitConverter.ToUInt32(hashedDataB, 0);
             
             hashResults[0] = fnvResultA;
             hashResults[1] = fnvResultB;

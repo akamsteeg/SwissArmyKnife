@@ -87,18 +87,16 @@ namespace SwissArmyKnife.DataStructures
         /// <returns></returns>
         private uint[] GetHashes(byte[] input)
         {
-            var hashResults = new uint[NumberOfHashes];
+            var hashResults = new uint[NumberOfHashes - 1];
 
             var fnvHash = new Fnv1a32();
 
             var hashedData = fnvHash.ComputeHash(input);
             uint fnvResultA = BitConverter.ToUInt32(hashedData, 0);
             uint fnvResultB = BitConverter.ToUInt32(fnvHash.ComputeHash(BitConverter.GetBytes(fnvResultA)), 0);
-            uint fnvResultC = fnvResultA % fnvResultB;
-
+            
             hashResults[0] = fnvResultA;
             hashResults[1] = fnvResultB;
-            hashResults[2] = fnvResultC;
 
             return hashResults;
         }

@@ -26,6 +26,21 @@ namespace SwissArmyKnife.Tests.Pools
         }
 
         [Test]
+        public void AddAndTryGetObjectFromPool_Successful()
+        {
+            var pool = CreateObjectPool();
+            var objectToPool = new IntPoolableObject();
+
+            pool.Add<IntPoolableObject>(objectToPool);
+
+            IntPoolableObject objectFromPool;
+            var couldRetrieve = pool.TryGet<IntPoolableObject>(out objectFromPool);
+
+            Assert.IsNotNull(objectFromPool);
+            Assert.IsTrue(couldRetrieve);
+        }
+
+        [Test]
         public void AddGetAndReturnObjectFromPool_Successful()
         {
             var pool = CreateObjectPool();
@@ -49,7 +64,7 @@ namespace SwissArmyKnife.Tests.Pools
 
             Assert.IsNull(objectFromPool);
         }
-        
+
         [Test]
         public void AddAndGetMultipleTypesFromPool_Successful()
         {
@@ -66,6 +81,17 @@ namespace SwissArmyKnife.Tests.Pools
 
             Assert.IsNotNull(retrievedPo1);
             Assert.IsNotNull(retrievedPo2);
+        }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void AddNull_Throws()
+        {
+            var pool = CreateObjectPool();
+
+            IntPoolableObject po1 = null;
+
+            pool.Add(po1);
         }
 
         private static ObjectPool CreateObjectPool()

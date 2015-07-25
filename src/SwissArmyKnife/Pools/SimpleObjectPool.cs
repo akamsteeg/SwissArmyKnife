@@ -94,9 +94,9 @@ namespace SwissArmyKnife.Pools
             bool result = false;
 
             objectFromPool = this.Get<T>();
-            if (objectFromPool == null)
+            if (objectFromPool != null)
             {
-                result = false;
+                result = true;
             }
 
             return result;

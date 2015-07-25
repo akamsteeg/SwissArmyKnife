@@ -21,7 +21,7 @@ namespace SwissArmyKnife.Pools
         public SimpleObjectPool()
         {
             this._lock = new object();
-            this._stacks = new Dictionary<Type, Stack>();
+            this._stacks = new Dictionary<Type, Stack>(5);
         }
 
         /// <summary>
@@ -66,12 +66,10 @@ namespace SwissArmyKnife.Pools
 
                 Type originType = typeof(T);
                 Stack typeStack;
-                if (this._stacks.TryGetValue(originType, out typeStack))
+                if (this._stacks.TryGetValue(originType, out typeStack) 
+                    && typeStack.Peek() != null)
                 {
-                    if (typeStack.Peek() != null)
-                    {
-                        result = (T)typeStack.Pop();
-                    }
+                    result = (T)typeStack.Pop();
                 }
 
                 return result;

@@ -60,20 +60,17 @@ namespace SwissArmyKnife.Pools
         /// </returns>
         public sealed override T Get<T>()
         {
-            lock (this._lock)
+            T result = null;
+
+            Type originType = typeof(T);
+            Stack typeStack;
+            if (this._stacks.TryGetValue(originType, out typeStack) 
+                && typeStack.Peek() != null)
             {
-                T result = null;
-
-                Type originType = typeof(T);
-                Stack typeStack;
-                if (this._stacks.TryGetValue(originType, out typeStack) 
-                    && typeStack.Peek() != null)
-                {
-                    result = (T)typeStack.Pop();
-                }
-
-                return result;
+                result = (T)typeStack.Pop();
             }
+
+            return result;
         }
 
         /// <summary>

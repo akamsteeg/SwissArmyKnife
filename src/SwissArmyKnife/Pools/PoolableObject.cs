@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SwissArmyKnife.ObjectPool
+namespace SwissArmyKnife.Pools
 {
     /// <summary>
     /// Base class for poolable objectss

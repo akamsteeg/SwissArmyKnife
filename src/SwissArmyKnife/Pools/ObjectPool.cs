@@ -1,4 +1,4 @@
-﻿namespace SwissArmyKnife.ObjectPool
+﻿namespace SwissArmyKnife.Pools
 {
     /// <summary>
     /// Represents a pool for long-lived reusable objects

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SwissArmyKnife.ObjectPool
+namespace SwissArmyKnife.Pools
 {
     /// <summary>
     /// 
@@ -45,7 +45,7 @@ namespace SwissArmyKnife.ObjectPool
         /// <param name="objectToAdd">
         /// The object to add to the pool
         /// </param>
-        public override void Add(T objectToAdd)
+        public sealed override void Add(T objectToAdd)
         {
             if (objectToAdd == null)
                 throw new ArgumentNullException(nameof(objectToAdd));
@@ -65,7 +65,7 @@ namespace SwissArmyKnife.ObjectPool
         /// A <see cref="PoolableObject"/> from the pool or null
         /// when the pool is exhausted
         /// </returns>
-        public override T Get()
+        public sealed override T Get()
         {
             lock (this._lock)
             {
@@ -90,7 +90,7 @@ namespace SwissArmyKnife.ObjectPool
         /// Returning an object to a full <see cref="ObjectPool{T}"/>
         /// silently disposes the returned object
         /// </remarks>
-        public override void Return(T objectToReturn)
+        public sealed override void Return(T objectToReturn)
         {
             if (objectToReturn == null)
                 throw new ArgumentNullException(nameof(objectToReturn));

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace SwissArmyKnife.Pools
 {
@@ -13,7 +10,7 @@ namespace SwissArmyKnife.Pools
         /// <summary>
         /// Gets or sets the managing <see cref="ObjectPool"/> for this object
         /// </summary>
-        public ObjectPool<PoolableObject> ObjectPool
+        public ObjectPool Pool
         {
             get;
             set;
@@ -40,7 +37,7 @@ namespace SwissArmyKnife.Pools
         /// <param name="disposing"></param>
         private void Dispose(bool disposing)
         {
-            this.ObjectPool.Return(this);
+            this.Pool.Return(this);
         }
     }
 }

@@ -3,27 +3,18 @@
     /// <summary>
     /// Represents a pool for long-lived reusable objects
     /// </summary>
-    /// <typeparam name="T">
-    /// The type of the objects to pool
-    /// </typeparam>
-    public abstract class ObjectPool<T> where T : PoolableObject
+    public abstract class ObjectPool
     {
-        /// <summary>
-        /// Gets the number of items in the cache
-        /// </summary>
-        public int Count
-        {
-            get;
-            protected set;
-        }
-
         /// <summary>
         /// Add a <see cref="PoolableObject"/> to the pool
         /// </summary>
         /// <param name="objectToAdd">
         /// The object to add to the pool
         /// </param>
-        public abstract void Add(T objectToAdd);
+        /// <typeparam name="T">
+        /// The type of the object to add to the pool
+        /// </typeparam>
+        public abstract void Add<T>(T objectToAdd) where T : PoolableObject;
 
         /// <summary>
         /// Get a <see cref="PoolableObject"/> from the pool
@@ -32,7 +23,23 @@
         /// A <see cref="PoolableObject"/> from the pool or null
         /// when the pool is exhausted
         /// </returns>
-        public abstract T Get();
+        /// <typeparam name="T">
+        /// The type of the object to get from the pool
+        /// </typeparam>
+        public abstract T Get<T>() where T : PoolableObject;
+
+        /// <summary>
+        /// Try to get a <see cref="PoolableObject"/> from the pool
+        /// </summary>
+        /// <typeparam name="T">
+        /// The type of the object to get from the pool
+        /// </typeparam>
+        /// <param name="objectFromPool">
+        /// </param>
+        /// <returns>
+        /// True when an object was retrieved from the pool, false otherwise
+        /// </returns>
+        public abstract bool TryGet<T>(out T objectFromPool) where T : PoolableObject;
 
         /// <summary>
         /// Return or add a <see cref="PoolableObject"/> to the pool
@@ -40,6 +47,9 @@
         /// <param name="objectToReturn">
         /// The <see cref="PoolableObject"/> to return to the pool
         /// </param>
-        public abstract void Return(T objectToReturn);
+        /// <typeparam name="T">
+        /// The type of the object to return to the pool
+        /// </typeparam>
+        public abstract void Return<T>(T objectToReturn) where T : PoolableObject;
     }
 }

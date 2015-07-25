@@ -1,42 +1,27 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace SwissArmyKnife.Pools
 {
     /// <summary>
-    /// 
+    /// A simple <see cref="ObjectPool"/>
     /// </summary>
-    /// <typeparam name="T"></typeparam>
     /// <remarks>
     /// This type is threadsafe
     /// </remarks>
-    public sealed class SimpleObjectPool<T> : ObjectPool<T> where T : PoolableObject
+    public sealed class SimpleObjectPool : ObjectPool
     {
         private readonly object _lock;
-        private readonly Stack<T> _objectStack;
+        private readonly Dictionary<Type, Stack> _stacks;
 
         /// <summary>
-        /// Initializes a new instance of <see cref="SimpleObjectPool{T}"/>
+        /// Initializes a new instance of the <see cref="SimpleObjectPool"/>
         /// </summary>
         public SimpleObjectPool()
-            :this(10)
-        {            
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="capacity"></param>
-        public SimpleObjectPool(int capacity)
         {
-            if (capacity < 1)
-                throw new ArgumentOutOfRangeException(nameof(capacity));
-
             this._lock = new object();
-            this._objectStack = new Stack<T>(capacity);
-            this.Count = 0;
+            this._stacks = new Dictionary<Type, Stack>();
         }
 
         /// <summary>
@@ -45,16 +30,24 @@ namespace SwissArmyKnife.Pools
         /// <param name="objectToAdd">
         /// The object to add to the pool
         /// </param>
-        public sealed override void Add(T objectToAdd)
+        public sealed override void Add<T>(T objectToAdd)
         {
             if (objectToAdd == null)
                 throw new ArgumentNullException(nameof(objectToAdd));
-            if (this.Count == this._objectStack.Count)
-                throw new InvalidOperationException("The pool is full and no more objects can be added");
 
             lock (this._lock)
             {
-                this._objectStack.Push(objectToAdd);
+                Type originType = objectToAdd.GetType();
+                Stack typeStack;
+
+                if (!this._stacks.TryGetValue(originType, out typeStack))
+                {
+                    typeStack = new Stack();
+                    this._stacks.Add(originType, typeStack);
+                }
+
+                objectToAdd.Pool = this;
+                typeStack.Push(objectToAdd);
             }
         }
 
@@ -65,19 +58,48 @@ namespace SwissArmyKnife.Pools
         /// A <see cref="PoolableObject"/> from the pool or null
         /// when the pool is exhausted
         /// </returns>
-        public sealed override T Get()
+        public sealed override T Get<T>()
         {
             lock (this._lock)
             {
                 T result = null;
 
-                if (this._objectStack.Count > 0)
+                Type originType = typeof(T);
+                Stack typeStack;
+                if (this._stacks.TryGetValue(originType, out typeStack))
                 {
-                    result = this._objectStack.Pop();
+                    if (typeStack.Peek() != null)
+                    {
+                        result = (T)typeStack.Pop();
+                    }
                 }
 
                 return result;
             }
+        }
+
+        /// <summary>
+        /// Try to get a <see cref="PoolableObject"/> from the pool
+        /// </summary>
+        /// <typeparam name="T">
+        /// The type of the object to get from the pool
+        /// </typeparam>
+        /// <param name="objectFromPool">
+        /// </param>
+        /// <returns>
+        /// True when an object was retrieved from the pool, false otherwise
+        /// </returns>
+        public sealed override bool TryGet<T>(out T objectFromPool)
+        {
+            bool result = false;
+
+            objectFromPool = this.Get<T>();
+            if (objectFromPool == null)
+            {
+                result = false;
+            }
+
+            return result;
         }
 
         /// <summary>
@@ -87,25 +109,17 @@ namespace SwissArmyKnife.Pools
         /// The <see cref="PoolableObject"/> to return to the pool
         /// </param>
         /// <remarks>
-        /// Returning an object to a full <see cref="ObjectPool{T}"/>
+        /// Returning an object to a full <see cref="ObjectPool"/>
         /// silently disposes the returned object
         /// </remarks>
-        public sealed override void Return(T objectToReturn)
+        public sealed override void Return<T>(T objectToReturn)
         {
             if (objectToReturn == null)
                 throw new ArgumentNullException(nameof(objectToReturn));
 
             lock (this._lock)
             {
-                if (this.Count != this._objectStack.Count)
-                {
-                    objectToReturn.Dispose();
-                    this._objectStack.Push(objectToReturn);
-                }
-                else
-                {
-                    objectToReturn = null;
-                }
+                this.Add<T>(objectToReturn);
             }
         }
     }

@@ -12,7 +12,6 @@ namespace SwissArmyKnife.DataStructures
         private const int NumberOfHashes = 3;
 
         private readonly bool[] _buckets;
-        private readonly Fnv1aBase _fnvHash;
 
         /// <summary>
         /// Initializes a new instance of <see cref="BloomFilter"/>
@@ -27,7 +26,6 @@ namespace SwissArmyKnife.DataStructures
             var capacity = (uint)ceiledCapacity * BitSize;
 
             this._buckets = new bool[capacity];
-            this._fnvHash = new Fnv1a32();
         }
 
         /// <summary>
@@ -38,7 +36,7 @@ namespace SwissArmyKnife.DataStructures
         /// </param>
         public void Add(byte[] input)
         {
-            var hashes = this.GetHashes(input);
+            var hashes = GetHashes(input);
 
             var primaryHash = hashes[0];
             var secondaryHash = hashes[1];
@@ -63,7 +61,7 @@ namespace SwissArmyKnife.DataStructures
         {
             bool result = true;
 
-            var hashes = this.GetHashes(input);
+            var hashes = GetHashes(input);
 
             var primaryHash = hashes[0];
             var secondaryHash = hashes[1];
@@ -85,20 +83,23 @@ namespace SwissArmyKnife.DataStructures
         /// Get three hash values to determine the 
         /// places in the buckets
         /// </summary>
-        /// <param name="input"></param>
+        /// <param name="input">
+        /// </param>
         /// <returns></returns>
-        private uint[] GetHashes(byte[] input)
+        private static uint[] GetHashes(byte[] input)
         {
             var hashResults = new uint[NumberOfHashes - 1];
+            using (var fnvHash = new Fnv1a32())
+            {
+                var hashedDataA = fnvHash.ComputeHash(input);
+                uint fnvResultA = BitConverter.ToUInt32(hashedDataA, 0);
 
-            var hashedDataA = this._fnvHash.ComputeHash(input);
-            uint fnvResultA = BitConverter.ToUInt32(hashedDataA, 0);
+                var hashedDataB = fnvHash.ComputeHash(hashedDataA);
+                uint fnvResultB = BitConverter.ToUInt32(hashedDataB, 0);
 
-            var hashedDataB = this._fnvHash.ComputeHash(hashedDataA);
-            uint fnvResultB = BitConverter.ToUInt32(hashedDataB, 0);
-            
-            hashResults[0] = fnvResultA;
-            hashResults[1] = fnvResultB;
+                hashResults[0] = fnvResultA;
+                hashResults[1] = fnvResultB;
+            }
 
             return hashResults;
         }

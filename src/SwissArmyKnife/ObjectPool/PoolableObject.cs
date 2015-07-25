@@ -30,7 +30,7 @@ namespace SwissArmyKnife.ObjectPool
         }
 
         /// <summary>
-        /// Resets the instance to its initial state
+        /// Resets the instance to its initial state. Free, release or reset managed resources
         /// </summary>
         protected abstract void Reset();
 

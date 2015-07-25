@@ -46,6 +46,7 @@
     <Compile Include="Extensions\GenericExtensions.cs" />
     <Compile Include="ObjectPool\ObjectPool.cs" />
     <Compile Include="ObjectPool\PoolableObject.cs" />
+    <Compile Include="ObjectPool\SimpleObjectPool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Extensions\StopwatchExtensions.cs" />
     <Compile Include="Extensions\StreamExtensions.cs" />

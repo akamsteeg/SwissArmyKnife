@@ -21,6 +21,9 @@ namespace SwissArmyKnife.DataStructures
         /// </param>
         public BloomFilter(int size)
         {
+            if (size < 1)
+                throw new ArgumentOutOfRangeException(nameof(size));
+
             double x = size / BitSize;
             double ceiledCapacity = Math.Ceiling(x);
             var capacity = (uint)ceiledCapacity * BitSize;
@@ -36,6 +39,11 @@ namespace SwissArmyKnife.DataStructures
         /// </param>
         public void Add(byte[] input)
         {
+            if (input == null)
+                throw new ArgumentNullException(nameof(input));
+            if (input.Length < 1)
+                throw new ArgumentException($"'{input}' does not contain data");
+
             var hashes = GetHashes(input);
 
             var primaryHash = hashes[0];
@@ -59,6 +67,11 @@ namespace SwissArmyKnife.DataStructures
         /// </returns>
         public bool Test(byte[] input)
         {
+            if (input == null)
+                throw new ArgumentNullException(nameof(input));
+            if (input.Length < 1)
+                throw new ArgumentException($"'{input}' does not contain data");
+
             bool result = true;
 
             var hashes = GetHashes(input);

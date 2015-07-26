@@ -56,6 +56,38 @@ namespace SwissArmyKnife.Tests.Pools
         }
 
         [Test]
+        public void AddGetReturnAndGetObjectFromPool_Successful()
+        {
+            var pool = CreateObjectPool();
+            var objectToPool = new IntPoolableObject();
+
+            pool.Add<IntPoolableObject>(objectToPool);
+
+            var objectFromPool = pool.Get<IntPoolableObject>();
+            Assert.IsNotNull(objectFromPool);
+
+            pool.Return(objectFromPool);
+
+            var objectFromPool2 = pool.Get<IntPoolableObject>();
+            Assert.IsNotNull(objectFromPool2);
+        }
+
+        [Test]
+        public void AddOneGetTwoFromPool_Successful()
+        {
+            var pool = CreateObjectPool();
+            var objectToPool = new IntPoolableObject();
+
+            pool.Add<IntPoolableObject>(objectToPool);
+
+            var objectFromPool = pool.Get<IntPoolableObject>();
+            Assert.IsNotNull(objectFromPool);
+
+            var objectFromPool2 = pool.Get<IntPoolableObject>();
+            Assert.IsNull(objectFromPool2);
+        }
+
+        [Test]
         public void GetObjectFromEmptyPool_Successful()
         {
             var pool = CreateObjectPool();

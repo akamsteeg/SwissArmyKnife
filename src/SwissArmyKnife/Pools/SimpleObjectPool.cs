@@ -65,7 +65,7 @@ namespace SwissArmyKnife.Pools
             Type originType = typeof(T);
             Stack typeStack;
             if (this._stacks.TryGetValue(originType, out typeStack) 
-                && typeStack.Peek() != null)
+                && typeStack.Count != 0)
             {
                 result = (T)typeStack.Pop();
             }
@@ -112,10 +112,7 @@ namespace SwissArmyKnife.Pools
             if (objectToReturn == null)
                 throw new ArgumentNullException(nameof(objectToReturn));
 
-            lock (this._lock)
-            {
-                this.Add<T>(objectToReturn);
-            }
+            this.Add<T>(objectToReturn);
         }
     }
 }

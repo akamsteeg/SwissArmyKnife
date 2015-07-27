@@ -10,15 +10,15 @@ namespace SwissArmyKnife.Pools
     /// <remarks>
     /// This type is threadsafe
     /// </remarks>
-    public sealed class SimpleObjectPool : ObjectPool
+    public sealed class GenericObjectPool : ObjectPool
     {
         private readonly object _lock;
         private readonly Dictionary<Type, Stack> _stacks;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SimpleObjectPool"/>
+        /// Initializes a new instance of the <see cref="GenericObjectPool"/>
         /// </summary>
-        public SimpleObjectPool()
+        public GenericObjectPool()
         {
             this._lock = new object();
             this._stacks = new Dictionary<Type, Stack>(5);

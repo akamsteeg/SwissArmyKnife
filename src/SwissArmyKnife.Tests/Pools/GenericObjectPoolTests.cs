@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace SwissArmyKnife.Tests.Pools
 {
     [TestFixture]
-    public class SimpleObjectPoolTests
+    public class GenericObjectPoolTests
     {
         [Test]
         public void AddAndGetObjectFromPool_Successful()
@@ -128,7 +128,7 @@ namespace SwissArmyKnife.Tests.Pools
 
         private static ObjectPool CreateObjectPool()
         {
-            return new SimpleObjectPool();
+            return new GenericObjectPool();
         }
     }
 }

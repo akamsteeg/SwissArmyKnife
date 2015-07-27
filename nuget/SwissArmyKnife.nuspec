@@ -2,21 +2,21 @@
 <package>
   <metadata>
     <id>SwissArmyKnife</id>
-	  <title>SwissArmyKnife</title>
+    <title>SwissArmyKnife</title>
     <version>1.0.0-dev</version>
     <description>A collection of utilities for general purposes</description>
     <releaseNotes>-</releaseNotes>
-    
+
     <tags>utility utitilies misc</tags>
 
     <copyright>Copyright 2015 Alex Kamsteeg (https://atlex.nl)</copyright>
     <authors>Alex Kamsteeg</authors>
     <owners>Alex Kamsteeg</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    
+
     <dependencies>
     </dependencies>
-    
+
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="System" />
     </frameworkAssemblies>
@@ -31,5 +31,11 @@
     <!-- .NET 4.5 -->
     <file src="..\src\SwissArmyKnife\bin\v4.5\$configuration$\SwissArmyKnife.dll" target="lib\net45\" />
     <file src="..\src\SwissArmyKnife\bin\v4.5\$configuration$\SwissArmyKnife.xml" target="lib\net45\" />
+
+    <!-- Sources & symbols for symbols/debugging -->
+    <file src="..\src\SwissArmyKnife\bin\v3.5\$configuration$\SwissArmyKnife.pdb" target="lib\net35\" />
+    <file src="..\src\SwissArmyKnife\bin\v4.0\$configuration$\SwissArmyKnife.pdb" target="lib\net40\" />
+    <file src="..\src\SwissArmyKnife\bin\v4.5\$configuration$\SwissArmyKnife.pdb" target="lib\net45\" />
+    <file src="..\src\SwissArmyKnife\**\*.cs" target="src\SwissArmyKnife\" exclude="..\src\SwissArmyKnife\obj\**\*.cs;..\src\SwissArmyKnife\properties\*.cs" />
   </files>
 </package>

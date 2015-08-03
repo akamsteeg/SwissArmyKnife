@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using SwissArmyKnife;
 using SwissArmyKnife.Extensions;
+using System.IO;
 
 namespace SwissArmyKnife.Tests.Extensions
 {
@@ -103,6 +104,16 @@ namespace SwissArmyKnife.Tests.Extensions
         {
             var t1 = 1.IsAnyOf(1, 2, 3, 4, 5);
             var t2 = 1.IsAnyOf(-1, 2, 3, 4, 6);
+
+            Assert.IsTrue(t1);
+            Assert.IsFalse(t2);
+        }
+
+        [Test]
+        public void EnumIsAnyOfManyValues_Successful()
+        {
+            var t1 = FileMode.Open.IsAnyOf(FileMode.Append, FileMode.Open);
+            var t2 = FileMode.Open.IsAnyOf(FileMode.Append, FileMode.Create);
 
             Assert.IsTrue(t1);
             Assert.IsFalse(t2);

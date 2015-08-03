@@ -64,10 +64,14 @@ namespace SwissArmyKnife.Pools
 
             Type originType = typeof(T);
             Stack typeStack;
-            if (this._stacks.TryGetValue(originType, out typeStack) 
-                && typeStack.Count != 0)
+
+            lock (this._lock)
             {
-                result = (T)typeStack.Pop();
+                if (this._stacks.TryGetValue(originType, out typeStack)
+                    && typeStack.Count != 0)
+                {
+                    result = (T)typeStack.Pop();
+                }
             }
 
             return result;

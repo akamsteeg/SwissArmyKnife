@@ -12,6 +12,8 @@
     <copyright>Copyright 2015 Alex Kamsteeg (https://atlex.nl)</copyright>
     <authors>Alex Kamsteeg</authors>
     <owners>Alex Kamsteeg</owners>
+
+    <licenseUrl>https://github.com/akamsteeg/SwissArmyKnife/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
 
     <dependencies>

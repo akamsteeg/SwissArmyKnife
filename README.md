@@ -9,8 +9,11 @@ Supported .NET frameworks:
 
 # Installation
 
--
+SwissArmyKnife is available [as NuGet package](https://www.nuget.org/packages/SwissArmyKnife/):
 
+```
+install-package SwissArmyKnife -Pre
+```
 
 # Documentation
 

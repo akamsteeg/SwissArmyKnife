@@ -4,10 +4,10 @@
     <id>SwissArmyKnife</id>
     <title>SwissArmyKnife</title>
     <version>1.0.0-dev</version>
-    <description>A collection of utilities for general purposes</description>
+    <description>A collection of extension methods and performance-related types for general purposes</description>
     <releaseNotes>-</releaseNotes>
-
-    <tags>utility utitilies misc</tags>
+    
+    <tags>utility utitilies extension extensions performance misc</tags>
 
     <copyright>Copyright 2015 Alex Kamsteeg (https://atlex.nl)</copyright>
     <authors>Alex Kamsteeg</authors>

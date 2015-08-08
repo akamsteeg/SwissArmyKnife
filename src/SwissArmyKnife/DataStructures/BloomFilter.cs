@@ -4,7 +4,7 @@ using System;
 namespace SwissArmyKnife.DataStructures
 {
     /// <summary>
-    /// 
+    /// Represents a Bloom filter data structure
     /// </summary>
     public class BloomFilter
     {

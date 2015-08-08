@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace SwissArmyKnife.Pools
 {
     /// <summary>
-    /// A simple <see cref="ObjectPool"/>
+    /// A generic <see cref="ObjectPool"/> for multiple types
     /// </summary>
     /// <remarks>
     /// This type is threadsafe

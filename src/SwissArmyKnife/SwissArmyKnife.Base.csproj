@@ -44,6 +44,7 @@
     <Compile Include="Cryptography\Fnv1aBase.cs" />
     <Compile Include="DataStructures\BloomFilter.cs" />
     <Compile Include="Extensions\GenericExtensions.cs" />
+    <Compile Include="Extensions\IComparableExtensions.cs" />
     <Compile Include="Pools\ObjectPool.cs" />
     <Compile Include="Pools\PoolableObject.cs" />
     <Compile Include="Pools\GenericObjectPool.cs" />

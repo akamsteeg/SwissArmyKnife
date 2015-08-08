@@ -15,3 +15,7 @@ Supported .NET frameworks:
 # Documentation
 
 See the [Wiki](https://github.com/akamsteeg/SwissArmyKnife/wiki) for documentation and more information about using the library.
+
+# License
+
+SwissArmyKnife uses the MIT license, see the LICENSE file.

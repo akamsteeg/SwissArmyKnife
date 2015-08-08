@@ -5,7 +5,7 @@ namespace SwissArmyKnife.Extensions
     /// <summary> 
     /// Generic extension methods
     /// </summary>
-    public static class GenericExtensions
+    public static class ObjectExtensions
     {
         #region IsAnyOf()
 

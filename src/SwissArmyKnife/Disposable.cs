@@ -66,7 +66,7 @@ namespace SwissArmyKnife
         protected abstract void Dispose(bool disposing);
 
         /// <summary>
-        /// Utility method for throwing a <see cref="ObjectDisposedException"/>
+        /// Utility method for throwing an <see cref="ObjectDisposedException"/>
         /// when this <see cref="Disposable"/> object is disposed
         /// </summary>
         protected void ThrowIfDisposed()

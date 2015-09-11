@@ -49,6 +49,7 @@
     <Compile Include="Cryptography\Fnv1a64Tests.cs" />
     <Compile Include="Cryptography\Fnv1aTestsBase.cs" />
     <Compile Include="DataStructures\BloomFilterTests.cs" />
+    <Compile Include="DisposableTests.cs" />
     <Compile Include="Extensions\GenericExtensionsTests.cs" />
     <Compile Include="Mocks\IntPoolableObject.cs" />
     <Compile Include="Mocks\StringPoolableObject.cs" />

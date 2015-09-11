@@ -39,6 +39,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Disposable.cs" />
     <Compile Include="Cryptography\Fnv1a32.cs" />
     <Compile Include="Cryptography\Fnv1a64.cs" />
     <Compile Include="Cryptography\Fnv1aBase.cs" />

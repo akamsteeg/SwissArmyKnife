@@ -1,11 +1,12 @@
 # SwissArmyKnife
 
-SwissArmyKnife is a utility library with useful performance-optimised extension methods and performance-oriented utility classes.
+SwissArmyKnife is a utility library with useful performance-optimised [extension methods](https://github.com/akamsteeg/SwissArmyKnife/wiki/Extension-methods) and performance-oriented [utility classes](https://github.com/akamsteeg/SwissArmyKnife/wiki/Performance-oriented-utility-classes) as well as [miscellaneous classes](https://github.com/akamsteeg/SwissArmyKnife/wiki/Miscellaneous-classes) to make your life as a developer easier. It's [fully documented](https://github.com/akamsteeg/SwissArmyKnife/wiki).
 
 Supported .NET frameworks:
 * .NET 3.5
 * .NET 4.0
 * .NET 4.5
+* .NET 4.6
 
 # Installation
 
@@ -17,7 +18,7 @@ install-package SwissArmyKnife -Pre
 
 # Documentation
 
-See the [Wiki](https://github.com/akamsteeg/SwissArmyKnife/wiki) for documentation and more information about using the library.
+See the [Wiki](https://github.com/akamsteeg/SwissArmyKnife/wiki) for documentation and more information about using the library. It contains code samples, explanations and guidelines on using this library.
 
 # License
 

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SwissArmyKnife.Extensions
+namespace SwissArmyKnife
 {
     /// <summary> 
     /// Generic extension methods

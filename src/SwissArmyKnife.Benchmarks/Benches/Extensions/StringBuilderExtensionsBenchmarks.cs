@@ -1,5 +1,4 @@
 ﻿using Minibench.Framework;
-using SwissArmyKnife.Extensions;
 using System.Text;
 
 namespace SwissArmyKnife.Benchmarks.Benches.Extensions

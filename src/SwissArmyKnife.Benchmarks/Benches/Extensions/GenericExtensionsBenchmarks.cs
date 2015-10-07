@@ -1,10 +1,4 @@
 ﻿using Minibench.Framework;
-using SwissArmyKnife.Extensions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SwissArmyKnife.Benchmarks.Benches.Extensions
 {

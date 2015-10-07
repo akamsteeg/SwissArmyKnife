@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SwissArmyKnife.Extensions
+namespace SwissArmyKnife
 {
     /// <summary>
     /// Extension methods for <see cref="IComparable{T}"/>

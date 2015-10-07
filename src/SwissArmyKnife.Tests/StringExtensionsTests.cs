@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SwissArmyKnife;
 using NUnit.Framework;
 using System.Threading;
 using System.Globalization;
-using SwissArmyKnife.Extensions;
 
 namespace SwissArmyKnife.Tests.Extensions
 {

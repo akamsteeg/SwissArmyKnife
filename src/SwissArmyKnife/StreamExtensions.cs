@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace SwissArmyKnife.Extensions
+namespace SwissArmyKnife
 {
     /// <summary>
     /// Extension methods for <see cref="Stream"/>

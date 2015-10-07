@@ -50,15 +50,15 @@
     <Compile Include="Cryptography\Fnv1aTestsBase.cs" />
     <Compile Include="DataStructures\BloomFilterTests.cs" />
     <Compile Include="DisposableTests.cs" />
-    <Compile Include="Extensions\GenericExtensionsTests.cs" />
+    <Compile Include="GenericExtensionsTests.cs" />
     <Compile Include="Mocks\IntPoolableObject.cs" />
     <Compile Include="Mocks\StringPoolableObject.cs" />
     <Compile Include="Pools\GenericObjectPoolTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Extensions\StopwatchExtensionsTests.cs" />
-    <Compile Include="Extensions\StreamExtensionTests.cs" />
-    <Compile Include="Extensions\StringBuilderExtensionsTests.cs" />
-    <Compile Include="Extensions\StringExtensionsTests.cs" />
+    <Compile Include="StopwatchExtensionsTests.cs" />
+    <Compile Include="StreamExtensionTests.cs" />
+    <Compile Include="StringBuilderExtensionsTests.cs" />
+    <Compile Include="StringExtensionsTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

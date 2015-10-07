@@ -8,9 +8,9 @@ namespace SwissArmyKnife.Pools
     public abstract class PoolableObject : IDisposable
     {
         /// <summary>
-        /// Gets or sets the managing <see cref="ObjectPool"/> for this object
+        /// Gets or sets the managing <see cref="IObjectPool"/> for this object
         /// </summary>
-        public ObjectPool Pool
+        public IObjectPool Pool
         {
             get;
             set;
@@ -18,7 +18,7 @@ namespace SwissArmyKnife.Pools
 
         /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or resetting
-        /// unmanaged resources and return it to the <see cref="ObjectPool"/>
+        /// unmanaged resources and return it to the <see cref="IObjectPool"/>
         /// </summary>
         public void Dispose()
         {
@@ -32,7 +32,7 @@ namespace SwissArmyKnife.Pools
         protected abstract void Reset();
 
         /// <summary>
-        /// Return this instance back to the <see cref="ObjectPool"/>
+        /// Return this instance back to the <see cref="IObjectPool"/>
         /// </summary>
         /// <param name="disposing"></param>
         private void Dispose(bool disposing)

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SwissArmyKnife.Extensions
+namespace SwissArmyKnife
 {
     /// <summary>
     /// Extension methods for <see cref="String"/>

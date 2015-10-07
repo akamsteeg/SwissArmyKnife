@@ -44,16 +44,16 @@
     <Compile Include="Cryptography\Fnv1a64.cs" />
     <Compile Include="Cryptography\Fnv1aBase.cs" />
     <Compile Include="DataStructures\BloomFilter.cs" />
-    <Compile Include="Extensions\ObjectExtensions.cs" />
-    <Compile Include="Extensions\IComparableExtensions.cs" />
+    <Compile Include="ObjectExtensions.cs" />
+    <Compile Include="IComparableExtensions.cs" />
     <Compile Include="Pools\ObjectPool.cs" />
     <Compile Include="Pools\PoolableObject.cs" />
     <Compile Include="Pools\GenericObjectPool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Extensions\StopwatchExtensions.cs" />
-    <Compile Include="Extensions\StreamExtensions.cs" />
-    <Compile Include="Extensions\StringBuilderExtensions.cs" />
-    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="StopwatchExtensions.cs" />
+    <Compile Include="StreamExtensions.cs" />
+    <Compile Include="StringBuilderExtensions.cs" />
+    <Compile Include="StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="SwissArmyKnife.Targets.csproj" />

@@ -3,7 +3,7 @@
     /// <summary>
     /// Represents a pool for long-lived reusable objects
     /// </summary>
-    public abstract class ObjectPool
+    public interface IObjectPool
     {
         /// <summary>
         /// Add a <see cref="PoolableObject"/> to the pool
@@ -14,7 +14,7 @@
         /// <typeparam name="T">
         /// The type of the object to add to the pool
         /// </typeparam>
-        public abstract void Add<T>(T objectToAdd) where T : PoolableObject;
+        void Add<T>(T objectToAdd) where T : PoolableObject;
 
         /// <summary>
         /// Get a <see cref="PoolableObject"/> from the pool
@@ -26,7 +26,7 @@
         /// <typeparam name="T">
         /// The type of the object to get from the pool
         /// </typeparam>
-        public abstract T Get<T>() where T : PoolableObject;
+        T Get<T>() where T : PoolableObject;
 
         /// <summary>
         /// Try to get a <see cref="PoolableObject"/> from the pool
@@ -39,7 +39,7 @@
         /// <returns>
         /// True when an object was retrieved from the pool, false otherwise
         /// </returns>
-        public abstract bool TryGet<T>(out T objectFromPool) where T : PoolableObject;
+        bool TryGet<T>(out T objectFromPool) where T : PoolableObject;
 
         /// <summary>
         /// Return or add a <see cref="PoolableObject"/> to the pool
@@ -50,6 +50,6 @@
         /// <typeparam name="T">
         /// The type of the object to return to the pool
         /// </typeparam>
-        public abstract void Return<T>(T objectToReturn) where T : PoolableObject;
+        void Return<T>(T objectToReturn) where T : PoolableObject;
     }
 }

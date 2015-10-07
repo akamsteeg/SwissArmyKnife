@@ -5,12 +5,12 @@ using System.Collections.Generic;
 namespace SwissArmyKnife.Pools
 {
     /// <summary>
-    /// A generic <see cref="ObjectPool"/> for multiple types
+    /// A generic <see cref="IObjectPool"/> for multiple types
     /// </summary>
     /// <remarks>
     /// This type is threadsafe
     /// </remarks>
-    public sealed class GenericObjectPool : ObjectPool
+    public sealed class GenericObjectPool : IObjectPool
     {
         private readonly object _lock;
         private readonly Dictionary<Type, Stack> _stacks;
@@ -30,7 +30,7 @@ namespace SwissArmyKnife.Pools
         /// <param name="objectToAdd">
         /// The object to add to the pool
         /// </param>
-        public sealed override void Add<T>(T objectToAdd)
+        public void Add<T>(T objectToAdd) where T : PoolableObject
         {
             if (objectToAdd == null)
                 throw new ArgumentNullException(nameof(objectToAdd));
@@ -58,7 +58,7 @@ namespace SwissArmyKnife.Pools
         /// A <see cref="PoolableObject"/> from the pool or null
         /// when the pool is exhausted
         /// </returns>
-        public sealed override T Get<T>()
+        public T Get<T>() where T : PoolableObject
         {
             T result = null;
 
@@ -88,7 +88,7 @@ namespace SwissArmyKnife.Pools
         /// <returns>
         /// True when an object was retrieved from the pool, false otherwise
         /// </returns>
-        public sealed override bool TryGet<T>(out T objectFromPool)
+        public bool TryGet<T>(out T objectFromPool) where T : PoolableObject
         {
             bool result = false;
 
@@ -108,10 +108,10 @@ namespace SwissArmyKnife.Pools
         /// The <see cref="PoolableObject"/> to return to the pool
         /// </param>
         /// <remarks>
-        /// Returning an object to a full <see cref="ObjectPool"/>
+        /// Returning an object to a full <see cref="IObjectPool"/>
         /// silently disposes the returned object
         /// </remarks>
-        public sealed override void Return<T>(T objectToReturn)
+        public void Return<T>(T objectToReturn) where T : PoolableObject
         {
             if (objectToReturn == null)
                 throw new ArgumentNullException(nameof(objectToReturn));

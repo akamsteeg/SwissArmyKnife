@@ -46,7 +46,7 @@
     <Compile Include="DataStructures\BloomFilter.cs" />
     <Compile Include="ObjectExtensions.cs" />
     <Compile Include="IComparableExtensions.cs" />
-    <Compile Include="Pools\ObjectPool.cs" />
+    <Compile Include="Pools\IObjectPool.cs" />
     <Compile Include="Pools\PoolableObject.cs" />
     <Compile Include="Pools\GenericObjectPool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

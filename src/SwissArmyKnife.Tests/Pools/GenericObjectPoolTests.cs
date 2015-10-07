@@ -126,7 +126,7 @@ namespace SwissArmyKnife.Tests.Pools
             pool.Add(po1);
         }
 
-        private static ObjectPool CreateObjectPool()
+        private static IObjectPool CreateObjectPool()
         {
             return new GenericObjectPool();
         }

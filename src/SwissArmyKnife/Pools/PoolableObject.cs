@@ -3,9 +3,10 @@
 namespace SwissArmyKnife.Pools
 {
     /// <summary>
-    /// Base class for poolable objectss
+    /// Base class for poolable objects
     /// </summary>
-    public abstract class PoolableObject : IDisposable
+    public abstract class PoolableObject 
+        : IPoolableObject
     {
         /// <summary>
         /// Gets or sets the managing <see cref="IObjectPool"/> for this object
@@ -37,6 +38,7 @@ namespace SwissArmyKnife.Pools
         /// <param name="disposing"></param>
         private void Dispose(bool disposing)
         {
+            this.Reset();
             this.Pool.Return(this);
         }
     }

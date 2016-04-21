@@ -10,7 +10,8 @@ namespace SwissArmyKnife.Pools
     /// <remarks>
     /// This type is threadsafe
     /// </remarks>
-    public sealed class GenericObjectPool : IObjectPool
+    public sealed class GenericObjectPool 
+        : IObjectPool
     {
         private readonly object _lock;
         private readonly Dictionary<Type, Stack> _stacks;
@@ -25,12 +26,12 @@ namespace SwissArmyKnife.Pools
         }
 
         /// <summary>
-        /// Add a <see cref="PoolableObject"/> to the pool
+        /// Add a <see cref="IPoolableObject"/> to the pool
         /// </summary>
         /// <param name="objectToAdd">
         /// The object to add to the pool
         /// </param>
-        public void Add<T>(T objectToAdd) where T : PoolableObject
+        public void Add<T>(T objectToAdd) where T : IPoolableObject
         {
             if (objectToAdd == null)
                 throw new ArgumentNullException(nameof(objectToAdd));
@@ -52,15 +53,15 @@ namespace SwissArmyKnife.Pools
         }
 
         /// <summary>
-        /// Get a <see cref="PoolableObject"/> from the pool
+        /// Get a <see cref="IPoolableObject"/> from the pool
         /// </summary>
         /// <returns>
-        /// A <see cref="PoolableObject"/> from the pool or null
+        /// A <see cref="IPoolableObject"/> from the pool or null
         /// when the pool is exhausted
         /// </returns>
-        public T Get<T>() where T : PoolableObject
+        public T Get<T>() where T : IPoolableObject
         {
-            T result = null;
+            T result = default(T);
 
             Type originType = typeof(T);
             Stack typeStack;
@@ -78,7 +79,7 @@ namespace SwissArmyKnife.Pools
         }
 
         /// <summary>
-        /// Try to get a <see cref="PoolableObject"/> from the pool
+        /// Try to get a <see cref="IPoolableObject"/> from the pool
         /// </summary>
         /// <typeparam name="T">
         /// The type of the object to get from the pool
@@ -88,7 +89,7 @@ namespace SwissArmyKnife.Pools
         /// <returns>
         /// True when an object was retrieved from the pool, false otherwise
         /// </returns>
-        public bool TryGet<T>(out T objectFromPool) where T : PoolableObject
+        public bool TryGet<T>(out T objectFromPool) where T : IPoolableObject
         {
             bool result = false;
 
@@ -102,16 +103,16 @@ namespace SwissArmyKnife.Pools
         }
 
         /// <summary>
-        /// Return or add a <see cref="PoolableObject"/> to the pool
+        /// Return or add a <see cref="IPoolableObject"/> to the pool
         /// </summary>
         /// <param name="objectToReturn">
-        /// The <see cref="PoolableObject"/> to return to the pool
+        /// The <see cref="IPoolableObject"/> to return to the pool
         /// </param>
         /// <remarks>
         /// Returning an object to a full <see cref="IObjectPool"/>
         /// silently disposes the returned object
         /// </remarks>
-        public void Return<T>(T objectToReturn) where T : PoolableObject
+        public void Return<T>(T objectToReturn) where T : IPoolableObject
         {
             if (objectToReturn == null)
                 throw new ArgumentNullException(nameof(objectToReturn));

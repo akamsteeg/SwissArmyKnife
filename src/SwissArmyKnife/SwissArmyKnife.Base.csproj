@@ -47,8 +47,10 @@
     <Compile Include="ObjectExtensions.cs" />
     <Compile Include="IComparableExtensions.cs" />
     <Compile Include="Pools\IObjectPool.cs" />
+    <Compile Include="Pools\IPoolableObject.cs" />
     <Compile Include="Pools\PoolableObject.cs" />
     <Compile Include="Pools\GenericObjectPool.cs" />
+    <Compile Include="Pools\PoolableStringBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StopwatchExtensions.cs" />
     <Compile Include="StreamExtensions.cs" />

@@ -173,7 +173,7 @@ namespace SwissArmyKnife.Tests.Extensions
         #region IsNullOrEmpty()
 
         [Test]
-        public void EmptyStringReturnsTrue()
+        public void IsNullOrEmptyOnEmptyStringReturnsTrue()
         {
             var s = string.Empty;
 
@@ -181,7 +181,7 @@ namespace SwissArmyKnife.Tests.Extensions
         }
 
         [Test]
-        public void NullStringReturnsTrue()
+        public void IsNullOrEmptyOnNullStringReturnsTrue()
         {
             string s = null;
 
@@ -189,11 +189,47 @@ namespace SwissArmyKnife.Tests.Extensions
         }
 
         [Test]
-        public void NotEmptyStringReturnsFalse()
+        public void IsNullOrEmptyOnNotEmptyStringReturnsFalse()
         {
             string s = "Lorem Ipsum";
 
             Assert.IsFalse(s.IsNullOrEmpty());
+        }
+
+        #endregion
+
+        #region IsNullOrWhiteSpace()
+
+        [Test]
+        public void IsNullOrWhiteSpaceOnEmptyStringReturnsTrue()
+        {
+            var s = string.Empty;
+
+            Assert.IsTrue(s.IsNullOrWhiteSpace());
+        }
+
+        [Test]
+        public void IsNullOrWhiteSpaceOnNullStringReturnsTrue()
+        {
+            string s = null;
+
+            Assert.IsTrue(s.IsNullOrWhiteSpace());
+        }
+
+        [Test]
+        public void IsNullOrWhiteSpaceOnWhiteSpaceStringReturnsTrue()
+        {
+            var s = " ";
+
+            Assert.IsTrue(s.IsNullOrWhiteSpace());
+        }
+
+        [Test]
+        public void IsNullOrWhiteSpaceOnNotEmptyStringReturnsFalse()
+        {
+            string s = "Lorem Ipsum";
+
+            Assert.IsFalse(s.IsNullOrWhiteSpace());
         }
 
         #endregion

@@ -151,5 +151,37 @@ namespace SwissArmyKnife
             string.IsNullOrEmpty(source);
 
         #endregion
+
+        #region IsNullOrWhitespace
+
+        /// <summary>
+        /// Indicates whether a specified string is null, empty, or consists only
+        /// of white-space characters
+        /// </summary>
+        /// <param name="source">
+        /// </param>
+        /// <returns>
+        /// true if the value parameter is null or System.String.Empty, or if
+        /// value consists exclusively of white-space characters
+        /// </returns>
+        public static bool IsNullOrWhiteSpace(this string source)
+        {
+            var result = false;
+
+#if NET35
+            if (source == null 
+                || string.IsNullOrEmpty(source))
+            {
+                result = true;
+            }
+#else
+            result = string.IsNullOrWhiteSpace(source);
+#endif
+
+
+            return result;
+        }
+
+        #endregion
     }
 }

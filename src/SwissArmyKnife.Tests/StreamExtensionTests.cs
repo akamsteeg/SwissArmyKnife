@@ -16,23 +16,21 @@ namespace SwissArmyKnife.Tests.Extensions
         }
 
         [Test]
-        [ExpectedException(typeof(ObjectDisposedException))]
         public void ResetDisposedStream()
         {
             var s = GetStream();
             s.Dispose();
 
-            s.Reset();
+            Assert.Throws<ObjectDisposedException>(() => s.Reset());
         }
 
         [Test]
-        [ExpectedException(typeof(ObjectDisposedException))]
         public void ResetClosedStream()
         {
             var s = GetStream();
             s.Close();
 
-            s.Reset();
+            Assert.Throws<ObjectDisposedException>(() => s.Reset());
         }
 
         private static Stream GetStream()

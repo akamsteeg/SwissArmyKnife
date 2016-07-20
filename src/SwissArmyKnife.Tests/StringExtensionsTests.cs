@@ -57,10 +57,12 @@ namespace SwissArmyKnife.Tests.Extensions
         }
 
         [Test]
-        [ExpectedException(typeof(FormatException))]
         public void FormatStringWithNotEnoughArgs_Throws()
         {
-            var s = "Test: {0} {1} {2} {3} {4} {5}".FormatWith("1", "2", "3", "4", "5");
+            Assert.Throws<FormatException>(() =>
+                {
+                    var s = "Test: {0} {1} {2} {3} {4} {5}".FormatWith("1", "2", "3", "4", "5");
+                });
         }
 
         [Test]
@@ -107,30 +109,27 @@ namespace SwissArmyKnife.Tests.Extensions
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void TruncateStringWithLengthBeyondSourceStringLength_Throws()
         {
             const string text = "Lorem ipsum";
 
-            var truncatedText = text.Truncate(int.MaxValue);
+            Assert.Throws<ArgumentOutOfRangeException>(() => text.Truncate(int.MaxValue));
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void TruncateStringToZeroLength_Throws()
         {
             const string text = "Lorem ipsum";
 
-            var truncatedText = text.Truncate(0);
+            Assert.Throws<ArgumentOutOfRangeException>(() => text.Truncate(0));
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void TruncateStringToNegativeLength_Throws()
         {
             const string text = "Lorem ipsum";
 
-            var truncatedText = text.Truncate(-1);
+            Assert.Throws<ArgumentOutOfRangeException>(() => text.Truncate(-1));
         }
 
         [Test]
@@ -146,30 +145,27 @@ namespace SwissArmyKnife.Tests.Extensions
 
 
         [Test]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void TruncateStringToZeroLengthWithSuffix_Throws()
         {
             const string text = "Lorem ipsum";
 
-            var truncatedText = text.Truncate(0, "...");
+            Assert.Throws<ArgumentOutOfRangeException>(() => text.Truncate(0, "..."));
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void TruncateStringToNegativeLengthWithSuffix_Throws()
         {
             const string text = "Lorem ipsum";
 
-            var truncatedText = text.Truncate(-1, "...");
+            Assert.Throws<ArgumentOutOfRangeException>(() => text.Truncate(-1, "..."));
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void TruncateStringWithSuffixAndLengthBeyondSourceStringLength_Throws()
         {
             const string text = "Lorem ipsum";
 
-            var truncatedText = text.Truncate(int.MaxValue, "...");
+            Assert.Throws<ArgumentOutOfRangeException>(() => text.Truncate(int.MaxValue, "..."));
         }
 
         #endregion

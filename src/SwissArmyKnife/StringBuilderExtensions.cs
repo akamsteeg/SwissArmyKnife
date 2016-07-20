@@ -96,33 +96,6 @@ namespace SwissArmyKnife
         /// Appends a line by processing a composite format string, which
         /// contains zero of more format items
         /// </summary>
-        /// <param name="sb">
-        /// </param>
-        /// <param name="format">
-        /// A composite format string
-        /// </param>
-        /// <param name="arg0">
-        /// The first object to format
-        /// </param>
-        /// <param name="arg1">
-        /// The second object to format
-        /// </param>
-        /// <param name="arg2">
-        /// The third object to format
-        /// </param>
-        /// <param name="arg3">
-        /// The fourth object to format
-        /// </param>
-        public static StringBuilder AppendFormatLine(this StringBuilder sb, string format, object arg0, object arg1, object arg2, object arg3)
-        {
-            sb.AppendFormat(format, arg0, arg1, arg2, arg3);
-            return sb.AppendLine();
-        }
-
-        /// <summary>
-        /// Appends a line by processing a composite format string, which
-        /// contains zero of more format items
-        /// </summary>
         /// <param name="sb"></param>
         /// <param name="format">
         /// A composite format string

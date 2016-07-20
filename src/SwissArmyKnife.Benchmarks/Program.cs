@@ -29,7 +29,8 @@ namespace SwissArmyKnife.Benchmarks
             var result = new Type[]
             {
                 // Extensions
-                typeof(GenericExtensionsBenchmarks),
+                typeof(ObjectExtensionsBenchmarks),
+                typeof(IComparableExtensionsBenchmarks),
                 typeof(StringBuilderExtensionsBenchmarks),
                 typeof(StringExtensionsBenchmarks),
                 //Data structures

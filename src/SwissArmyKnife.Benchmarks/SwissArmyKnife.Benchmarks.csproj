@@ -76,7 +76,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Benches\DataStructures\BloomFilterBenchmarks.cs" />
-    <Compile Include="Benches\Extensions\GenericExtensionsBenchmarks.cs" />
+    <Compile Include="Benches\Extensions\IComparableExtensionsBenchmarks.cs" />
+    <Compile Include="Benches\Extensions\ObjectExtensionsBenchmarks.cs" />
     <Compile Include="Benches\Extensions\StringBuilderExtensionsBenchmarks.cs" />
     <Compile Include="Benches\Extensions\StringExtensionsBenchmarks.cs" />
     <Compile Include="Program.cs" />

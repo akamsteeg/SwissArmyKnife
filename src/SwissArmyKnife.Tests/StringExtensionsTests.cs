@@ -169,5 +169,69 @@ namespace SwissArmyKnife.Tests.Extensions
         }
 
         #endregion
+
+        #region IsNullOrEmpty()
+
+        [Test]
+        public void IsNullOrEmptyOnEmptyStringReturnsTrue()
+        {
+            var s = string.Empty;
+
+            Assert.IsTrue(s.IsNullOrEmpty());
+        }
+
+        [Test]
+        public void IsNullOrEmptyOnNullStringReturnsTrue()
+        {
+            string s = null;
+
+            Assert.IsTrue(s.IsNullOrEmpty());
+        }
+
+        [Test]
+        public void IsNullOrEmptyOnNotEmptyStringReturnsFalse()
+        {
+            string s = "Lorem Ipsum";
+
+            Assert.IsFalse(s.IsNullOrEmpty());
+        }
+
+        #endregion
+
+        #region IsNullOrWhiteSpace()
+
+        [Test]
+        public void IsNullOrWhiteSpaceOnEmptyStringReturnsTrue()
+        {
+            var s = string.Empty;
+
+            Assert.IsTrue(s.IsNullOrWhiteSpace());
+        }
+
+        [Test]
+        public void IsNullOrWhiteSpaceOnNullStringReturnsTrue()
+        {
+            string s = null;
+
+            Assert.IsTrue(s.IsNullOrWhiteSpace());
+        }
+
+        [Test]
+        public void IsNullOrWhiteSpaceOnWhiteSpaceStringReturnsTrue()
+        {
+            var s = " ";
+
+            Assert.IsTrue(s.IsNullOrWhiteSpace());
+        }
+
+        [Test]
+        public void IsNullOrWhiteSpaceOnNotEmptyStringReturnsFalse()
+        {
+            string s = "Lorem Ipsum";
+
+            Assert.IsFalse(s.IsNullOrWhiteSpace());
+        }
+
+        #endregion
     }
 }

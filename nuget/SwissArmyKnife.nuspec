@@ -30,6 +30,9 @@
     <!-- .NET 4.5 -->
     <file src="..\src\SwissArmyKnife\bin\v4.5\$configuration$\SwissArmyKnife.dll" target="lib\net45\" />
     <file src="..\src\SwissArmyKnife\bin\v4.5\$configuration$\SwissArmyKnife.xml" target="lib\net45\" />
+    <!-- .NET 4.6 -->
+    <file src="..\src\SwissArmyKnife\bin\v4.6\$configuration$\SwissArmyKnife.dll" target="lib\net46\" />
+    <file src="..\src\SwissArmyKnife\bin\v4.6\$configuration$\SwissArmyKnife.xml" target="lib\net46\" />
 
     <!-- Sources & symbols for symbols/debugging -->
     <file src="..\src\SwissArmyKnife\bin\v4.0\$configuration$\SwissArmyKnife.pdb" target="lib\net40\" />

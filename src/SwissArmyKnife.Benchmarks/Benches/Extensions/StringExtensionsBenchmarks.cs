@@ -1,8 +1,8 @@
-﻿using Minibench.Framework;
+﻿using BenchmarkDotNet.Attributes;
 
 namespace SwissArmyKnife.Benchmarks.Benches.Extensions
 {
-    internal class StringExtensionsBenchmarks
+    public class StringExtensionsBenchmarks
     {
         #region FormatWith()
 

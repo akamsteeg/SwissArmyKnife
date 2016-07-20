@@ -1,9 +1,9 @@
-﻿using Minibench.Framework;
+﻿using BenchmarkDotNet.Attributes;
 using System.Text;
 
 namespace SwissArmyKnife.Benchmarks.Benches.Extensions
 {
-    internal class StringBuilderExtensionsBenchmarks
+    public class StringBuilderExtensionsBenchmarks
     {
         [Benchmark]
         public void AppendFormattedLineOneArg()

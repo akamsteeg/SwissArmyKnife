@@ -1,14 +1,10 @@
-﻿using Minibench.Framework;
+﻿using BenchmarkDotNet.Attributes;
 using SwissArmyKnife.DataStructures;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace SwissArmyKnife.Benchmarks.Benches.DataStructures
 {
-    internal class BloomFilterBenchmarks
+    public class BloomFilterBenchmarks
     {
         private BloomFilter BloomFilter
         {

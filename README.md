@@ -3,7 +3,6 @@
 SwissArmyKnife is a utility library with useful performance-optimised [extension methods](https://github.com/akamsteeg/SwissArmyKnife/wiki/Extension-methods) and performance-oriented [utility classes](https://github.com/akamsteeg/SwissArmyKnife/wiki/Performance-oriented-utility-classes) as well as [miscellaneous classes](https://github.com/akamsteeg/SwissArmyKnife/wiki/Miscellaneous-classes) to make your life as a developer easier.
 
 Supported .NET frameworks:
-* .NET 3.5
 * .NET 4.0
 * .NET 4.5
 * .NET 4.6

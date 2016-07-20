@@ -137,5 +137,19 @@ namespace SwissArmyKnife
             source.Truncate(length) + suffix;
 
         #endregion
+
+        #region IsNullOrEmpty
+
+        /// <summary>
+        /// Indicates whether the specified string is null or a <see cref="string"/>.Empty string
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns>
+        /// True if the value parameter is null or an empty string (""); otherwise, false
+        /// </returns>
+        public static bool IsNullOrEmpty(this string source) =>
+            string.IsNullOrEmpty(source);
+
+        #endregion
     }
 }

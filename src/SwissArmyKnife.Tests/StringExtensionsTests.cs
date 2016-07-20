@@ -169,5 +169,33 @@ namespace SwissArmyKnife.Tests.Extensions
         }
 
         #endregion
+
+        #region IsNullOrEmpty()
+
+        [Test]
+        public void EmptyStringReturnsTrue()
+        {
+            var s = string.Empty;
+
+            Assert.IsTrue(s.IsNullOrEmpty());
+        }
+
+        [Test]
+        public void NullStringReturnsTrue()
+        {
+            string s = null;
+
+            Assert.IsTrue(s.IsNullOrEmpty());
+        }
+
+        [Test]
+        public void NotEmptyStringReturnsFalse()
+        {
+            string s = "Lorem Ipsum";
+
+            Assert.IsFalse(s.IsNullOrEmpty());
+        }
+
+        #endregion
     }
 }

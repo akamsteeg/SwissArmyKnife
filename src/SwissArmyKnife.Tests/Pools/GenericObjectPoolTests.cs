@@ -116,14 +116,13 @@ namespace SwissArmyKnife.Tests.Pools
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void AddNull_Throws()
         {
             var pool = CreateObjectPool();
 
             IntPoolableObject po1 = null;
 
-            pool.Add(po1);
+            Assert.Throws<ArgumentNullException>(() => pool.Add(po1));
         }
 
         private static IObjectPool CreateObjectPool()

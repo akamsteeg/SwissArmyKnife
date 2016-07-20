@@ -103,5 +103,33 @@ namespace SwissArmyKnife.Benchmarks.Benches.Extensions
         }
 
         #endregion
+
+        #region IsNullOrWhiteSpace()
+
+        [Benchmark]
+        public void IsNullOrWhiteSpaceWithNullString()
+        {
+            string s = null;
+
+            var result = s.IsNullOrWhiteSpace();
+        }
+
+        [Benchmark]
+        public void IsNullOrWhiteSpaceWithEmptyString()
+        {
+            string s = string.Empty;
+
+            var result = s.IsNullOrWhiteSpace();
+        }
+
+        [Benchmark]
+        public void IsNullOrWhiteSpaceWithString()
+        {
+            var s = "Lorem ipsum";
+
+            var result = s.IsNullOrWhiteSpace();
+        }
+
+        #endregion
     }
 }

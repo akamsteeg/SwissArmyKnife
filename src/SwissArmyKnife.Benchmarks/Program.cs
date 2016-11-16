@@ -44,7 +44,7 @@ namespace SwissArmyKnife.Benchmarks
         {
             var config = ManualConfig.Create(DefaultConfig.Instance);
             var gcDiagnoser = new MemoryDiagnoser();
-            config.Add(new Job { Mode = Mode.Throughput, LaunchCount = 2, WarmupCount = 2, TargetCount = 10 });
+            config.Add(Job.Clr);
             config.Add(gcDiagnoser);
 
             return config;

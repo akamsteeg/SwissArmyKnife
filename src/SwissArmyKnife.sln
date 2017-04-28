@@ -1,17 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissArmyKnife.Base", "SwissArmyKnife\SwissArmyKnife.Base.csproj", "{755F796C-D8DF-4592-A9B2-0BEB761AA107}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissArmyKnife.Tests", "SwissArmyKnife.Tests\SwissArmyKnife.Tests.csproj", "{F104C48B-3B34-479D-8EDF-AD191EE25EF2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissArmyKnife.Benchmarks", "SwissArmyKnife.Benchmarks\SwissArmyKnife.Benchmarks.csproj", "{22157725-DE80-4474-B784-7011C00B4856}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissArmyKnife.NET40", "SwissArmyKnife\SwissArmyKnife.NET40.csproj", "{47516FC4-6BF7-4CB4-BC76-4AA56AB21A4E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissArmyKnife.NET45", "SwissArmyKnife\SwissArmyKnife.NET45.csproj", "{97D63658-BD02-44FB-9AA3-5F5D7D94D134}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{F193E30A-0137-459E-9046-7A7BCECC537F}"
 	ProjectSection(SolutionItems) = preProject
@@ -20,9 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{F193E30A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{890CAAD3-BF0E-4162-8BB1-DA3416C53686}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TargetFrameworks", "TargetFrameworks", "{9D1DC5A5-7B21-49BB-94DF-B348C97DC52D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissArmyKnife.NET46", "SwissArmyKnife\SwissArmyKnife.NET46.csproj", "{33514118-7D98-43A6-9EDC-7AC4484368EF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissArmyKnife", "SwissArmyKnife\SwissArmyKnife.csproj", "{44F3E2E6-2C72-4550-B8AE-C6C9350645C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,26 +36,15 @@ Global
 		{22157725-DE80-4474-B784-7011C00B4856}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22157725-DE80-4474-B784-7011C00B4856}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22157725-DE80-4474-B784-7011C00B4856}.Release|Any CPU.Build.0 = Release|Any CPU
-		{47516FC4-6BF7-4CB4-BC76-4AA56AB21A4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{47516FC4-6BF7-4CB4-BC76-4AA56AB21A4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{47516FC4-6BF7-4CB4-BC76-4AA56AB21A4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{47516FC4-6BF7-4CB4-BC76-4AA56AB21A4E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{97D63658-BD02-44FB-9AA3-5F5D7D94D134}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{97D63658-BD02-44FB-9AA3-5F5D7D94D134}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{97D63658-BD02-44FB-9AA3-5F5D7D94D134}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{97D63658-BD02-44FB-9AA3-5F5D7D94D134}.Release|Any CPU.Build.0 = Release|Any CPU
-		{33514118-7D98-43A6-9EDC-7AC4484368EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{33514118-7D98-43A6-9EDC-7AC4484368EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{33514118-7D98-43A6-9EDC-7AC4484368EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{33514118-7D98-43A6-9EDC-7AC4484368EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44F3E2E6-2C72-4550-B8AE-C6C9350645C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44F3E2E6-2C72-4550-B8AE-C6C9350645C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44F3E2E6-2C72-4550-B8AE-C6C9350645C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44F3E2E6-2C72-4550-B8AE-C6C9350645C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F104C48B-3B34-479D-8EDF-AD191EE25EF2} = {890CAAD3-BF0E-4162-8BB1-DA3416C53686}
-		{47516FC4-6BF7-4CB4-BC76-4AA56AB21A4E} = {9D1DC5A5-7B21-49BB-94DF-B348C97DC52D}
-		{97D63658-BD02-44FB-9AA3-5F5D7D94D134} = {9D1DC5A5-7B21-49BB-94DF-B348C97DC52D}
-		{33514118-7D98-43A6-9EDC-7AC4484368EF} = {9D1DC5A5-7B21-49BB-94DF-B348C97DC52D}
 	EndGlobalSection
 EndGlobal

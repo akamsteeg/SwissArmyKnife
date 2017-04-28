@@ -65,6 +65,10 @@
       <Project>{755f796c-d8df-4592-a9b2-0beb761aa107}</Project>
       <Name>SwissArmyKnife.Base</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SwissArmyKnife\SwissArmyKnife.csproj">
+      <Project>{44f3e2e6-2c72-4550-b8ae-c6c9350645c3}</Project>
+      <Name>SwissArmyKnife</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />

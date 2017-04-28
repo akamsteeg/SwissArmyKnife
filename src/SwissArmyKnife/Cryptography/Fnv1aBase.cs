@@ -16,18 +16,25 @@ namespace SwissArmyKnife.Cryptography
         private ulong _fnvPrime;
         private ulong _hashData;
 
-        /// <summary>
-        /// Initializes a new instance of <see cref="Fnv1aBase"/>
-        /// </summary>
-        /// <param name="offsetBasis">
-        /// The offset basis for the Fowler-Noll-Vo
-        /// algorithm
-        /// </param>
-        /// <param name="fnvPrime">
-        /// The prime to use in the Fowler-Noll-Vo
-        /// algorithm
-        /// </param>
-        internal Fnv1aBase(ulong offsetBasis, ulong fnvPrime)
+#if NETSTANDARD1_5
+    /// <summary>
+    /// Represents the size, in bits, of the computed hash code
+    /// </summary>
+    protected int HashSizeValue;
+#endif
+
+    /// <summary>
+    /// Initializes a new instance of <see cref="Fnv1aBase"/>
+    /// </summary>
+    /// <param name="offsetBasis">
+    /// The offset basis for the Fowler-Noll-Vo
+    /// algorithm
+    /// </param>
+    /// <param name="fnvPrime">
+    /// The prime to use in the Fowler-Noll-Vo
+    /// algorithm
+    /// </param>
+    internal Fnv1aBase(ulong offsetBasis, ulong fnvPrime)
         {
             this._offsetBasis = offsetBasis;
             this._fnvPrime = fnvPrime;

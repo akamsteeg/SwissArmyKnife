@@ -14,7 +14,7 @@ namespace SwissArmyKnife.Pools
         : IObjectPool
     {
         private readonly object _lock;
-        private readonly Dictionary<Type, Stack> _stacks;
+        private readonly Dictionary<Type, Stack<object>> _stacks;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GenericObjectPool"/>
@@ -22,7 +22,7 @@ namespace SwissArmyKnife.Pools
         public GenericObjectPool()
         {
             this._lock = new object();
-            this._stacks = new Dictionary<Type, Stack>(5);
+            this._stacks = new Dictionary<Type, Stack<object>>(5);
         }
 
         /// <summary>
@@ -39,11 +39,11 @@ namespace SwissArmyKnife.Pools
             lock (this._lock)
             {
                 Type originType = objectToAdd.GetType();
-                Stack typeStack;
+                Stack<object> typeStack;
 
                 if (!this._stacks.TryGetValue(originType, out typeStack))
                 {
-                    typeStack = new Stack();
+                    typeStack = new Stack<object>();
                     this._stacks.Add(originType, typeStack);
                 }
 
@@ -64,7 +64,7 @@ namespace SwissArmyKnife.Pools
             T result = default(T);
 
             Type originType = typeof(T);
-            Stack typeStack;
+            Stack<object> typeStack;
 
             lock (this._lock)
             {

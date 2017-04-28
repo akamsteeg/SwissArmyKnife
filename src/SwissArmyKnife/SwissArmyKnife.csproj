@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard1.5;net40;net45;net46</TargetFrameworks>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	
+    <IncludeSymbols>True</IncludeSymbols>
+	
+    <Authors>Alex Kamsteeg</Authors>
+    <Company />
+    <Description>A collection of extension methods and performance-related types for general purposes&lt;/</Description>
+    <Copyright>Copyright Alex Kamsteeg (https://www.atlex.nl)</Copyright>
+    <PackageLicenseUrl>https://github.com/akamsteeg/SwissArmyKnife/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/akamsteeg/SwissArmyKnife</PackageProjectUrl>
+    <PackageTags>utility utitilies extension extensions performance misc</PackageTags>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <Version>1.1.0</Version>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|AnyCPU'">
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <TreatSpecificWarningsAsErrors />
+    <DocumentationFile>bin\Debug\SwissArmyKnife.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|AnyCPU'">
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <TreatSpecificWarningsAsErrors />
+    <DocumentationFile>bin\Release\SwissArmyKnife.xml</DocumentationFile>
+  </PropertyGroup>
+
+</Project>

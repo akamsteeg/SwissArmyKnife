@@ -61,9 +61,9 @@
     <Compile Include="StringExtensionsTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SwissArmyKnife\SwissArmyKnife.Base.csproj">
-      <Project>{755f796c-d8df-4592-a9b2-0beb761aa107}</Project>
-      <Name>SwissArmyKnife.Base</Name>
+    <ProjectReference Include="..\SwissArmyKnife\SwissArmyKnife.csproj">
+      <Project>{44f3e2e6-2c72-4550-b8ae-c6c9350645c3}</Project>
+      <Name>SwissArmyKnife</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

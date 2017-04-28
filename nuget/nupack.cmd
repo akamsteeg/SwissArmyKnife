@@ -1,1 +1,0 @@
-nuget.exe pack SwissArmyKnife.nuspec -Prop Configuration=Release -Symbols

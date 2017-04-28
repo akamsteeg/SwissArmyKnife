@@ -6,6 +6,7 @@ Supported .NET frameworks:
 * .NET 4.0
 * .NET 4.5
 * .NET 4.6
+* .NETSTANDARD 1.5
 
 # Installation
 

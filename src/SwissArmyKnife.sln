@@ -7,11 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissArmyKnife.Tests", "Swi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissArmyKnife.Benchmarks", "SwissArmyKnife.Benchmarks\SwissArmyKnife.Benchmarks.csproj", "{22157725-DE80-4474-B784-7011C00B4856}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{F193E30A-0137-459E-9046-7A7BCECC537F}"
-	ProjectSection(SolutionItems) = preProject
-		..\nuget\SwissArmyKnife.nuspec = ..\nuget\SwissArmyKnife.nuspec
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{890CAAD3-BF0E-4162-8BB1-DA3416C53686}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissArmyKnife", "SwissArmyKnife\SwissArmyKnife.csproj", "{44F3E2E6-2C72-4550-B8AE-C6C9350645C3}"

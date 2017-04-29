@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissArmyKnife.Base", "SwissArmyKnife\SwissArmyKnife.Base.csproj", "{755F796C-D8DF-4592-A9B2-0BEB761AA107}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissArmyKnife.Tests", "SwissArmyKnife.Tests\SwissArmyKnife.Tests.csproj", "{F104C48B-3B34-479D-8EDF-AD191EE25EF2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissArmyKnife.Benchmarks", "SwissArmyKnife.Benchmarks\SwissArmyKnife.Benchmarks.csproj", "{22157725-DE80-4474-B784-7011C00B4856}"
@@ -24,10 +22,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{755F796C-D8DF-4592-A9B2-0BEB761AA107}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{755F796C-D8DF-4592-A9B2-0BEB761AA107}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{755F796C-D8DF-4592-A9B2-0BEB761AA107}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{755F796C-D8DF-4592-A9B2-0BEB761AA107}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F104C48B-3B34-479D-8EDF-AD191EE25EF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F104C48B-3B34-479D-8EDF-AD191EE25EF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F104C48B-3B34-479D-8EDF-AD191EE25EF2}.Release|Any CPU.ActiveCfg = Release|Any CPU

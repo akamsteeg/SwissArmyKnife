@@ -1,10 +1,10 @@
 ﻿using BenchmarkDotNet.Configs;
-using BenchmarkDotNet.Diagnostics.Windows;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Running;
 using SwissArmyKnife.Benchmarks.Benches.DataStructures;
 using SwissArmyKnife.Benchmarks.Benches.Extensions;
 using System;
+using BenchmarkDotNet.Diagnosers;
 
 namespace SwissArmyKnife.Benchmarks
 {
@@ -43,9 +43,11 @@ namespace SwissArmyKnife.Benchmarks
         private static IConfig GetConfig()
         {
             var config = ManualConfig.Create(DefaultConfig.Instance);
-            var gcDiagnoser = new MemoryDiagnoser();
+
+            config.Add(MemoryDiagnoser.Default);
+
             config.Add(Job.Clr);
-            config.Add(gcDiagnoser);
+            config.Add(Job.Core);
 
             return config;
         }

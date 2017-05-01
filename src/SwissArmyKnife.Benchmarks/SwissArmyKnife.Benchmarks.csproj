@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{22157725-DE80-4474-B784-7011C00B4856}</ProjectGuid>
+    <ProjectGuid>{149B85EA-B015-49B0-9FDE-06D0D5E478C9}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SwissArmyKnife.Benchmarks</RootNamespace>

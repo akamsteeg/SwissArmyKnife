@@ -5,11 +5,11 @@ VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissArmyKnife.Tests", "SwissArmyKnife.Tests\SwissArmyKnife.Tests.csproj", "{F104C48B-3B34-479D-8EDF-AD191EE25EF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissArmyKnife.Benchmarks", "SwissArmyKnife.Benchmarks\SwissArmyKnife.Benchmarks.csproj", "{22157725-DE80-4474-B784-7011C00B4856}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{890CAAD3-BF0E-4162-8BB1-DA3416C53686}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissArmyKnife", "SwissArmyKnife\SwissArmyKnife.csproj", "{44F3E2E6-2C72-4550-B8AE-C6C9350645C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissArmyKnife.Benchmarks", "SwissArmyKnife.Benchmarks\SwissArmyKnife.Benchmarks.csproj", "{149B85EA-B015-49B0-9FDE-06D0D5E478C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,14 +21,14 @@ Global
 		{F104C48B-3B34-479D-8EDF-AD191EE25EF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F104C48B-3B34-479D-8EDF-AD191EE25EF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F104C48B-3B34-479D-8EDF-AD191EE25EF2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{22157725-DE80-4474-B784-7011C00B4856}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{22157725-DE80-4474-B784-7011C00B4856}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{22157725-DE80-4474-B784-7011C00B4856}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{22157725-DE80-4474-B784-7011C00B4856}.Release|Any CPU.Build.0 = Release|Any CPU
 		{44F3E2E6-2C72-4550-B8AE-C6C9350645C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{44F3E2E6-2C72-4550-B8AE-C6C9350645C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44F3E2E6-2C72-4550-B8AE-C6C9350645C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44F3E2E6-2C72-4550-B8AE-C6C9350645C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{149B85EA-B015-49B0-9FDE-06D0D5E478C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{149B85EA-B015-49B0-9FDE-06D0D5E478C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{149B85EA-B015-49B0-9FDE-06D0D5E478C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{149B85EA-B015-49B0-9FDE-06D0D5E478C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

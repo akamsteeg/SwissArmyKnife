@@ -47,9 +47,8 @@ namespace SwissArmyKnife.Benchmarks
             config.Add(MemoryDiagnoser.Default);
 
             config.Add(Job.Clr);
-            config.Add(Job.Core);
 
-            return config;
+      return config;
         }
     }
 }

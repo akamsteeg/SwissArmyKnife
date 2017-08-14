@@ -1,4 +1,5 @@
-﻿using BenchmarkDotNet.Attributes;
+﻿using System;
+using BenchmarkDotNet.Attributes;
 
 namespace SwissArmyKnife.Benchmarks.Benches.Extensions
 {
@@ -130,6 +131,33 @@ namespace SwissArmyKnife.Benchmarks.Benches.Extensions
             var result = s.IsNullOrWhiteSpace();
         }
 
+        #endregion
+
+        #region Contains()
+
+        [Benchmark]
+        public void ContainsWithValidIncorrectCasedStringAndCaseInsensitiveComparison()
+        {
+            var s = "Lorem Ipsum";
+
+            var result = s.Contains("ipsum", StringComparison.InvariantCultureIgnoreCase);
+        }
+
+        [Benchmark]
+        public void ContainsWithValidCorrectCasedStringAndCaseSensensitiveComparison()
+        {
+            var s = "Lorem Ipsum";
+
+            var result = s.Contains("Ipsum", StringComparison.InvariantCulture);
+        }
+
+        [Benchmark]
+        public void ContainsWithValidIncorrectCasedStringAndCaseSensensitiveComparison()
+        {
+            var s = "Lorem Ipsum";
+
+            var result = s.Contains("ipsum", StringComparison.InvariantCulture);
+        }
         #endregion
     }
 }

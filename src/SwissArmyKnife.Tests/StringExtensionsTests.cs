@@ -8,6 +8,8 @@ namespace SwissArmyKnife.Tests.Extensions
     [TestFixture]
     class StringExtensionsTests
     {
+        #region FormatWith()
+
         [Test]
         public void FormatStringWithOneArg_Successful()
         {
@@ -73,6 +75,7 @@ namespace SwissArmyKnife.Tests.Extensions
             Assert.AreEqual("Test: 1 1", s);
         }
 
+
         #region Types
 
         [Test]
@@ -92,6 +95,8 @@ namespace SwissArmyKnife.Tests.Extensions
 
             Assert.AreEqual("Test: 1.1", s);
         }
+
+        #endregion
 
         #endregion
 
@@ -232,6 +237,49 @@ namespace SwissArmyKnife.Tests.Extensions
             Assert.IsFalse(s.IsNullOrWhiteSpace());
         }
 
+        #endregion
+
+        #region Contains()
+
+        [Test]
+        public void ContainsWithEmptyStringReturnsTrue()
+        {
+            string s = "Lorem Ipsum";
+
+            Assert.IsTrue(s.Contains("", StringComparison.InvariantCultureIgnoreCase));
+        }
+
+        [Test]
+        public void ContainsWithNullStringThrows()
+        {
+            string s = "Lorem Ipsum";
+
+            Assert.Throws<ArgumentNullException>(() => s.Contains(null, StringComparison.InvariantCultureIgnoreCase));
+        }
+
+        [Test]
+        public void ContainsWithValidCorrectCasedStringAndCaseInsensitiveReturnsTrue()
+        {
+            string s = "Lorem Ipsum";
+
+            Assert.IsTrue(s.Contains("Ipsum", StringComparison.InvariantCultureIgnoreCase));
+        }
+
+        [Test]
+        public void ContainsWithValidIncorrectCasedStringAndCaseInsensitiveComparisonReturnsTrue()
+        {
+            string s = "Lorem Ipsum";
+
+            Assert.IsTrue(s.Contains("ipsum", StringComparison.InvariantCultureIgnoreCase));
+        }
+
+        [Test]
+        public void ContainsWithValidIncorrectCasedStringAndCaseSensitiveComparisonReturnsFalse()
+        {
+            string s = "Lorem Ipsum";
+
+            Assert.IsFalse(s.Contains("ipsum", StringComparison.InvariantCulture));
+        }
         #endregion
     }
 }

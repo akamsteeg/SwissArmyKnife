@@ -8,13 +8,13 @@
 	
     <Authors>Alex Kamsteeg</Authors>
     <Company />
-    <Description>A collection of extension methods and performance-related types for general purposes&lt;/</Description>
+    <Description>A collection of extension methods and performance-related types for general purposes</Description>
     <Copyright>Copyright Alex Kamsteeg (https://www.atlex.nl)</Copyright>
     <PackageLicenseUrl>https://github.com/akamsteeg/SwissArmyKnife/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/akamsteeg/SwissArmyKnife</PackageProjectUrl>
-    <PackageTags>utility utitilies extension extensions performance misc</PackageTags>
-    <AssemblyVersion>1.1.0.0</AssemblyVersion>
-    <Version>1.1.0</Version>
+    <PackageTags>utility utitilies extension extensions method methods performance misc</PackageTags>
+    <AssemblyVersion>1.2.0.0</AssemblyVersion>
+    <Version>1.2.0</Version>
     <PackageIconUrl>https://www.atlex.nl/nuget/swissarmyknife/logo.png</PackageIconUrl>
   </PropertyGroup>
 

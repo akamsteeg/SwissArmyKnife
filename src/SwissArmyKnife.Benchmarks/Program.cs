@@ -48,7 +48,7 @@ namespace SwissArmyKnife.Benchmarks
 
             config.Add(Job.Clr);
 
-      return config;
+            return config;
         }
     }
 }

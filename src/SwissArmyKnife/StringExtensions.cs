@@ -167,6 +167,36 @@ namespace SwissArmyKnife
         public static bool IsNullOrWhiteSpace(this string source) => 
             string.IsNullOrWhiteSpace(source);
 
+    #endregion
+
+        #region Contains
+
+        /// <summary>
+        /// Returns a value indicating whether a specified substring occurs
+        /// within this string
+        /// </summary>
+        /// <param name="source">
+        /// </param>
+        /// <param name="value">
+        /// The string to seek
+        /// </param>
+        /// <param name="comparisonType">
+        /// One of the enumeration values that specifies the rules for the search
+        /// </param>
+        /// <returns>
+        /// true if the value parameter occurs within this string, or if value is
+        /// the empty string (""); otherwise, false
+        /// </returns>
+        public static bool Contains(this string source, string value, StringComparison comparisonType)
+        {
+            if (value == null) // No string.IsNullOrEmpty() because Contains(string) returns true when the input is an empty string and we mimick that here
+                throw new ArgumentNullException(nameof(value));
+
+            var result = (value == string.Empty || (source.IndexOf(value, comparisonType) != -1));
+
+            return result;
+        }
+
         #endregion
     }
 }

@@ -1,14 +1,10 @@
 ﻿using NUnit.Framework;
 using SwissArmyKnife.Cryptography;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SwissArmyKnife.Tests.Cryptography
 {
-    [TestFixture]
+  [TestFixture]
     internal class Fnv1a64Tests : Fnv1aTestsBase
     {
         public Fnv1a64Tests()
@@ -17,10 +13,10 @@ namespace SwissArmyKnife.Tests.Cryptography
 
         }
 
-        [Test, Sequential, Explicit("Need to fix the cast exceptions first")]
+        [Test, Sequential]
         public void Fnv_Succesful(
             [Values("fnv", "Fowler/Noll/Vo", "fowler", "noll", "vo")]string input,
-            [Values(15903756304948927129, 15903756304948927129, 15903756304948927129, 15903756304948927129, 15903756304948927129)]uint expected
+            [Values(15903756304948927129UL, 16489909637164264766UL, 12534660946462825874UL, 4329070551024743754UL, 634788777754156882UL)]ulong expected
             )
         {
             var hashedData = this.GetHashResult(input);

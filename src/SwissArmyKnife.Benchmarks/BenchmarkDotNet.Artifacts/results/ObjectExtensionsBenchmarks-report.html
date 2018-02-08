@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>ObjectExtensionsBenchmarks</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.10.9, OS=Windows 10 Redstone 2 (10.0.15063)
+Processor=Intel Core i7-6820HQ CPU 2.70GHz (Skylake), ProcessorCount=8
+Frequency=2648440 Hz, Resolution=377.5808 ns, Timer=TSC
+.NET Core SDK=2.0.0
+  [Host] : .NET Core 2.0.0 (Framework 4.6.00001.0), 64bit RyuJIT
+  Clr    : .NET Framework 4.7 (CLR 4.0.30319.42000), 64bit RyuJIT-v4.7.2102.0
+  Core   : .NET Core 2.0.0 (Framework 4.6.00001.0), 64bit RyuJIT
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>                Method</th><th>Job</th><th>Runtime</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Gen 0</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>StringIsAnyOfSingleValue</td><td>Clr</td><td>Clr</td><td>3.531 ns</td><td>0.0320 ns</td><td>0.0250 ns</td><td>-</td><td>0 B</td>
+</tr><tr><td>StringIsAnyOfTwoValues</td><td>Clr</td><td>Clr</td><td>4.592 ns</td><td>0.1246 ns</td><td>0.1040 ns</td><td>-</td><td>0 B</td>
+</tr><tr><td>StringIsAnyOfThreeValues</td><td>Clr</td><td>Clr</td><td>5.902 ns</td><td>0.1211 ns</td><td>0.1073 ns</td><td>-</td><td>0 B</td>
+</tr><tr><td>StringIsAnyOfFourValues</td><td>Clr</td><td>Clr</td><td>5.461 ns</td><td>0.0817 ns</td><td>0.0764 ns</td><td>-</td><td>0 B</td>
+</tr><tr><td>StringIsAnyOfManyValues</td><td>Clr</td><td>Clr</td><td>23.851 ns</td><td>0.1783 ns</td><td>0.1668 ns</td><td>0.0152</td><td>64 B</td>
+</tr><tr><td>StringIsAnyOfManyValuesFails</td><td>Clr</td><td>Clr</td><td>35.983 ns</td><td>0.3693 ns</td><td>0.3273 ns</td><td>0.0152</td><td>64 B</td>
+</tr><tr><td> IntIsAnyOfSingleValue</td><td>Clr</td><td>Clr</td><td>5.666 ns</td><td>0.0883 ns</td><td>0.0826 ns</td><td>0.0057</td><td>24 B</td>
+</tr><tr><td>   IntIsAnyOfTwoValues</td><td>Clr</td><td>Clr</td><td>5.246 ns</td><td>0.0573 ns</td><td>0.0508 ns</td><td>0.0057</td><td>24 B</td>
+</tr><tr><td> IntIsAnyOfThreeValues</td><td>Clr</td><td>Clr</td><td>5.104 ns</td><td>0.0782 ns</td><td>0.0693 ns</td><td>0.0057</td><td>24 B</td>
+</tr><tr><td>  IntIsAnyOfFourValues</td><td>Clr</td><td>Clr</td><td>6.544 ns</td><td>0.1358 ns</td><td>0.1204 ns</td><td>0.0057</td><td>24 B</td>
+</tr><tr><td>  IntIsAnyOfManyValues</td><td>Clr</td><td>Clr</td><td>11.939 ns</td><td>0.0927 ns</td><td>0.0867 ns</td><td>0.0172</td><td>72 B</td>
+</tr><tr><td>IntIsAnyOfTwoValuesFails</td><td>Clr</td><td>Clr</td><td>29.858 ns</td><td>0.2595 ns</td><td>0.2428 ns</td><td>0.0401</td><td>168 B</td>
+</tr><tr><td>StringIsAnyOfSingleValue</td><td>Core</td><td>Core</td><td>3.518 ns</td><td>0.0481 ns</td><td>0.0450 ns</td><td>-</td><td>0 B</td>
+</tr><tr><td>StringIsAnyOfTwoValues</td><td>Core</td><td>Core</td><td>3.113 ns</td><td>0.0387 ns</td><td>0.0362 ns</td><td>-</td><td>0 B</td>
+</tr><tr><td>StringIsAnyOfThreeValues</td><td>Core</td><td>Core</td><td>4.403 ns</td><td>0.0375 ns</td><td>0.0351 ns</td><td>-</td><td>0 B</td>
+</tr><tr><td>StringIsAnyOfFourValues</td><td>Core</td><td>Core</td><td>3.726 ns</td><td>0.0517 ns</td><td>0.0484 ns</td><td>-</td><td>0 B</td>
+</tr><tr><td>StringIsAnyOfManyValues</td><td>Core</td><td>Core</td><td>22.673 ns</td><td>0.1514 ns</td><td>0.1416 ns</td><td>0.0152</td><td>64 B</td>
+</tr><tr><td>StringIsAnyOfManyValuesFails</td><td>Core</td><td>Core</td><td>43.607 ns</td><td>0.3509 ns</td><td>0.3283 ns</td><td>0.0152</td><td>64 B</td>
+</tr><tr><td> IntIsAnyOfSingleValue</td><td>Core</td><td>Core</td><td>5.219 ns</td><td>0.0369 ns</td><td>0.0345 ns</td><td>0.0057</td><td>24 B</td>
+</tr><tr><td>   IntIsAnyOfTwoValues</td><td>Core</td><td>Core</td><td>5.784 ns</td><td>0.0462 ns</td><td>0.0432 ns</td><td>0.0057</td><td>24 B</td>
+</tr><tr><td> IntIsAnyOfThreeValues</td><td>Core</td><td>Core</td><td>5.925 ns</td><td>0.0629 ns</td><td>0.0558 ns</td><td>0.0057</td><td>24 B</td>
+</tr><tr><td>  IntIsAnyOfFourValues</td><td>Core</td><td>Core</td><td>6.249 ns</td><td>0.0713 ns</td><td>0.0595 ns</td><td>0.0057</td><td>24 B</td>
+</tr><tr><td>  IntIsAnyOfManyValues</td><td>Core</td><td>Core</td><td>12.375 ns</td><td>0.0516 ns</td><td>0.0482 ns</td><td>0.0172</td><td>72 B</td>
+</tr><tr><td>IntIsAnyOfTwoValuesFails</td><td>Core</td><td>Core</td><td>31.788 ns</td><td>0.2067 ns</td><td>0.1832 ns</td><td>0.0401</td><td>168 B</td>
+</tr></tbody></table>
+</body>
+</html>

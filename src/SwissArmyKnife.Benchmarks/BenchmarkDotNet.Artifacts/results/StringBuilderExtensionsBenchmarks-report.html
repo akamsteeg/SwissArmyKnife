@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>StringBuilderExtensionsBenchmarks</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.10.9, OS=Windows 10 Redstone 2 (10.0.15063)
+Processor=Intel Core i7-6820HQ CPU 2.70GHz (Skylake), ProcessorCount=8
+Frequency=2648440 Hz, Resolution=377.5808 ns, Timer=TSC
+.NET Core SDK=2.0.0
+  [Host] : .NET Core 2.0.0 (Framework 4.6.00001.0), 64bit RyuJIT
+  Clr    : .NET Framework 4.7 (CLR 4.0.30319.42000), 64bit RyuJIT-v4.7.2102.0
+  Core   : .NET Core 2.0.0 (Framework 4.6.00001.0), 64bit RyuJIT
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>                Method</th><th>Job</th><th>Runtime</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Gen 0</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>AppendFormattedLineOneArg</td><td>Clr</td><td>Clr</td><td>83.32 ns</td><td>0.5578 ns</td><td>0.4945 ns</td><td>0.0247</td><td>104 B</td>
+</tr><tr><td>AppendFormattedLineTwoArgs</td><td>Clr</td><td>Clr</td><td>117.71 ns</td><td>2.3734 ns</td><td>2.2201 ns</td><td>0.0246</td><td>104 B</td>
+</tr><tr><td>AppendFormattedLineThreeArgs</td><td>Clr</td><td>Clr</td><td>138.34 ns</td><td>1.1950 ns</td><td>1.0594 ns</td><td>0.0246</td><td>104 B</td>
+</tr><tr><td>AppendFormattedLineManyArgs</td><td>Clr</td><td>Clr</td><td>279.15 ns</td><td>1.3056 ns</td><td>1.1574 ns</td><td>0.0644</td><td>272 B</td>
+</tr><tr><td>AppendFormattedLineOneArg</td><td>Core</td><td>Core</td><td>90.31 ns</td><td>0.8362 ns</td><td>0.7412 ns</td><td>0.0247</td><td>104 B</td>
+</tr><tr><td>AppendFormattedLineTwoArgs</td><td>Core</td><td>Core</td><td>121.57 ns</td><td>0.9251 ns</td><td>0.8654 ns</td><td>0.0246</td><td>104 B</td>
+</tr><tr><td>AppendFormattedLineThreeArgs</td><td>Core</td><td>Core</td><td>153.72 ns</td><td>1.3533 ns</td><td>1.2659 ns</td><td>0.0246</td><td>104 B</td>
+</tr><tr><td>AppendFormattedLineManyArgs</td><td>Core</td><td>Core</td><td>298.24 ns</td><td>1.3672 ns</td><td>1.2120 ns</td><td>0.0644</td><td>272 B</td>
+</tr></tbody></table>
+</body>
+</html>

@@ -50,6 +50,7 @@
     <Compile Include="DataStructures\BloomFilterTests.cs" />
     <Compile Include="DisposableTests.cs" />
     <Compile Include="GenericExtensionsTests.cs" />
+    <Compile Include="IntExtensionTests.cs" />
     <Compile Include="Mocks\IntPoolableObject.cs" />
     <Compile Include="Mocks\StringPoolableObject.cs" />
     <Compile Include="Pools\GenericObjectPoolTests.cs" />

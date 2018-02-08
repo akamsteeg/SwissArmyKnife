@@ -33,6 +33,7 @@ namespace SwissArmyKnife.Benchmarks
                 typeof(IComparableExtensionsBenchmarks),
                 typeof(StringBuilderExtensionsBenchmarks),
                 typeof(StringExtensionsBenchmarks),
+                typeof(IntExtensionsBenchmarks),
                 //Data structures
                 typeof(BloomFilterBenchmarks),
             };

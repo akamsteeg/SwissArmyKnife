@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>IComparableExtensionsBenchmarks</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.10.12, OS=Windows 10 Redstone 3 [1709, Fall Creators Update] (10.0.16299.192)
+Intel Core i7-6820HQ CPU 2.70GHz (Skylake), 1 CPU, 8 logical cores and 4 physical cores
+Frequency=2648435 Hz, Resolution=377.5815 ns, Timer=TSC
+.NET Core SDK=2.1.4
+  [Host] : .NET Core 2.0.5 (Framework 4.6.26020.03), 64bit RyuJIT
+  Clr    : .NET Framework 4.7 (CLR 4.0.30319.42000), 64bit RyuJIT-v4.7.2600.0
+  Core   : .NET Core 2.0.5 (Framework 4.6.26020.03), 64bit RyuJIT
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>   Method</th><th>Job</th><th>Runtime</th><th> Mean</th><th>Error</th><th>StdDev</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>StringIsBetween</td><td>Clr</td><td>Clr</td><td>166.5224 ns</td><td>2.6292 ns</td><td>2.3307 ns</td><td>0 B</td>
+</tr><tr><td>IntIsBetween</td><td>Clr</td><td>Clr</td><td>0.0037 ns</td><td>0.0051 ns</td><td>0.0045 ns</td><td>0 B</td>
+</tr><tr><td>DoubleIsBetween</td><td>Clr</td><td>Clr</td><td>5.2946 ns</td><td>0.0836 ns</td><td>0.0782 ns</td><td>0 B</td>
+</tr><tr><td>StringIsBetween</td><td>Core</td><td>Core</td><td>76.5870 ns</td><td>0.4298 ns</td><td>0.3810 ns</td><td>0 B</td>
+</tr><tr><td>IntIsBetween</td><td>Core</td><td>Core</td><td>0.0013 ns</td><td>0.0035 ns</td><td>0.0029 ns</td><td>0 B</td>
+</tr><tr><td>DoubleIsBetween</td><td>Core</td><td>Core</td><td>6.2857 ns</td><td>0.0826 ns</td><td>0.0733 ns</td><td>0 B</td>
+</tr></tbody></table>
+</body>
+</html>

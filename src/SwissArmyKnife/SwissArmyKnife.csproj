@@ -13,8 +13,8 @@
     <PackageLicenseUrl>https://github.com/akamsteeg/SwissArmyKnife/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/akamsteeg/SwissArmyKnife</PackageProjectUrl>
     <PackageTags>utility utitilies extension extensions method methods performance misc</PackageTags>
-    <AssemblyVersion>1.2.0.0</AssemblyVersion>
-    <Version>1.2.0</Version>
+    <AssemblyVersion>1.3.0.0</AssemblyVersion>
+    <Version>1.3.0</Version>
     <PackageIconUrl>https://www.atlex.nl/nuget/swissarmyknife/logo.png</PackageIconUrl>
   </PropertyGroup>
 

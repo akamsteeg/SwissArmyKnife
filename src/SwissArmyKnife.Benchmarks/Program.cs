@@ -36,6 +36,7 @@ namespace SwissArmyKnife.Benchmarks
                 typeof(IntExtensionsBenchmarks),
                 //Data structures
                 typeof(BloomFilterBenchmarks),
+                typeof(CircularBufferBenchmarks),
             };
 
             return result;

@@ -68,10 +68,11 @@ namespace SwissArmyKnife.Tests.DataStructures
             var result = buffer.Get();
 
             Assert.AreEqual(1, result);
+            Assert.AreEqual(0, buffer.Count);
         }
 
         [Test]
-        public void Add_SizeTwiceItemsAndGet_Succeeds()
+        public void Add_50PercentOverfillAndGet_Succeeds()
         {
             var buffer = Create();
 
@@ -84,16 +85,16 @@ namespace SwissArmyKnife.Tests.DataStructures
 
             Assert.AreEqual(buffer.Size, buffer.Count);
 
-            for (var i = numberOfItems - 1; i > 0; i--)
+            for (var i = 0; i < buffer.Size; i++)
             {
-                var result = buffer.Get();
-
-                Assert.AreEqual(i, result);
+                buffer.Get();
             }
+
+            Assert.AreEqual(0, buffer.Count);
         }
 
         [Test]
-        public void Add_SingleItemAndGet10Items_Succeeds()
+        public void Add_10ItemsAndGet10Items_Succeeds()
         {
             var buffer = Create();
 
@@ -106,12 +107,37 @@ namespace SwissArmyKnife.Tests.DataStructures
 
             Assert.AreEqual(size, buffer.Count);
 
-            for (var i = size - 1; i > 0; i--)
+            for (var i = 0; i < size; i++)
             {
                 var result = buffer.Get();
 
                 Assert.AreEqual(i, result);
             }
+
+            Assert.AreEqual(0, buffer.Count);
+        }
+
+        [Test]
+        public void Add_10ItemsAndEnumerate_Succeeds()
+        {
+            var buffer = Create();
+
+            const int size = 10;
+
+            for (var i = 0; i < size; i++)
+            {
+                buffer.Add(i);
+            }
+
+            var expectedItem = 0;
+            foreach (var currentItem in buffer)
+            {
+                Assert.AreEqual(expectedItem, currentItem);
+
+                expectedItem++;
+            }
+
+            Assert.AreEqual(0, buffer.Count);
         }
 
         [Test]

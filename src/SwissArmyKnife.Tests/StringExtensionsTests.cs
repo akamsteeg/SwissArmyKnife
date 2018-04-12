@@ -89,18 +89,22 @@ namespace SwissArmyKnife.Tests.Extensions
         [Test]
         public void FormatStringWithDoubleAsArg_Successful()
         {
+#if NETCOREAPP1_1
+            CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
+#else
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture; // Ensure a dot in the string representation of a double
+#endif
 
             var s = "Test: {0}".FormatWith(1.1);
 
             Assert.AreEqual("Test: 1.1", s);
         }
 
-        #endregion
+#endregion
 
-        #endregion
+#endregion
 
-        #region Truncate()
+#region Truncate()
 
         [Test]
         public void TruncateString_Successful()
@@ -173,9 +177,9 @@ namespace SwissArmyKnife.Tests.Extensions
             Assert.Throws<ArgumentOutOfRangeException>(() => text.Truncate(int.MaxValue, "..."));
         }
 
-        #endregion
+#endregion
 
-        #region IsNullOrEmpty()
+#region IsNullOrEmpty()
 
         [Test]
         public void IsNullOrEmptyOnEmptyStringReturnsTrue()
@@ -201,9 +205,9 @@ namespace SwissArmyKnife.Tests.Extensions
             Assert.IsFalse(s.IsNullOrEmpty());
         }
 
-        #endregion
+#endregion
 
-        #region IsNullOrWhiteSpace()
+#region IsNullOrWhiteSpace()
 
         [Test]
         public void IsNullOrWhiteSpaceOnEmptyStringReturnsTrue()
@@ -237,16 +241,16 @@ namespace SwissArmyKnife.Tests.Extensions
             Assert.IsFalse(s.IsNullOrWhiteSpace());
         }
 
-        #endregion
+#endregion
 
-        #region Contains()
+#region Contains()
 
         [Test]
         public void ContainsWithEmptyStringReturnsTrue()
         {
             string s = "Lorem Ipsum";
 
-            Assert.IsTrue(s.Contains("", StringComparison.InvariantCultureIgnoreCase));
+            Assert.IsTrue(s.Contains("", StringComparison.OrdinalIgnoreCase));
         }
 
         [Test]
@@ -254,7 +258,7 @@ namespace SwissArmyKnife.Tests.Extensions
         {
             string s = "Lorem Ipsum";
 
-            Assert.Throws<ArgumentNullException>(() => s.Contains(null, StringComparison.InvariantCultureIgnoreCase));
+            Assert.Throws<ArgumentNullException>(() => s.Contains(null, StringComparison.OrdinalIgnoreCase));
         }
 
         [Test]
@@ -262,7 +266,7 @@ namespace SwissArmyKnife.Tests.Extensions
         {
             string s = "Lorem Ipsum";
 
-            Assert.IsTrue(s.Contains("Ipsum", StringComparison.InvariantCultureIgnoreCase));
+            Assert.IsTrue(s.Contains("Ipsum", StringComparison.OrdinalIgnoreCase));
         }
 
         [Test]
@@ -270,7 +274,7 @@ namespace SwissArmyKnife.Tests.Extensions
         {
             string s = "Lorem Ipsum";
 
-            Assert.IsTrue(s.Contains("ipsum", StringComparison.InvariantCultureIgnoreCase));
+            Assert.IsTrue(s.Contains("ipsum", StringComparison.OrdinalIgnoreCase));
         }
 
         [Test]
@@ -278,8 +282,8 @@ namespace SwissArmyKnife.Tests.Extensions
         {
             string s = "Lorem Ipsum";
 
-            Assert.IsFalse(s.Contains("ipsum", StringComparison.InvariantCulture));
+            Assert.IsFalse(s.Contains("ipsum", StringComparison.Ordinal));
         }
-        #endregion
+#endregion
     }
 }

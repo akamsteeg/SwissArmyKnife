@@ -28,7 +28,7 @@ namespace SwissArmyKnife.Tests.Extensions
         public void ResetClosedStream()
         {
             var s = GetStream();
-            s.Close();
+            s.Dispose();
 
             Assert.Throws<ObjectDisposedException>(() => s.Reset());
         }

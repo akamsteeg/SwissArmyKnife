@@ -13,10 +13,13 @@
     <PackageLicenseUrl>https://github.com/akamsteeg/SwissArmyKnife/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/akamsteeg/SwissArmyKnife</PackageProjectUrl>
     <PackageTags>utility utitilies extension extensions method methods performance misc</PackageTags>
-    <AssemblyVersion>1.3.0.0</AssemblyVersion>
+    <AssemblyVersion>1.4.0.0</AssemblyVersion>
     <Version>1.3.0</Version>
     <PackageIconUrl>https://www.atlex.nl/nuget/swissarmyknife/logo.png</PackageIconUrl>
-    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageReleaseNotes>1.4.0:
+- [Feature] Added the CircularBuffer ringbuffer in SwissArmyKnife.DataStructures.CircularBuffer
+- [Feature] Added an interface IBloomFilter to the BloomFilter</PackageReleaseNotes>
+    <FileVersion>1.4.0.0</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

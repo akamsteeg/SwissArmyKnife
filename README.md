@@ -8,6 +8,8 @@ Supported .NET frameworks:
 * .NET 4.6
 * .NETSTANDARD 1.5
 
+Build status: ![build status](https://interastra.visualstudio.com/_apis/public/build/definitions/91e1708a-5416-4974-88df-9c2449706ab9/4/badge)
+
 # Installation
 
 SwissArmyKnife is available [as NuGet package](https://www.nuget.org/packages/SwissArmyKnife/):

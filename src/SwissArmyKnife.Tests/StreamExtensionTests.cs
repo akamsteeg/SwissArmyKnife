@@ -13,6 +13,7 @@ namespace SwissArmyKnife.Tests.Extensions
             var s = GetStream();
 
             s.Reset();
+            Assert.AreEqual(0, s.Position);
         }
 
         [Test]

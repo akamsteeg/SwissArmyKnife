@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 using NUnit.Framework;
 
 namespace SwissArmyKnife.Tests
@@ -13,40 +9,112 @@ namespace SwissArmyKnife.Tests
         #region IsAnyOf()
 
         [Test]
-        public void IsAnyOf_SingleIntSameAsInput_Succeeds()
+        public void StringIsAnyOfSingleValue_Successful()
         {
-            1.IsAnyOf(1);
+            var t1 = "test".IsAnyOf("test");
+            var t2 = "test".IsAnyOf("not test");
+
+            Assert.IsTrue(t1);
+            Assert.IsFalse(t2);
         }
 
         [Test]
-        public void IsAnyOf_SingleIntButDifferentAsInput_Succeeds()
+        public void StringIsAnyOfTwoValues_Successful()
         {
-            1.IsAnyOf(2);
+            var t1 = "test".IsAnyOf("test", "fake");
+            var t2 = "test".IsAnyOf("not test", "fake");
 
+            Assert.IsTrue(t1);
+            Assert.IsFalse(t2);
         }
 
         [Test]
-        public void IsAnyOf_TwoInts_Succeeds()
+        public void StringIsAnyOfThreeValues_Successful()
         {
-            Assert.IsTrue(1.IsAnyOf(2, 1));
+            var t1 = "test".IsAnyOf("test", "fake0", "fake1");
+            var t2 = "test".IsAnyOf("not test", "fake0", "fake1");
+
+            Assert.IsTrue(t1);
+            Assert.IsFalse(t2);
         }
 
         [Test]
-        public void IsAnyOf_ThreeInts_Succeeds()
+        public void StringIsAnyOfFourValues_Successful()
         {
-            Assert.IsTrue(1.IsAnyOf(3, 2, 1));
+            var t1 = "test".IsAnyOf("test", "fake0", "fake1", "fake2");
+            var t2 = "test".IsAnyOf("not test", "fake0", "fake1", "fake2");
+
+            Assert.IsTrue(t1);
+            Assert.IsFalse(t2);
         }
 
         [Test]
-        public void IsAnyOf_FourInts_Succeeds()
+        public void StringIsAnyOfManyValues_Successful()
         {
-            Assert.IsTrue(1.IsAnyOf(4, 3, 2, 1));
+            var t1 = "test".IsAnyOf("test", "fake0", "fake1", "fake2", "fake3");
+            var t2 = "test".IsAnyOf("not test", "fake0", "fake1", "fake2", "fake3");
+
+            Assert.IsTrue(t1);
+            Assert.IsFalse(t2);
         }
 
         [Test]
-        public void IsAnyOf_ManyInts_Succeeds()
+        public void IntIsAnyOfSingleValue_Successful()
         {
-            Assert.IsTrue(1.IsAnyOf(9, 8, 7, 6, 5, 4, 3, 2, 1));
+            var t1 = 1.IsAnyOf(1);
+            var t2 = 1.IsAnyOf(2);
+
+            Assert.IsTrue(t1);
+            Assert.IsFalse(t2);
+        }
+
+        [Test]
+        public void IntIsAnyOfTwoValues_Successful()
+        {
+            var t1 = 1.IsAnyOf(1, 2);
+            var t2 = 1.IsAnyOf(2, 3);
+
+            Assert.IsTrue(t1);
+            Assert.IsFalse(t2);
+        }
+        [Test]
+        public void IntIsAnyOfThreeValues_Successful()
+        {
+            var t1 = 1.IsAnyOf(1, 2, 3);
+            var t2 = 1.IsAnyOf(-1, 2, 3);
+
+            Assert.IsTrue(t1);
+            Assert.IsFalse(t2);
+        }
+
+        [Test]
+        public void IntIsAnyOfFourValues_Successful()
+        {
+            var t1 = 1.IsAnyOf(1, 2, 3, 4);
+            var t2 = 1.IsAnyOf(-1, 2, 3, 4);
+
+            Assert.IsTrue(t1);
+            Assert.IsFalse(t2);
+        }
+
+        [Test]
+        public void IntIsAnyOfManyValues_Successful()
+        {
+            var t1 = 1.IsAnyOf(1, 2, 3, 4, 5);
+            var t2 = 1.IsAnyOf(-1, 2, 3, 4, 6);
+
+            Assert.IsTrue(t1);
+            Assert.IsFalse(t2);
+        }
+
+        [Test]
+        public void EnumIsAnyOfManyValues_Successful()
+        {
+            var t1 = FileMode.Open.IsAnyOf(FileMode.Append, FileMode.Open);
+            var t2 = FileMode.Open.IsAnyOf(FileMode.Append, FileMode.Create);
+
+            Assert.IsTrue(t1);
+            Assert.IsFalse(t2);
         }
 
         #endregion

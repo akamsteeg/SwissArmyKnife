@@ -1,6 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
-using SwissArmyKnife.DataStructures.CircularBuffer;
+using SwissArmyKnife.DataStructures;
 
 namespace SwissArmyKnife.Tests.DataStructures
 {

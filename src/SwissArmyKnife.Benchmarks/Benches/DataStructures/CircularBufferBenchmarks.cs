@@ -1,5 +1,5 @@
 ﻿using BenchmarkDotNet.Attributes;
-using SwissArmyKnife.DataStructures.CircularBuffer;
+using SwissArmyKnife.DataStructures;
 
 namespace SwissArmyKnife.Benchmarks.Benches.DataStructures
 {

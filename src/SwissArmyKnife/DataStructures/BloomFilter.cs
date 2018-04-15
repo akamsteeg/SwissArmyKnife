@@ -7,6 +7,7 @@ namespace SwissArmyKnife.DataStructures
     /// Represents a Bloom filter data structure
     /// </summary>
     public class BloomFilter
+        : IBloomFilter
     {
         private const int BitSize = 64;
         private const int NumberOfHashes = 3;

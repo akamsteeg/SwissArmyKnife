@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace SwissArmyKnife.DataStructures.CircularBuffer
+namespace SwissArmyKnife.DataStructures
 {
     /// <summary>
     /// Represents a strongly typed circular buffer

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System;
 
-namespace SwissArmyKnife.DataStructures.CircularBuffer
+namespace SwissArmyKnife.DataStructures
 {
     /// <summary>
     /// Represents a circular buffer

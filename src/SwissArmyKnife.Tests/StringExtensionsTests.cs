@@ -1,64 +1,63 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 using System.Threading;
 using System.Globalization;
 
 namespace SwissArmyKnife.Tests.Extensions
 {
-    [TestFixture]
-    class StringExtensionsTests
+    public class StringExtensionsTests
     {
         #region FormatWith()
 
-        [Test]
+        [Fact]
         public void FormatStringWithOneArg_Successful()
         {
             var s = "Test: {0}".FormatWith("1");
 
-            Assert.AreEqual("Test: 1", s);
+            Assert.Equal("Test: 1", s);
         }
 
-        [Test]
+        [Fact]
         public void FormatStringWithTwoArgs_Successful()
         {
             var s = "Test: {0} {1}".FormatWith("1", "2");
 
-            Assert.AreEqual("Test: 1 2", s);
+            Assert.Equal("Test: 1 2", s);
         }
 
-        [Test]
+        [Fact]
         public void FormatStringWithThreeArgs_Successful()
         {
             var s = "Test: {0} {1} {2}".FormatWith("1", "2", "3");
 
-            Assert.AreEqual("Test: 1 2 3", s);
+            Assert.Equal("Test: 1 2 3", s);
         }
 
-        [Test]
+        [Fact]
         public void FormatStringWithFourArgs_Successful()
         {
             var s = "Test: {0} {1} {2} {3}".FormatWith("1", "2", "3", "4");
 
-            Assert.AreEqual("Test: 1 2 3 4", s);
+            Assert.Equal("Test: 1 2 3 4", s);
         }
 
-        [Test]
+        [Fact]
         public void FormatStringWithManyArgs_Successful()
         {
             var s = "Test: {0} {1} {2} {3} {4} {5}".FormatWith("1", "2", "3", "4", "5", "6");
 
-            Assert.AreEqual("Test: 1 2 3 4 5 6", s);
+            Assert.Equal("Test: 1 2 3 4 5 6", s);
         }
 
-        [Test]
+        [Fact]
         public void FormatStringWithToManyArgs_Successful()
         {
             var s = "Test: {0} {1} {2} {3} {4}".FormatWith("1", "2", "3", "4", "5", "6");
 
-            Assert.AreEqual("Test: 1 2 3 4 5", s);
+            Assert.Equal("Test: 1 2 3 4 5", s);
         }
 
-        [Test]
+        [Fact]
         public void FormatStringWithNotEnoughArgs_Throws()
         {
             Assert.Throws<FormatException>(() =>
@@ -67,26 +66,26 @@ namespace SwissArmyKnife.Tests.Extensions
                 });
         }
 
-        [Test]
+        [Fact]
         public void FormatStringWithOneArgFormattedTwice_Successful()
         {
             var s = "Test: {0} {0}".FormatWith("1");
 
-            Assert.AreEqual("Test: 1 1", s);
+            Assert.Equal("Test: 1 1", s);
         }
 
 
         #region Types
 
-        [Test]
+        [Fact]
         public void FormatStringWithIntegerAsArg_Successful()
         {
             var s = "Test: {0}".FormatWith(1);
 
-            Assert.AreEqual("Test: 1", s);
+            Assert.Equal("Test: 1", s);
         }
 
-        [Test]
+        [Fact]
         public void FormatStringWithDoubleAsArg_Successful()
         {
 #if NETCOREAPP1_1
@@ -97,7 +96,7 @@ namespace SwissArmyKnife.Tests.Extensions
 
             var s = "Test: {0}".FormatWith(1.1);
 
-            Assert.AreEqual("Test: 1.1", s);
+            Assert.Equal("Test: 1.1", s);
         }
 
 #endregion
@@ -106,18 +105,18 @@ namespace SwissArmyKnife.Tests.Extensions
 
 #region Truncate()
 
-        [Test]
+        [Fact]
         public void TruncateString_Successful()
         {
             const string text = "Lorem ipsum";
 
             var truncatedText = text.Truncate(5);
 
-            Assert.IsNotNull(truncatedText);
-            Assert.AreEqual("Lorem", truncatedText);
+            Assert.NotNull(truncatedText);
+            Assert.Equal("Lorem", truncatedText);
         }
 
-        [Test]
+        [Fact]
         public void TruncateStringWithLengthBeyondSourceStringLength_Throws()
         {
             const string text = "Lorem ipsum";
@@ -125,7 +124,7 @@ namespace SwissArmyKnife.Tests.Extensions
             Assert.Throws<ArgumentOutOfRangeException>(() => text.Truncate(int.MaxValue));
         }
 
-        [Test]
+        [Fact]
         public void TruncateStringToZeroLength_Throws()
         {
             const string text = "Lorem ipsum";
@@ -133,7 +132,7 @@ namespace SwissArmyKnife.Tests.Extensions
             Assert.Throws<ArgumentOutOfRangeException>(() => text.Truncate(0));
         }
 
-        [Test]
+        [Fact]
         public void TruncateStringToNegativeLength_Throws()
         {
             const string text = "Lorem ipsum";
@@ -141,19 +140,19 @@ namespace SwissArmyKnife.Tests.Extensions
             Assert.Throws<ArgumentOutOfRangeException>(() => text.Truncate(-1));
         }
 
-        [Test]
+        [Fact]
         public void TruncateStringWithSuffix_Successful()
         {
             const string text = "Lorem ipsum";
 
             var truncatedText = text.Truncate(5, "...");
 
-            Assert.IsNotNull(truncatedText);
-            Assert.AreEqual("Lorem...", truncatedText);
+            Assert.NotNull(truncatedText);
+            Assert.Equal("Lorem...", truncatedText);
         }
 
 
-        [Test]
+        [Fact]
         public void TruncateStringToZeroLengthWithSuffix_Throws()
         {
             const string text = "Lorem ipsum";
@@ -161,7 +160,7 @@ namespace SwissArmyKnife.Tests.Extensions
             Assert.Throws<ArgumentOutOfRangeException>(() => text.Truncate(0, "..."));
         }
 
-        [Test]
+        [Fact]
         public void TruncateStringToNegativeLengthWithSuffix_Throws()
         {
             const string text = "Lorem ipsum";
@@ -169,7 +168,7 @@ namespace SwissArmyKnife.Tests.Extensions
             Assert.Throws<ArgumentOutOfRangeException>(() => text.Truncate(-1, "..."));
         }
 
-        [Test]
+        [Fact]
         public void TruncateStringWithSuffixAndLengthBeyondSourceStringLength_Throws()
         {
             const string text = "Lorem ipsum";
@@ -181,79 +180,79 @@ namespace SwissArmyKnife.Tests.Extensions
 
 #region IsNullOrEmpty()
 
-        [Test]
+        [Fact]
         public void IsNullOrEmptyOnEmptyStringReturnsTrue()
         {
             var s = string.Empty;
 
-            Assert.IsTrue(s.IsNullOrEmpty());
+            Assert.True(s.IsNullOrEmpty());
         }
 
-        [Test]
+        [Fact]
         public void IsNullOrEmptyOnNullStringReturnsTrue()
         {
             string s = null;
 
-            Assert.IsTrue(s.IsNullOrEmpty());
+            Assert.True(s.IsNullOrEmpty());
         }
 
-        [Test]
+        [Fact]
         public void IsNullOrEmptyOnNotEmptyStringReturnsFalse()
         {
             string s = "Lorem Ipsum";
 
-            Assert.IsFalse(s.IsNullOrEmpty());
+            Assert.False(s.IsNullOrEmpty());
         }
 
 #endregion
 
 #region IsNullOrWhiteSpace()
 
-        [Test]
+        [Fact]
         public void IsNullOrWhiteSpaceOnEmptyStringReturnsTrue()
         {
             var s = string.Empty;
 
-            Assert.IsTrue(s.IsNullOrWhiteSpace());
+            Assert.True(s.IsNullOrWhiteSpace());
         }
 
-        [Test]
+        [Fact]
         public void IsNullOrWhiteSpaceOnNullStringReturnsTrue()
         {
             string s = null;
 
-            Assert.IsTrue(s.IsNullOrWhiteSpace());
+            Assert.True(s.IsNullOrWhiteSpace());
         }
 
-        [Test]
+        [Fact]
         public void IsNullOrWhiteSpaceOnWhiteSpaceStringReturnsTrue()
         {
             var s = " ";
 
-            Assert.IsTrue(s.IsNullOrWhiteSpace());
+            Assert.True(s.IsNullOrWhiteSpace());
         }
 
-        [Test]
+        [Fact]
         public void IsNullOrWhiteSpaceOnNotEmptyStringReturnsFalse()
         {
             string s = "Lorem Ipsum";
 
-            Assert.IsFalse(s.IsNullOrWhiteSpace());
+            Assert.False(s.IsNullOrWhiteSpace());
         }
 
 #endregion
 
 #region Contains()
 
-        [Test]
+        [Fact]
         public void ContainsWithEmptyStringReturnsTrue()
         {
             string s = "Lorem Ipsum";
 
-            Assert.IsTrue(s.Contains("", StringComparison.OrdinalIgnoreCase));
+            Assert.True(s.Contains("", StringComparison.OrdinalIgnoreCase));
         }
 
-        [Test]
+        [Fact]
         public void ContainsWithNullStringThrows()
         {
             string s = "Lorem Ipsum";
@@ -261,28 +260,28 @@ namespace SwissArmyKnife.Tests.Extensions
             Assert.Throws<ArgumentNullException>(() => s.Contains(null, StringComparison.OrdinalIgnoreCase));
         }
 
-        [Test]
+        [Fact]
         public void ContainsWithValidCorrectCasedStringAndCaseInsensitiveReturnsTrue()
         {
             string s = "Lorem Ipsum";
 
-            Assert.IsTrue(s.Contains("Ipsum", StringComparison.OrdinalIgnoreCase));
+            Assert.True(s.Contains("Ipsum", StringComparison.OrdinalIgnoreCase));
         }
 
-        [Test]
+        [Fact]
         public void ContainsWithValidIncorrectCasedStringAndCaseInsensitiveComparisonReturnsTrue()
         {
             string s = "Lorem Ipsum";
 
-            Assert.IsTrue(s.Contains("ipsum", StringComparison.OrdinalIgnoreCase));
+            Assert.True(s.Contains("ipsum", StringComparison.OrdinalIgnoreCase));
         }
 
-        [Test]
+        [Fact]
         public void ContainsWithValidIncorrectCasedStringAndCaseSensitiveComparisonReturnsFalse()
         {
             string s = "Lorem Ipsum";
 
-            Assert.IsFalse(s.Contains("ipsum", StringComparison.Ordinal));
+            Assert.False(s.Contains("ipsum", StringComparison.Ordinal));
         }
 #endregion
     }

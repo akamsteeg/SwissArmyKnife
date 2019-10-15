@@ -1,60 +1,55 @@
-﻿using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using Xunit;
 
 namespace SwissArmyKnife.Tests
 {
-    [TestFixture]
-    internal class DisposableTests
+    public class DisposableTests
     {
-        [Test]
+        [Fact]
         public void Dispose_Successful()
         {
             var t = new DisposableObject();
-            Assert.IsFalse(t.ObjectIsDisposed);
+            Assert.False(t.ObjectIsDisposed);
 
             t.Dispose();
-            Assert.IsTrue(t.ObjectIsDisposed);
+            Assert.True(t.ObjectIsDisposed);
         }
 
-        [Test]
+        [Fact]
         public void Using_Successful()
         {
             DisposableObject t;
             using (t = new DisposableObject())
             {
-                Assert.IsFalse(t.ObjectIsDisposed);
+                Assert.False(t.ObjectIsDisposed);
             }
 
-            Assert.IsTrue(t.ObjectIsDisposed);
+            Assert.True(t.ObjectIsDisposed);
         }
 
-        [Test]
+        [Fact]
         public void DoubleDisposeDoesNotThrow_Successful()
         {
             var t = new DisposableObject();
-            Assert.IsFalse(t.ObjectIsDisposed);
+            Assert.False(t.ObjectIsDisposed);
 
             t.Dispose();
             t.Dispose();
 
-            Assert.IsTrue(t.ObjectIsDisposed);
+            Assert.True(t.ObjectIsDisposed);
         }
 
-        [Test]
+        [Fact]
         public void ThrowIfDisposedBeforeDispose_Successful()
         {
             var t = new DisposableObject();
-            Assert.IsFalse(t.ObjectIsDisposed);
+            Assert.False(t.ObjectIsDisposed);
 
-            Assert.DoesNotThrow(() => t.ThrowWhenDisposed());
+            t.ThrowWhenDisposed();
 
             t.Dispose();
 
-            Assert.IsTrue(t.ObjectIsDisposed);
+            Assert.True(t.ObjectIsDisposed);
             Assert.Throws<ObjectDisposedException>(() => t.ThrowWhenDisposed());
         }
     }

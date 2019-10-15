@@ -1,7 +1,6 @@
 ﻿using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Running;
-using SwissArmyKnife.Benchmarks.Benches.DataStructures;
 using SwissArmyKnife.Benchmarks.Benches.Extensions;
 using System;
 using BenchmarkDotNet.Diagnosers;
@@ -34,9 +33,6 @@ namespace SwissArmyKnife.Benchmarks
                 typeof(StringBuilderExtensionsBenchmarks),
                 typeof(StringExtensionsBenchmarks),
                 typeof(IntExtensionsBenchmarks),
-                //Data structures
-                typeof(BloomFilterBenchmarks),
-                typeof(CircularBufferBenchmarks),
             };
 
             return result;

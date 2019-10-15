@@ -1,22 +1,21 @@
-﻿using NUnit.Framework;
+﻿using Xunit;
 using System;
 using System.IO;
 
 namespace SwissArmyKnife.Tests.Extensions
 {
-    [TestFixture]
-    internal class StreamExtensionTests
+    public class StreamExtensionTests
     {
-        [Test]
+        [Fact]
         public void Reset_Successful()
         {
             var s = GetStream();
 
             s.Reset();
-            Assert.AreEqual(0, s.Position);
+            Assert.Equal(0, s.Position);
         }
 
-        [Test]
+        [Fact]
         public void ResetDisposedStream()
         {
             var s = GetStream();
@@ -25,7 +24,7 @@ namespace SwissArmyKnife.Tests.Extensions
             Assert.Throws<ObjectDisposedException>(() => s.Reset());
         }
 
-        [Test]
+        [Fact]
         public void ResetClosedStream()
         {
             var s = GetStream();
@@ -42,7 +41,7 @@ namespace SwissArmyKnife.Tests.Extensions
 
             var data = new byte[size];
 
-            Random r = new Random();
+            var r = new Random();
             r.NextBytes(data);
 
             newStream.Write(data, 0, size);

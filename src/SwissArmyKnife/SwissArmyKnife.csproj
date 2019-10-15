@@ -1,7 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard1.5;net40;net45;net46</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
+    <LangVersion>8.0</LangVersion>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	
     <IncludeSymbols>True</IncludeSymbols>
@@ -10,7 +11,7 @@
     <Company />
     <Description>A collection of extension methods and performance-related types for general purposes</Description>
     <Copyright>Copyright Alex Kamsteeg (https://www.atlex.nl)</Copyright>
-    <PackageLicenseUrl>https://github.com/akamsteeg/SwissArmyKnife/blob/master/LICENSE</PackageLicenseUrl>
+    <License>MIT</License>
     <PackageProjectUrl>https://github.com/akamsteeg/SwissArmyKnife</PackageProjectUrl>
     <PackageTags>utility utitilies extension extensions method methods performance misc</PackageTags>
     <AssemblyVersion>1.4.0.0</AssemblyVersion>
@@ -21,25 +22,4 @@
 - [Feature] Added an interface IBloomFilter to the BloomFilter</PackageReleaseNotes>
     <FileVersion>1.4.0.0</FileVersion>
   </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
-    <TreatSpecificWarningsAsErrors />
-    <DocumentationFile>bin\Debug\SwissArmyKnife.xml</DocumentationFile>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
-    <TreatSpecificWarningsAsErrors />
-    <DocumentationFile>bin\Release\SwissArmyKnife.xml</DocumentationFile>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard1.5|AnyCPU'">
-    <LangVersion>7.1</LangVersion>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard1.5|AnyCPU'">
-    <LangVersion>7.1</LangVersion>
-  </PropertyGroup>
-
 </Project>

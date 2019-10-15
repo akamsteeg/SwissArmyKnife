@@ -64,9 +64,9 @@ namespace SwissArmyKnife
         /// <returns>True if the object is equal to any of the values, false otherwise</returns>
         public static bool IsAnyOf<T>(this T source, params T[] values)
         {
-            bool result = false;
+            var result = false;
             
-            for (int i = 0; i < values.Length; i++)
+            for (var i = 0; i < values.Length; i++)
             {
                 result = source.Equals(values[i]);
 

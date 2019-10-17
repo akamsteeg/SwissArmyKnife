@@ -6,6 +6,8 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
 
+    <DocumentationFile>docs\SwissArmyKnife.xml</DocumentationFile>
+
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>SwissArmyKnife.snk</AssemblyOriginatorKeyFile>
 
@@ -15,7 +17,7 @@
     <RepositoryUrl>https://github.com/akamsteeg/SwissArmyKnife.git</RepositoryUrl>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <RepositoryType>Git</RepositoryType>
-	
+  
     <Authors>Alex Kamsteeg</Authors>
     <Company />
     <Description>A collection of extension methods and performance-related types for general purposes</Description>
@@ -23,7 +25,7 @@
     <License>MIT</License>
     <PackageProjectUrl>https://github.com/akamsteeg/SwissArmyKnife</PackageProjectUrl>
     <PackageTags>utility utitilies extension extensions method methods performance misc</PackageTags>
-    <PackageIcon>logo.png</PackageIcon>
+    <PackageIcon>icon.png</PackageIcon>
     <PackageReleaseNotes>
 1.4.0:
 - [Feature] Added the CircularBuffer ringbuffer in SwissArmyKnife.DataStructures.CircularBuffer

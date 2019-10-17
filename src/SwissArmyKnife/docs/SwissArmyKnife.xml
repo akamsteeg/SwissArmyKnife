@@ -1,0 +1,452 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SwissArmyKnife</name>
+    </assembly>
+    <members>
+        <member name="T:SwissArmyKnife.Disposable">
+            <summary>
+            Implements the Disposable pattern and is used
+            as a base class for disposable resources
+            </summary>
+            <remarks>
+            This class is thread-safe
+            </remarks>
+        </member>
+        <member name="F:SwissArmyKnife.Disposable._disposed">
+            <summary>
+            Holds the value to track the disposed state. As
+            long as the value is 0 the object is not disposed
+            </summary>
+        </member>
+        <member name="P:SwissArmyKnife.Disposable.IsDisposed">
+            <summary>
+            Gets the state of the disposable object
+            </summary>
+        </member>
+        <member name="M:SwissArmyKnife.Disposable.#ctor">
+            <summary>
+            Initializes a new instance of <see cref="T:SwissArmyKnife.Disposable"/>
+            </summary>
+        </member>
+        <member name="M:SwissArmyKnife.Disposable.Dispose">
+            <summary>
+            Performs application-defined tasks associated with 
+            freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:SwissArmyKnife.Disposable.Dispose(System.Boolean)">
+            <summary>
+            Performs application-defined tasks associated with 
+            freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <param name="disposing">
+            True when disposing, false when finalizing
+            </param>
+        </member>
+        <member name="M:SwissArmyKnife.Disposable.ThrowIfDisposed">
+            <summary>
+            Utility method for throwing an <see cref="T:System.ObjectDisposedException"/>
+            when this <see cref="T:SwissArmyKnife.Disposable"/> object is disposed
+            </summary>
+        </member>
+        <member name="T:SwissArmyKnife.IComparableExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.IComparable`1"/>
+            </summary>
+        </member>
+        <member name="M:SwissArmyKnife.IComparableExtensions.IsBetween``1(``0,``0,``0)">
+            <summary>
+            Checks whether the object is equal to or between the supplied upper
+            and lower values
+            </summary>
+            <param name="value">
+            </param>
+            <param name="lower">
+            The lower bound
+            </param>
+            <param name="upper">
+            The upper bound
+            </param>
+            <returns>
+            True if the value is between or equal to the lower or upper value,
+            false otherwise
+            </returns>
+        </member>
+        <member name="T:SwissArmyKnife.IntExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.Int32"/>
+            </summary>
+        </member>
+        <member name="M:SwissArmyKnife.IntExtensions.MilliSeconds(System.Int32)">
+            <summary>
+            Gets a <see cref="T:System.TimeSpan"/> for the specified number of milliseconds
+            </summary>
+            <param name="value">
+            The value to convert
+            </param>
+            <returns>
+            The <see cref="T:System.TimeSpan"/> for the specified number of milliseconds
+            </returns>
+        </member>
+        <member name="M:SwissArmyKnife.IntExtensions.Seconds(System.Int32)">
+            <summary>
+            Gets a <see cref="T:System.TimeSpan"/> for the specified number of seconds
+            </summary>
+            <param name="value">
+            The value to convert
+            </param>
+            <returns>
+            The <see cref="T:System.TimeSpan"/> for the specified number of seconds
+            </returns>
+        </member>
+        <member name="M:SwissArmyKnife.IntExtensions.Minutes(System.Int32)">
+            <summary>
+            Gets a <see cref="T:System.TimeSpan"/> for the specified number of minutes
+            </summary>
+            <param name="value">
+            The value to convert
+            </param>
+            <returns>
+            The <see cref="T:System.TimeSpan"/> for the specified number of minutes
+            </returns>
+        </member>
+        <member name="M:SwissArmyKnife.IntExtensions.Hours(System.Int32)">
+            <summary>
+            Gets a <see cref="T:System.TimeSpan"/> for the specified number of hours
+            </summary>
+            <param name="value">
+            The value to convert
+            </param>
+            <returns>
+            The <see cref="T:System.TimeSpan"/> for the specified number of hours
+            </returns>
+        </member>
+        <member name="M:SwissArmyKnife.IntExtensions.Days(System.Int32)">
+            <summary>
+            Gets a <see cref="T:System.TimeSpan"/> for the specified number of days
+            </summary>
+            <param name="value">
+            The value to convert
+            </param>
+            <returns>
+            The <see cref="T:System.TimeSpan"/> for the specified number of days
+            </returns>
+        </member>
+        <member name="T:SwissArmyKnife.ObjectExtensions">
+            <summary> 
+            Generic extension methods
+            </summary>
+        </member>
+        <member name="M:SwissArmyKnife.ObjectExtensions.IsAnyOf``1(``0,``0)">
+            <summary>
+            Checks if the object is equal to the supplied value
+            </summary>
+            <param name="source"></param>
+            <param name="value">The value to check the object against</param>
+            <returns>True if the object is equal to the value, false otherwise</returns>
+        </member>
+        <member name="M:SwissArmyKnife.ObjectExtensions.IsAnyOf``1(``0,``0,``0)">
+            <summary>
+            Checks if the object is equal to the supplied values
+            </summary>
+            <param name="source"></param>
+            <param name="value0">The first value to check the object against</param>
+            <param name="value1">The second value to check the object against</param>
+            <returns>True if the object is equal to any of the values, false otherwise</returns>
+        </member>
+        <member name="M:SwissArmyKnife.ObjectExtensions.IsAnyOf``1(``0,``0,``0,``0)">
+            <summary>
+            Checks if the object is equal to the supplied values
+            </summary>
+            <param name="source"></param>
+            <param name="value0">The first value to check the object against</param>
+            <param name="value1">The second value to check the object against</param>
+            <param name="value2">The second value to check the object against</param>
+            <returns>True if the object is equal to any of the values, false otherwise</returns>
+        </member>
+        <member name="M:SwissArmyKnife.ObjectExtensions.IsAnyOf``1(``0,``0,``0,``0,``0)">
+            <summary>
+            Checks if the object is equal to the supplied values
+            </summary>
+            <param name="source"></param>
+            <param name="value0">The first value to check the object against</param>
+            <param name="value1">The second value to check the object against</param>
+            <param name="value2">The second value to check the object against</param>
+            <param name="value3">The second value to check the object against</param>
+            <returns>True if the object is equal to any of the values, false otherwise</returns>
+        </member>
+        <member name="M:SwissArmyKnife.ObjectExtensions.IsAnyOf``1(``0,``0[])">
+            <summary>
+            Checks if the object is equal to any of the supplied values
+            </summary>
+            <param name="source"></param>
+            <param name="values">The values to check the object against</param>
+            <returns>True if the object is equal to any of the values, false otherwise</returns>
+        </member>
+        <member name="T:SwissArmyKnife.StopwatchExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.Diagnostics.Stopwatch"/>
+            </summary>
+        </member>
+        <member name="M:SwissArmyKnife.StopwatchExtensions.GetElapsedAndRestart(System.Diagnostics.Stopwatch)">
+            <summary>
+            Get the current value of the <see cref="T:System.Diagnostics.Stopwatch"/>
+            and restart the timer
+            </summary>
+            <param name="sw"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SwissArmyKnife.StreamExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.IO.Stream"/>
+            </summary>
+        </member>
+        <member name="M:SwissArmyKnife.StreamExtensions.Reset(System.IO.Stream)">
+            <summary>
+            Reset the position within the stream 
+            back to the beginning
+            </summary>
+            <param name="source"></param>
+        </member>
+        <member name="T:SwissArmyKnife.StringBuilderExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.Text.StringBuilder"/>
+            </summary>
+        </member>
+        <member name="M:SwissArmyKnife.StringBuilderExtensions.AppendFormatLine(System.Text.StringBuilder,System.IFormatProvider,System.String,System.Object[])">
+            <summary>
+            Appends a line by processing a composite format string, which
+            contains zero of more format items
+            </summary>
+            <param name="sb">
+            </param>
+            <param name="provider">
+            An object that supplies culture-specific formatting information
+            </param>
+            <param name="format">
+            A composite format string
+            </param>
+            <param name="args">
+            An object array that contains zero or more objects to format
+            </param>
+        </member>
+        <member name="M:SwissArmyKnife.StringBuilderExtensions.AppendFormatLine(System.Text.StringBuilder,System.String,System.Object)">
+            <summary>
+            Appends a line by processing a composite format string, which
+            contains zero of more format items
+            </summary>
+            <param name="sb">
+            </param>
+            <param name="format">
+            A composite format string
+            </param>
+            <param name="arg0">
+            The object to format
+            </param>
+        </member>
+        <member name="M:SwissArmyKnife.StringBuilderExtensions.AppendFormatLine(System.Text.StringBuilder,System.String,System.Object,System.Object)">
+            <summary>
+            Appends a line by processing a composite format string, which
+            contains zero of more format items
+            </summary>
+            <param name="sb">
+            </param>
+            <param name="format">
+            A composite format string
+            </param>
+            <param name="arg0">
+            The first object to format
+            </param>
+            <param name="arg1">
+            The second object to format
+            </param>
+        </member>
+        <member name="M:SwissArmyKnife.StringBuilderExtensions.AppendFormatLine(System.Text.StringBuilder,System.String,System.Object,System.Object,System.Object)">
+            <summary>
+            Appends a line by processing a composite format string, which
+            contains zero of more format items
+            </summary>
+            <param name="sb">
+            </param>
+            <param name="format">
+            A composite format string
+            </param>
+            <param name="arg0">
+            The first object to format
+            </param>
+            <param name="arg1">
+            The second object to format
+            </param>
+            <param name="arg2">
+            The third object to format
+            </param>
+        </member>
+        <member name="M:SwissArmyKnife.StringBuilderExtensions.AppendFormatLine(System.Text.StringBuilder,System.String,System.Object[])">
+            <summary>
+            Appends a line by processing a composite format string, which
+            contains zero of more format items
+            </summary>
+            <param name="sb"></param>
+            <param name="format">
+            A composite format string
+            </param>
+            <param name="args">
+            An object array that contains zero or more objects to format
+            </param>
+        </member>
+        <member name="T:SwissArmyKnife.StringExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.String"/>
+            </summary>
+        </member>
+        <member name="M:SwissArmyKnife.StringExtensions.FormatWith(System.String,System.Object)">
+            <summary>
+            Replaces the format item in a specified string with the string
+            representation of the specified object
+            </summary>
+            <param name="source">
+            A composite format string
+            </param>
+            <param name="arg0">
+            The object to format
+            </param>
+            <returns>
+            A copy of the string in which any format items are replaced by the
+            string representation of arg0
+            </returns>
+        </member>
+        <member name="M:SwissArmyKnife.StringExtensions.FormatWith(System.String,System.Object,System.Object)">
+            <summary>
+            Replaces the format items in a specified string with the string
+            representation of two specified objects
+            </summary>
+            <param name="source">
+            A composite format string
+            </param>
+            <param name="arg0">
+            The first object to format
+            </param>
+            <param name="arg1">
+            The second object to format
+            </param>
+            <returns>
+            A copy of the string in which any format items are replaced by the
+            string representation of arg0 and arg1
+            </returns>
+        </member>
+        <member name="M:SwissArmyKnife.StringExtensions.FormatWith(System.String,System.Object,System.Object,System.Object)">
+            <summary>
+            Replaces the format items in a specified string with the string
+            representation of three specified objects
+            </summary>
+            <param name="source">
+            A composite format string
+            </param>
+            <param name="arg0">
+            The first object to format
+            </param>
+            <param name="arg1">
+            The second object to format
+            </param>
+            <param name="arg2">
+            The third object to format
+            </param>
+            <returns>
+            A copy of the string in which any format items are replaced by the
+            string representation of arg0, arg1 and arg2
+            </returns>
+        </member>
+        <member name="M:SwissArmyKnife.StringExtensions.FormatWith(System.String,System.Object[])">
+            <summary>
+            Replaces the format item in a specified string with the string
+            representation of a corresponding object in a specified array
+            </summary>
+            <param name="source">
+            A composite format string
+            </param>
+            <param name="args">
+            An object array that contains zero or more objects to format
+            </param>
+            <returns>
+            A copy of the string in which the format items have been replaced by
+            the string representation of the corresponding objects in args
+            </returns>
+        </member>
+        <member name="M:SwissArmyKnife.StringExtensions.FormatWith(System.String,System.IFormatProvider,System.Object[])">
+            <summary>
+            Replaces the format item in a specified string with the string
+            representation of a corresponding object in a specified array
+            </summary>
+            <param name="source">
+            A composite format string
+            </param>
+            <param name="formatProvider">
+            An object that supplies culture-specific formatting information
+            </param>
+            <param name="args">
+            An object array that contains zero or more objects to format
+            </param>
+            <returns>
+            A copy of the string in which the format items have been replaced by
+            the string representation of the corresponding objects in args
+            </returns>
+        </member>
+        <member name="M:SwissArmyKnife.StringExtensions.Truncate(System.String,System.Int32)">
+            <summary>
+            Truncates this instance to the specified length
+            </summary>
+            <param name="source"></param>
+            <param name="length">The length to truncate to</param>
+            <returns>The truncated <see cref="T:System.String"/></returns>
+        </member>
+        <member name="M:SwissArmyKnife.StringExtensions.Truncate(System.String,System.Int32,System.String)">
+            <summary>
+            Truncates this instance to the specified length
+            </summary>
+            <param name="source"></param>
+            <param name="length">The length to truncate to</param>
+            <param name="suffix">The suffix to append to the truncated <see cref="T:System.String"/></param>
+            <returns>The truncated <see cref="T:System.String"/></returns>
+        </member>
+        <member name="M:SwissArmyKnife.StringExtensions.IsNullOrEmpty(System.String)">
+            <summary>
+            Indicates whether the specified string is null or a <see cref="T:System.String"/>.Empty string
+            </summary>
+            <param name="source"></param>
+            <returns>
+            True if the value parameter is null or an empty string (""); otherwise, false
+            </returns>
+        </member>
+        <member name="M:SwissArmyKnife.StringExtensions.IsNullOrWhiteSpace(System.String)">
+            <summary>
+            Indicates whether a specified string is null, empty, or consists only
+            of white-space characters
+            </summary>
+            <param name="source">
+            </param>
+            <returns>
+            true if the value parameter is null or System.String.Empty, or if
+            value consists exclusively of white-space characters
+            </returns>
+        </member>
+        <member name="M:SwissArmyKnife.StringExtensions.Contains(System.String,System.String,System.StringComparison)">
+            <summary>
+            Returns a value indicating whether a specified substring occurs
+            within this string
+            </summary>
+            <param name="source">
+            </param>
+            <param name="value">
+            The string to seek
+            </param>
+            <param name="comparisonType">
+            One of the enumeration values that specifies the rules for the search
+            </param>
+            <returns>
+            true if the value parameter occurs within this string, or if value is
+            the empty string (""); otherwise, false
+            </returns>
+        </member>
+    </members>
+</doc>

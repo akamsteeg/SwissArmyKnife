@@ -6,7 +6,6 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
 
-
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>SwissArmyKnife.snk</AssemblyOriginatorKeyFile>
 
@@ -24,14 +23,19 @@
     <License>MIT</License>
     <PackageProjectUrl>https://github.com/akamsteeg/SwissArmyKnife</PackageProjectUrl>
     <PackageTags>utility utitilies extension extensions method methods performance misc</PackageTags>
-    <AssemblyVersion>1.4.0.0</AssemblyVersion>
-    <Version>1.4.0</Version>
-    <PackageIconUrl>https://www.atlex.nl/nuget/swissarmyknife/logo.png</PackageIconUrl>
-    <PackageReleaseNotes>1.4.0:
+    <PackageIcon>logo.png</PackageIcon>
+    <PackageReleaseNotes>
+1.4.0:
 - [Feature] Added the CircularBuffer ringbuffer in SwissArmyKnife.DataStructures.CircularBuffer
-- [Feature] Added an interface IBloomFilter to the BloomFilter</PackageReleaseNotes>
-    <FileVersion>1.4.0.0</FileVersion>
+- [Feature] Added an interface IBloomFilter to the BloomFilter
+    </PackageReleaseNotes>
+
+    <Version>1.4.0</Version>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="icon.png" Pack="true" PackagePath="\"/>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta2-19367-01" PrivateAssets="All" />

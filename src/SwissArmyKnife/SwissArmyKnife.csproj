@@ -27,12 +27,17 @@
     <PackageTags>utility utitilies extension extensions method methods performance misc</PackageTags>
     <PackageIcon>icon.png</PackageIcon>
     <PackageReleaseNotes>
-1.4.0:
-- [Feature] Added the CircularBuffer ringbuffer in SwissArmyKnife.DataStructures.CircularBuffer
-- [Feature] Added an interface IBloomFilter to the BloomFilter
+      2.0.0:
+      - [Breaking] Removed random datastructures and pools and crypto stuff (#24)
+      - [Feature] Moved supported target frameworks to .NET 4.6.1 and .NET Standard 2.0 (#21)
+      - [Feature] Add strong naming (#20)
+      - [Feature] Add SourceLink and .snupkg support (#23)
+      1.4.0:
+      - [Feature] Added the CircularBuffer ringbuffer in SwissArmyKnife.DataStructures.CircularBuffer
+      - [Feature] Added an interface IBloomFilter to the BloomFilter
     </PackageReleaseNotes>
 
-    <Version>1.4.0</Version>
+    <Version>2.0.0-beta1</Version>
   </PropertyGroup>
 
   <ItemGroup>

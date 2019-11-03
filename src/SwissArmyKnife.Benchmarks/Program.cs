@@ -4,6 +4,7 @@ using BenchmarkDotNet.Running;
 using SwissArmyKnife.Benchmarks.Benches.Extensions;
 using System;
 using BenchmarkDotNet.Diagnosers;
+using BenchmarkDotNet.Environments;
 
 namespace SwissArmyKnife.Benchmarks
 {
@@ -44,8 +45,8 @@ namespace SwissArmyKnife.Benchmarks
 
             config.Add(MemoryDiagnoser.Default);
 
-            config.Add(Job.Core);
-            config.Add(Job.Clr);
+            config.Add(Job.Default.With(CoreRuntime.Core30));
+            config.Add(Job.Default.With(ClrRuntime.Net472));
 
             return config;
         }

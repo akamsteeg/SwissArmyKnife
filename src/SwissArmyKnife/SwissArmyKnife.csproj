@@ -10,7 +10,7 @@
 
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>SwissArmyKnife.snk</AssemblyOriginatorKeyFile>
-    <publicsign>true</publicsign>
+    <publicsign Condition="'$(TargetFramework)' == 'netstandard2.0'">true</publicsign>
 
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>

@@ -2,7 +2,7 @@
 using System.Text;
 using Xunit;
 
-namespace SwissArmyKnife.Tests.Extensions
+namespace SwissArmyKnife.Tests
 {
     public class StringBuilderExtensionsTests
     {

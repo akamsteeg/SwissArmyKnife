@@ -2,7 +2,7 @@
 using System;
 using System.IO;
 
-namespace SwissArmyKnife.Tests.Extensions
+namespace SwissArmyKnife.Tests
 {
     public class StreamExtensionTests
     {

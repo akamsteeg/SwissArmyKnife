@@ -3,7 +3,7 @@ using Xunit;
 using System.Threading;
 using System.Globalization;
 
-namespace SwissArmyKnife.Tests.Extensions
+namespace SwissArmyKnife.Tests
 {
     public class StringExtensionsTests
     {

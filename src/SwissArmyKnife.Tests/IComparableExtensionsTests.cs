@@ -1,6 +1,6 @@
 ﻿using Xunit;
 
-namespace SwissArmyKnife.Tests.Extensions
+namespace SwissArmyKnife.Tests
 {
     public class IComparableExtensionsTests
     {

@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Threading;
 
-namespace SwissArmyKnife.Tests.Extensions
+namespace SwissArmyKnife.Tests
 {
     public class StopwatchExtensionsTests
     {

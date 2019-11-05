@@ -8,9 +8,9 @@
 
     <DocumentationFile>docs\SwissArmyKnife.xml</DocumentationFile>
 
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>SwissArmyKnife.snk</AssemblyOriginatorKeyFile>
-    <publicsign Condition="'$(TargetFramework)' == 'netstandard2.0'">true</publicsign>
+    <publicsign Condition="'$(TargetFramework)' == 'netstandard2.0'">True</publicsign>
 
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
@@ -23,7 +23,7 @@
     <Company />
     <Description>A collection of extension methods and performance-related types for general purposes</Description>
     <Copyright>Copyright Alex Kamsteeg (https://www.atlex.nl)</Copyright>
-    <License>MIT</License>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/akamsteeg/SwissArmyKnife</PackageProjectUrl>
     <PackageTags>utility utitilies extension extensions method methods performance misc</PackageTags>
     <PackageIcon>icon.png</PackageIcon>
@@ -53,6 +53,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta2-19367-01" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta2-19554-01" PrivateAssets="All" />
   </ItemGroup>
 </Project>

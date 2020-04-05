@@ -29,6 +29,8 @@
     <PackageTags>utility utitilies extension extensions method methods performance misc</PackageTags>
     <PackageIcon>icon.png</PackageIcon>
     <PackageReleaseNotes>
+      2.0.2:
+      - [Feature] Enabled deterministic builds (#28)
       2.0.1:
       - [Fix] Removed public signing from .NET Standard TFM to avoid assembly load errors when this is loaded as a transitive dependency on .NET Framework
       2.0.0:
@@ -41,7 +43,7 @@
       - [Feature] Added an interface IBloomFilter to the BloomFilter
     </PackageReleaseNotes>
 
-    <Version>2.0.1</Version>
+    <Version>2.0.2</Version>
     <AssemblyVersion>2.0.0.0</AssemblyVersion> <!-- Only increase on major version to avoid binding problems-->
   </PropertyGroup>
 

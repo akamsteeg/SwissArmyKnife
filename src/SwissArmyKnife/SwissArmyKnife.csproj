@@ -12,6 +12,7 @@
     <AssemblyOriginatorKeyFile>SwissArmyKnife.snk</AssemblyOriginatorKeyFile>
 
     <IncludeSymbols>true</IncludeSymbols>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
 
     <RepositoryUrl>https://github.com/akamsteeg/SwissArmyKnife.git</RepositoryUrl>
@@ -56,4 +57,9 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta2-19554-01" PrivateAssets="All" />
   </ItemGroup>
+
+  <PropertyGroup Condition="'$(TF_BUILD)' == 'true'">
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
 </Project>

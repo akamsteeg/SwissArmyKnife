@@ -4,7 +4,7 @@ using BenchmarkDotNet.Running;
 using SwissArmyKnife.Benchmarks.Benches.Extensions;
 using System;
 using BenchmarkDotNet.Diagnosers;
-using BenchmarkDotNet.Environments;
+using BenchmarkDotNet.Toolchains.CsProj;
 
 namespace SwissArmyKnife.Benchmarks
 {
@@ -43,10 +43,14 @@ namespace SwissArmyKnife.Benchmarks
         {
             var config = ManualConfig.Create(DefaultConfig.Instance);
 
-            config.Add(MemoryDiagnoser.Default);
+            config
+              .AddDiagnoser(MemoryDiagnoser.Default);
 
-            config.Add(Job.Default.With(CoreRuntime.Core30));
-            config.Add(Job.Default.With(ClrRuntime.Net472));
+            config.AddJob(
+              Job.Default.WithToolchain(CsProjCoreToolchain.NetCoreApp31).AsBaseline(),
+              Job.Default.WithToolchain(CsProjCoreToolchain.NetCoreApp21),
+              Job.Default.WithToolchain(CsProjClassicNetToolchain.Net48)
+              );
 
             return config;
         }

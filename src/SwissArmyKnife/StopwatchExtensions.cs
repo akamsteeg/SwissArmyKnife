@@ -19,8 +19,7 @@ namespace SwissArmyKnife
             sw.Stop();
             var result = sw.Elapsed;
 
-            sw.Reset();
-            sw.Start();
+            sw.Restart();
 
             return result;
         }

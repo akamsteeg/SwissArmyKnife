@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using Xunit;
 
 namespace SwissArmyKnife.Tests
@@ -111,6 +112,26 @@ namespace SwissArmyKnife.Tests
         {
             var t1 = FileMode.Open.IsAnyOf(FileMode.Append, FileMode.Open);
             var t2 = FileMode.Open.IsAnyOf(FileMode.Append, FileMode.Create);
+
+            Assert.True(t1);
+            Assert.False(t2);
+        }
+
+        [Fact]
+        public void EnumIsAnyOfArray_Successful()
+        {
+            var t1 = FileMode.Open.IsAnyOf(new[] { FileMode.Append, FileMode.Open });
+            var t2 = FileMode.Open.IsAnyOf(new[] { FileMode.Append, FileMode.Create });
+
+            Assert.True(t1);
+            Assert.False(t2);
+        }
+
+        [Fact]
+        public void EnumIsAnyOfIEnumerable_Successful()
+        {
+            var t1 = FileMode.Open.IsAnyOf(new List<FileMode>() { FileMode.Append, FileMode.Open });
+            var t2 = FileMode.Open.IsAnyOf(new List<FileMode>() { FileMode.Append, FileMode.Create });
 
             Assert.True(t1);
             Assert.False(t2);

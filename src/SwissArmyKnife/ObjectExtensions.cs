@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SwissArmyKnife
 {
@@ -62,13 +63,31 @@ namespace SwissArmyKnife
         /// <param name="source"></param>
         /// <param name="values">The values to check the object against</param>
         /// <returns>True if the object is equal to any of the values, false otherwise</returns>
-        public static bool IsAnyOf<T>(this T source, params T[] values)
+        public static bool IsAnyOf<T>(this T source, params T[] values) =>
+            IsAnyOfInternal(source, values);
+
+        /// <summary>
+        /// Checks if the object is equal to any of the supplied values
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="values">The values to check the object against</param>
+        /// <returns>True if the object is equal to any of the values, false otherwise</returns>
+        public static bool IsAnyOf<T>(this T source, IEnumerable<T> values) =>
+            IsAnyOfInternal(source, values);
+
+        /// <summary>
+        /// Checks if the object is equal to any of the supplied values
+        /// </summary>
+        /// <param name="source">The current object to compare the values against</param>
+        /// <param name="values">The values to check the object against</param>
+        /// <returns>True if the object is equal to any of the values, false otherwise</returns>
+        private static bool IsAnyOfInternal<T>(T source, IEnumerable<T> values)
         {
             var result = false;
-            
-            for (var i = 0; i < values.Length; i++)
+
+            foreach (var currentValue in values)
             {
-                result = source.Equals(values[i]);
+                result = source.Equals(currentValue);
 
                 if (result)
                     break;

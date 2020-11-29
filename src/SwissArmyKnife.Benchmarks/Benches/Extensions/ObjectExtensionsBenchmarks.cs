@@ -1,4 +1,5 @@
 ﻿using BenchmarkDotNet.Attributes;
+using System.Collections.Generic;
 
 namespace SwissArmyKnife.Benchmarks.Benches.Extensions
 {
@@ -73,9 +74,33 @@ namespace SwissArmyKnife.Benchmarks.Benches.Extensions
         }
 
         [Benchmark]
-        public void IntIsAnyOfTwoValuesFails()
+        public void IntIsAnyOfManyValuesFails()
         {
             var t1 = 0.IsAnyOf(1, 2, 3, 4, 5);
+        }
+
+        [Benchmark]
+        public void IntIsAnyOfManyValuesArray()
+        {
+            var t1 = 1.IsAnyOf(new int[] { 1, 2, 3, 4, 5 });
+        }
+
+        [Benchmark]
+        public void IntIsAnyOfManyValuesArrayFails()
+        {
+            var t1 = 0.IsAnyOf(new int[] { 1, 2, 3, 4, 5 });
+        }
+
+        [Benchmark]
+        public void IntIsAnyOfManyValuesIEnumerable()
+        {
+            var t1 = 1.IsAnyOf(new List<int>() { 1, 2, 3, 4, 5 });
+        }
+
+        [Benchmark]
+        public void IntIsAnyOfManyValuesIEnumerableFails()
+        {
+            var t1 = 0.IsAnyOf(new List<int>() { 1, 2, 3, 4, 5 });
         }
 
         #endregion

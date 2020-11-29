@@ -9,6 +9,7 @@ namespace SwissArmyKnife.Helpers
     {
         /// <summary>
         /// Determines whether the specified object is equal to the current object
+        /// based on the hash code
         /// </summary>
         /// <typeparam name="T">
         /// The <see cref="Type"/> of the current object
@@ -32,7 +33,7 @@ namespace SwissArmyKnife.Helpers
 
         /// <summary>
         /// Indicates whether the current object is equal to another object of the
-        /// same type
+        /// same type based on the hash code
         /// </summary>
         /// <typeparam name="T">
         /// The <see cref="Type"/> of the current  and other object

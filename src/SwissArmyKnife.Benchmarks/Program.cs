@@ -48,7 +48,6 @@ namespace SwissArmyKnife.Benchmarks
 
             config.AddJob(
               Job.Default.WithToolchain(CsProjCoreToolchain.NetCoreApp31).AsBaseline(),
-              Job.Default.WithToolchain(CsProjCoreToolchain.NetCoreApp21),
               Job.Default.WithToolchain(CsProjClassicNetToolchain.Net48)
               );
 

@@ -4,6 +4,9 @@ namespace SwissArmyKnife.Helpers
 {
     /// <summary>
     /// Represents a helper for equality comparisons
+    ///
+    /// It relies on the correct overrides of GetHashCode()
+    /// and does only support exact comparisons.
     /// </summary>
     public static class EqualityHelper
     {
@@ -24,11 +27,8 @@ namespace SwissArmyKnife.Helpers
         /// True if the specified object is equal to the current object; false otherwise
         /// </returns>
         public static bool Equals<T>(T current, object other)
-        {
-            var result = (other is not null and T otherT && current.GetHashCode() == otherT.GetHashCode());
-
-            return result;
-        }
+            where T : class
+            => EqualsInternal(current, other as T);
 
         /// <summary>
         /// Indicates whether the current object is equal to another object of the
@@ -47,10 +47,25 @@ namespace SwissArmyKnife.Helpers
         /// True if the current object is equal to the other parameter; false otherwise
         /// </returns>
         public static bool Equals<T>(T current, T other)
-        {
-            var result = (other is not null && current.GetHashCode() == other.GetHashCode());
+            => EqualsInternal(current, other);
 
-            return result;
-        }
+        /// <summary>
+        /// Indicates whether the current object is equal to another object of the
+        /// same type based on the hash code
+        /// </summary>
+        /// <typeparam name="T">
+        /// The <see cref="Type"/> of the current  and other object
+        /// </typeparam>
+        /// <param name="current">
+        /// The object to compare with the other object
+        /// </param>
+        /// <param name="other">
+        /// An object to compare with the current object
+        /// </param>
+        /// <returns>
+        /// True if the current object is equal to the other parameter; false otherwise
+        /// </returns>
+        private static bool  EqualsInternal<T>(T current, T other) =>
+            (current is not null && other is not null && current.GetHashCode() == other.GetHashCode());
     }
 }

@@ -24,7 +24,6 @@ namespace SwissArmyKnife.Helpers
         /// True if the specified object is equal to the current object; false otherwise
         /// </returns>
         public static bool Equals<T>(T current, object other)
-          where T : notnull
         {
             var result = (other is not null and T otherT && current.GetHashCode() == otherT.GetHashCode());
 
@@ -48,7 +47,6 @@ namespace SwissArmyKnife.Helpers
         /// True if the current object is equal to the other parameter; false otherwise
         /// </returns>
         public static bool Equals<T>(T current, T other)
-          where T : notnull
         {
             var result = (other is not null && current.GetHashCode() == other.GetHashCode());
 

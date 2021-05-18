@@ -138,5 +138,139 @@ namespace SwissArmyKnife.Tests
         }
 
         #endregion
+
+        #region IsEqualToAll()
+
+        [Fact]
+        public void StringIsEqualToAllValue_Successful()
+        {
+            var t1 = "test".IsEqualToAll("test");
+            var t2 = "test".IsEqualToAll("not test");
+
+            Assert.True(t1);
+            Assert.False(t2);
+        }
+
+        [Fact]
+        public void StringIsEqualToAllTwoValues_Successful()
+        {
+            var t1 = "test".IsEqualToAll("test", "test");
+            var t2 = "test".IsEqualToAll("test", "fake");
+
+            Assert.True(t1);
+            Assert.False(t2);
+        }
+
+        [Fact]
+        public void StringIsEqualToAllThreeValues_Successful()
+        {
+            var t1 = "test".IsEqualToAll("test", "test", "test");
+            var t2 = "test".IsEqualToAll("test", "fake0", "fake1");
+
+            Assert.True(t1);
+            Assert.False(t2);
+        }
+
+        [Fact]
+        public void StringIsEqualToAllFourValues_Successful()
+        {
+            var t1 = "test".IsEqualToAll("test", "test", "test", "test");
+            var t2 = "test".IsEqualToAll("test", "fake0", "fake1", "fake2");
+
+            Assert.True(t1);
+            Assert.False(t2);
+        }
+
+        [Fact]
+        public void StringIsEqualToAllManyValues_Successful()
+        {
+            var t1 = "test".IsEqualToAll("test", "test", "test", "test", "test");
+            var t2 = "test".IsEqualToAll("test", "fake0", "fake1", "fake2", "fake3");
+
+            Assert.True(t1);
+            Assert.False(t2);
+        }
+
+        [Fact]
+        public void IntIsEqualToAllSingleValue_Successful()
+        {
+            var t1 = 1.IsEqualToAll(1);
+            var t2 = 1.IsEqualToAll(2);
+
+            Assert.True(t1);
+            Assert.False(t2);
+        }
+
+        [Fact]
+        public void IntIsEqualToAllTwoValues_Successful()
+        {
+            var t1 = 1.IsEqualToAll(1, 1);
+            var t2 = 1.IsEqualToAll(1, 2);
+
+            Assert.True(t1);
+            Assert.False(t2);
+        }
+        [Fact]
+        public void IntIsEqualToAllThreeValues_Successful()
+        {
+            var t1 = 1.IsEqualToAll(1, 1, 1);
+            var t2 = 1.IsEqualToAll(1, 2, 3);
+
+            Assert.True(t1);
+            Assert.False(t2);
+        }
+
+        [Fact]
+        public void IntIsEqualToAllFourValues_Successful()
+        {
+            var t1 = 1.IsEqualToAll(1, 1, 1, 1);
+            var t2 = 1.IsEqualToAll(1, 2, 3, 4);
+
+            Assert.True(t1);
+            Assert.False(t2);
+        }
+
+        [Fact]
+        public void IntIsEqualToAllManyValues_Successful()
+        {
+            var t1 = 1.IsEqualToAll(1, 1, 1, 1, 1);
+            var t2 = 1.IsEqualToAll(1, 2, 3, 4, 6);
+
+            Assert.True(t1);
+            Assert.False(t2);
+        }
+
+        [Fact]
+        public void EnumIsEqualToAllManyValues_Successful()
+        {
+            var t1 = FileMode.Open.IsEqualToAll(FileMode.Open, FileMode.Open);
+            var t2 = FileMode.Open.IsEqualToAll(FileMode.Open, FileMode.Create);
+
+            Assert.True(t1);
+            Assert.False(t2);
+        }
+
+        [Fact]
+        public void EnumIsEqualToAllArray_Successful()
+        {
+            var t1 = FileMode.Open.IsEqualToAll(new[] { FileMode.Open, FileMode.Open });
+            var t2 = FileMode.Open.IsEqualToAll(new[] { FileMode.Append, FileMode.Create });
+
+            Assert.True(t1);
+            Assert.False(t2);
+        }
+
+        [Fact]
+        public void EnumIsEqualToAllEnumerable_Successful()
+        {
+            var t1 = FileMode.Open.IsEqualToAll(new List<FileMode>() { FileMode.Open, FileMode.Open });
+            var t2 = FileMode.Open.IsEqualToAll(new List<FileMode>() { FileMode.Append, FileMode.Create });
+
+            Assert.True(t1);
+            Assert.False(t2);
+        }
+
+
+        #endregion
     }
 }

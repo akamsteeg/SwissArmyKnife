@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace SwissArmyKnife
 {
@@ -91,6 +90,100 @@ namespace SwissArmyKnife
 
                 if (result)
                     break;
+            }
+
+            return result;
+        }
+
+        #endregion
+
+        #region IsEqualToAll()
+
+        /// <summary>
+        /// Checks if the object is equal to the supplied value
+        /// </summary>
+        /// <param name="source">The current object to compare the values against</param>
+        /// <param name="value">The values to check the object against</param>
+        /// <returns>True if the object is equal to the supplied value, false otherwise</returns>
+
+        public static bool IsEqualToAll<T>(this T source, T value) =>
+            source.Equals(value);
+
+        /// <summary>
+        /// Checks if the object is equal to all the supplied values
+        /// </summary>
+        /// <param name="source">The current object to compare the values against</param>
+        /// <param name="value0">The first value to check the object against</param>
+        /// <param name="value1">The second value to check the object against</param>
+        /// <returns>True if the object is equal to all of the supplied values, false otherwise</returns>
+        public static bool IsEqualToAll<T>(this T source, T value0, T value1) =>
+            source.Equals(value0)
+            && source.Equals(value1);
+
+        /// <summary>
+        /// Checks if the object is equal to all the supplied values
+        /// </summary>
+        /// <param name="source">The current object to compare the values against</param>
+        /// <param name="value0">The first value to check the object against</param>
+        /// <param name="value1">The second value to check the object against</param>
+        /// <param name="value2">The third value to check the object against</param>
+        /// <returns>True if the object is equal to all of the supplied values, false otherwise</returns>
+        public static bool IsEqualToAll<T>(this T source, T value0, T value1, T value2) =>
+            source.Equals(value0)
+            && source.Equals(value1)
+            && source.Equals(value2);
+
+        /// <summary>
+        /// Checks if the object is equal to all the supplied values
+        /// </summary>
+        /// <param name="source">The current object to compare the values against</param>
+        /// <param name="value0">The first value to check the object against</param>
+        /// <param name="value1">The second value to check the object against</param>
+        /// <param name="value2">The third value to check the object against</param>
+        /// <param name="value3">The fourth value to check the object against</param>
+        /// <returns>True if the object is equal to all of the supplied values, false otherwise</returns>
+        public static bool IsEqualToAll<T>(this T source, T value0, T value1, T value2, T value3) =>
+            source.Equals(value0)
+            && source.Equals(value1)
+            && source.Equals(value2)
+            && source.Equals(value3);
+
+
+        /// <summary>
+        /// Checks if the object is equal to all the supplied values
+        /// </summary>
+        /// <param name="source">The current object to compare the values against</param>
+        /// <param name="values">The values to check the object against</param>
+        /// <returns>True if the object is equal to all of the supplied values, false otherwise</returns>
+        public static bool IsEqualToAll<T>(this T source, params T[] values) =>
+            IsEqualToAllInternal(source, values);
+
+        /// <summary>
+        /// Checks if the object is equal to all the supplied values
+        /// </summary>
+        /// <param name="source">The current object to compare the values against</param>
+        /// <param name="values">The values to check the object against</param>
+        /// <returns>True if the object is equal to all of the supplied values, false otherwise</returns>
+        public static bool IsEqualToAll<T>(this T source, IEnumerable<T> values) =>
+            IsEqualToAllInternal(source, values);
+
+        /// <summary>
+        /// Checks if the object is equal to all the supplied values
+        /// </summary>
+        /// <param name="source">The current object to compare the values against</param>
+        /// <param name="values">The values to check the object against</param>
+        /// <returns>True if the object is equal to all of the supplied values, false otherwise</returns>
+        private static bool IsEqualToAllInternal<T>(this T source, IEnumerable<T> values)
+        {
+            var result = true;
+
+            foreach (var currentValue in values)
+            {
+                if (!source.Equals(currentValue))
+                {
+                    result = false;
+                    break;
+                }
             }
 
             return result;

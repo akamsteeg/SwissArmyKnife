@@ -29,6 +29,10 @@
     <PackageTags>utility utitilies extension extensions method methods performance misc</PackageTags>
     <PackageIcon>icon.png</PackageIcon>
     <PackageReleaseNotes>
+      2.2.0:
+      - [Feature] Added the object.IsEqualToAll() extension methods
+      - [Fix] Cleaned up and fixed documentation
+      - [Fix] Compiler flags for deterministic builds
       2.1.0:
       - [Feature] Add equalityhelper to simplify implementations of IEquetable&lt;T&gt; (#33)
       2.0.2:
@@ -45,8 +49,8 @@
       - [Feature] Added an interface IBloomFilter to the BloomFilter
     </PackageReleaseNotes>
 
-    <Version>2.1.0</Version>
-    <AssemblyVersion>2.1.0.0</AssemblyVersion> <!-- Only increase on major version to avoid binding problems-->
+    <Version>2.2.0</Version>
+    <AssemblyVersion>2.2.0.0</AssemblyVersion> <!-- Only increase on minor or major versions to avoid binding problems-->
   </PropertyGroup>
 
   <ItemGroup>

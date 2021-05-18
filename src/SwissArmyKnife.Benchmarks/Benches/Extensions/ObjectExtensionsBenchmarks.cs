@@ -104,5 +104,99 @@ namespace SwissArmyKnife.Benchmarks.Benches.Extensions
         }
 
         #endregion
+
+        #region IsEqualToAll()
+
+        [Benchmark]
+        public void StringIsEqualToAllSingleValue()
+        {
+            var t1 = "test".IsEqualToAll("test");
+        }
+
+        [Benchmark]
+        public void StringIsEqualToAllTwoValues()
+        {
+            var t1 = "test".IsEqualToAll("test", "test");
+        }
+
+        [Benchmark]
+        public void StringIsEqualToAllThreeValues()
+        {
+            var t1 = "test".IsEqualToAll("test", "test", "test");
+        }
+
+        [Benchmark]
+        public void StringIsEqualToAllourValues()
+        {
+            var t1 = "test".IsEqualToAll("test", "test", "test", "test");
+        }
+
+        [Benchmark]
+        public void StringIsEqualToAllManyValues()
+        {
+            var t1 = "test".IsEqualToAll("test", "test", "test", "test", "test");
+        }
+
+        [Benchmark]
+        public void StringIsEqualToAllManyValuesFails()
+        {
+            var t1 = "test".IsEqualToAll("test", "test", "test", "test", "test");
+        }
+
+        [Benchmark]
+        public void IntIsEqualToAllSingleValue()
+        {
+            var t1 = 1.IsEqualToAll(1);
+        }
+
+        [Benchmark]
+        public void IntIsEqualToAllTwoValues()
+        {
+            var t1 = 1.IsEqualToAll(1, 1);
+        }
+
+        [Benchmark]
+        public void IntIsEqualToAllThreeValues()
+        {
+            var t1 = 1.IsEqualToAll(1, 1, 1);
+        }
+
+        [Benchmark]
+        public void IntIsEqualToAllourValues()
+        {
+            var t1 = 1.IsEqualToAll(1, 1, 1, 1);
+        }
+
+        [Benchmark]
+        public void IntIsEqualToAllManyValues()
+        {
+            var t1 = 1.IsEqualToAll(1, 1, 1, 1);
+        }
+
+        [Benchmark]
+        public void IntIsEqualToAllManyValuesFails()
+        {
+            var t1 = 0.IsEqualToAll(1, 1, 1, 2);
+        }
+
+        [Benchmark]
+        public void IntIsEqualToAllManyValuesArray()
+        {
+            var t1 = 1.IsEqualToAll(new int[] { 1, 1, 1, 2 });
+        }
+
+        [Benchmark]
+        public void IntIsEqualToAllManyValuesIEnumerable()
+        {
+            var t1 = 1.IsEqualToAll(new List<int>() { 1, 1, 1, 1 });
+        }
+
+        [Benchmark]
+        public void IntIsEqualToAllManyValuesIEnumerableFails()
+        {
+            var t1 = 0.IsEqualToAll(new List<int>() { 11, 1, 1, 2 });
+        }
+
+        #endregion
     }
 }

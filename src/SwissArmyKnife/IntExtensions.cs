@@ -7,6 +7,8 @@ namespace SwissArmyKnife
     /// </summary>
     public static class IntExtensions
     {
+        #region TimeSpan
+
         /// <summary>
         /// Gets a <see cref="TimeSpan"/> for the specified number of milliseconds
         /// </summary>
@@ -67,5 +69,6 @@ namespace SwissArmyKnife
         public static TimeSpan Days(this int value) =>
           TimeSpan.FromDays(value);
 
+        #endregion
     }
 }

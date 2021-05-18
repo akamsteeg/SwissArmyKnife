@@ -34,7 +34,7 @@ namespace SwissArmyKnife
         /// <param name="source"></param>
         /// <param name="value0">The first value to check the object against</param>
         /// <param name="value1">The second value to check the object against</param>
-        /// <param name="value2">The second value to check the object against</param>
+        /// <param name="value2">The third value to check the object against</param>
         /// <returns>True if the object is equal to any of the values, false otherwise</returns>
         public static bool IsAnyOf<T>(this T source, T value0, T value1, T value2) =>
             (source.Equals(value0) 
@@ -47,8 +47,8 @@ namespace SwissArmyKnife
         /// <param name="source"></param>
         /// <param name="value0">The first value to check the object against</param>
         /// <param name="value1">The second value to check the object against</param>
-        /// <param name="value2">The second value to check the object against</param>
-        /// <param name="value3">The second value to check the object against</param>
+        /// <param name="value2">The third value to check the object against</param>
+        /// <param name="value3">The fourth value to check the object against</param>
         /// <returns>True if the object is equal to any of the values, false otherwise</returns>
         public static bool IsAnyOf<T>(this T source, T value0, T value1, T value2, T value3) =>
             (source.Equals(value0)

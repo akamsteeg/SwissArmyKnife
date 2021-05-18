@@ -7,9 +7,6 @@
 # BenchmarkDotNet
 BenchmarkDotNet.Artifacts/
 
-# Generated documentation
-docs/
-
 # User-specific files
 *.suo
 *.user

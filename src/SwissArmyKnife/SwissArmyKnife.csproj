@@ -6,7 +6,7 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
 
-    <DocumentationFile>docs\SwissArmyKnife.xml</DocumentationFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
 
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>SwissArmyKnife.snk</AssemblyOriginatorKeyFile>

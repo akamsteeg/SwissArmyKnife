@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>netcoreapp3.1;net48</TargetFrameworks>
+    <TargetFrameworks>net6.0;netcoreapp3.1;net48</TargetFrameworks>
 	  <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
 
@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="BenchmarkDotNet" Version="0.12.1" />
+    <PackageReference Include="BenchmarkDotNet" Version="0.13.5" />
   </ItemGroup>
 
   <ItemGroup>

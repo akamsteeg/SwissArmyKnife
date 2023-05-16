@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
-    <LangVersion>9.0</LangVersion>
+    <LangVersion>10.0</LangVersion>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
 
@@ -58,7 +58,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
   </ItemGroup>
 
   <PropertyGroup Condition="'$(TF_BUILD)' == 'true'">

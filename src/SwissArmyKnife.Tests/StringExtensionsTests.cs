@@ -74,6 +74,8 @@ namespace SwissArmyKnife.Tests
             Assert.Equal("Test: 1 1", s);
         }
 
+        #endregion
+
 
         #region Types
 
@@ -88,7 +90,7 @@ namespace SwissArmyKnife.Tests
         [Fact]
         public void FormatStringWithDoubleAsArg_Successful()
         {
-#if NETCOREAPP1_1
+#if NETCOREAPP3_1_OR_GREATER
             CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
 #else
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture; // Ensure a dot in the string representation of a double
@@ -98,8 +100,6 @@ namespace SwissArmyKnife.Tests
 
             Assert.Equal("Test: 1.1", s);
         }
-
-#endregion
 
 #endregion
 

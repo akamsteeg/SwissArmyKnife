@@ -26,7 +26,43 @@ namespace SwissArmyKnife
         /// false otherwise
         /// </returns>
         public static bool IsBetween<T>(this T value, T lower, T upper) where T : IComparable<T> =>
-            (value.CompareTo(lower) >= 0 && value.CompareTo(upper) <= 0);
+            value.CompareTo(lower) >= 0 && value.CompareTo(upper) <= 0;
+
+        #endregion
+
+        #region IsLessThan()
+
+        /// <summary>
+        /// Checks whether the object is less than the supplied value
+        /// </summary>
+        /// <param name="value">
+        /// </param>
+        /// <param name="valueToCompareWith">
+        /// The lower bound
+        /// </param>
+        /// <returns>
+        /// True if the value is less than the supplied value; false otherwise
+        /// </returns>
+        public static bool IsLessThan<T>(this T value, T valueToCompareWith) where T : IComparable<T> =>
+            value.CompareTo(valueToCompareWith) < 0;
+
+        #endregion
+
+        #region IsLargerThan()
+
+        /// <summary>
+        /// Checks whether the object is larger than the supplied value
+        /// </summary>
+        /// <param name="value">
+        /// </param>
+        /// <param name="valueToCompareWith">
+        /// The lower bound
+        /// </param>
+        /// <returns>
+        /// True if the value is larger than the supplied value; false otherwise
+        /// </returns>
+        public static bool IsGreaterThan<T>(this T value, T valueToCompareWith) where T : IComparable<T> =>
+            value.CompareTo(valueToCompareWith) > 0;
 
         #endregion
     }

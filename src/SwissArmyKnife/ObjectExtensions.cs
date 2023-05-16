@@ -2,7 +2,7 @@
 
 namespace SwissArmyKnife
 {
-    /// <summary> 
+    /// <summary>
     /// Generic extension methods
     /// </summary>
     public static class ObjectExtensions
@@ -37,8 +37,8 @@ namespace SwissArmyKnife
         /// <param name="value2">The third value to check the object against</param>
         /// <returns>True if the object is equal to any of the values, false otherwise</returns>
         public static bool IsAnyOf<T>(this T source, T value0, T value1, T value2) =>
-            (source.Equals(value0) 
-            || source.Equals(value1) 
+            (source.Equals(value0)
+            || source.Equals(value1)
             || source.Equals(value2));
 
         /// <summary>

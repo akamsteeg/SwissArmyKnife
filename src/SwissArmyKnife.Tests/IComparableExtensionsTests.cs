@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using System;
+using Xunit;
 
 namespace SwissArmyKnife.Tests
 {
@@ -6,34 +7,32 @@ namespace SwissArmyKnife.Tests
     {
         #region IsBetween()
 
-        [Fact]
-        public void StringIsBetween_Successful()
+        [InlineData("b", "a", "c", true)]
+        [InlineData("b", "a", "b", true)]
+        [InlineData("b", "b", "b", true)]
+        [InlineData("b", "b", "c", true)]
+        [InlineData("a", "b", "b", false)]
+        [InlineData("a", "b", "c", false)]
+        [Theory]
+        public void String_IsBetween(string testValue, string lower, string upper, bool expected)
         {
-            var t1 = "b".IsBetween("a", "c");
-            var t2 = "z".IsBetween("a", "c");
+            var result = testValue.IsBetween(lower, upper);
 
-            Assert.True(t1);
-            Assert.False(t2);
+            Assert.Equal(expected, result);
         }
 
-        [Fact]
-        public void IntIsBetween_Successful()
+        [InlineData(1, 0, 2, true)]
+        [InlineData(1, 0, 1, true)]
+        [InlineData(1, 1, 1, true)]
+        [InlineData(1, 1, 2, true)]
+        [InlineData(0, 1, 1, false)]
+        [InlineData(0, 1, 2, false)]
+        [Theory]
+        public void Int_IsBetween(int testValue, int lower, int upper, bool expected)
         {
-            var t1 = 1.IsBetween(0, 2);
-            var t2 = 9.IsBetween(0, 2);
+            var result = testValue.IsBetween(lower, upper);
 
-            Assert.True(t1);
-            Assert.False(t2);
-        }
-
-        [Fact]
-        public void DoubleIsBetween_Successful()
-        {
-            var t1 = 1.1.IsBetween(1.0, 1.5);
-            var t2 = 9.0.IsBetween(1.0, 2.0);
-
-            Assert.True(t1);
-            Assert.False(t2);
+            Assert.Equal(expected, result);
         }
 
         [Fact]
@@ -47,6 +46,59 @@ namespace SwissArmyKnife.Tests
             Assert.False(t2);
             Assert.False(t3);
         }
+
+        #endregion
+
+        #region IsLessThan()
+
+        [InlineData("b", "c", true)]
+        [InlineData("b", "b", false)]
+        [InlineData("b", "a", false)]
+        [Theory]
+        public void String_IsLessThan(string testValue, string compareTo, bool expected)
+        {
+            var result = testValue.IsLessThan(compareTo);
+
+            Assert.Equal(expected, result);
+        }
+
+        [InlineData(1, 2, true)]
+        [InlineData(1, 1, false)]
+        [InlineData(1, 0, false)]
+        [Theory]
+        public void Int_IsLessThan(int testValue, int compareTo, bool expected)
+        {
+            var result = testValue.IsLessThan(compareTo);
+
+            Assert.Equal(expected, result);
+        }
+
+        #endregion
+
+        #region IsGreaterThan()
+
+        [InlineData("b", "a", true)]
+        [InlineData("b", "b", false)]
+        [InlineData("a", "b", false)]
+        [Theory]
+        public void String_IsGreaterThan(string testValue, string compareTo, bool expected)
+        {
+            var result = testValue.IsGreaterThan(compareTo);
+
+            Assert.Equal(expected, result);
+        }
+
+        [InlineData(1, 0, true)]
+        [InlineData(1, 1, false)]
+        [InlineData(0, 1, false)]
+        [Theory]
+        public void Int_IsGreaterThan(int testValue, int compareTo, bool expected)
+        {
+            var result = testValue.IsGreaterThan(compareTo);
+
+            Assert.Equal(expected, result);
+        }
+
         #endregion
     }
 }

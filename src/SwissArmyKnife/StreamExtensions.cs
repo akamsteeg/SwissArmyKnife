@@ -9,7 +9,7 @@ namespace SwissArmyKnife
     public static class StreamExtensions
     {
         /// <summary>
-        /// Reset the position within the stream 
+        /// Reset the position within the stream
         /// back to the beginning
         /// </summary>
         /// <param name="source"></param>

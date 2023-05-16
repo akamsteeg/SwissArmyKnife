@@ -3,10 +3,13 @@
 namespace SwissArmyKnife.Helpers
 {
     /// <summary>
+    /// <para>
     /// Represents a helper for equality comparisons
-    ///
+    /// </para>
+    /// <para>
     /// It relies on the correct overrides of GetHashCode()
     /// and does only support exact comparisons.
+    /// </para>
     /// </summary>
     public static class EqualityHelper
     {

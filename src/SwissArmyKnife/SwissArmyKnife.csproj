@@ -6,35 +6,27 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
 
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-
-    <SignAssembly>True</SignAssembly>
-    <AssemblyOriginatorKeyFile>SwissArmyKnife.snk</AssemblyOriginatorKeyFile>
-
-    <IncludeSymbols>true</IncludeSymbols>
-    <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
-
-    <RepositoryUrl>https://github.com/akamsteeg/SwissArmyKnife.git</RepositoryUrl>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <RepositoryType>Git</RepositoryType>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   
     <Authors>Alex Kamsteeg</Authors>
     <Company />
-    <Description>A collection of extension methods and performance-related types for general purposes</Description>
+    <Description>A collection of extension methods, abstract base classes and helpers for general purposes</Description>
     <Copyright>Copyright Alex Kamsteeg (https://www.atlex.nl)</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/akamsteeg/SwissArmyKnife</PackageProjectUrl>
-    <PackageTags>utility utitilies extension extensions method methods performance misc</PackageTags>
+    <PackageTags>utility utitilies extension extensions method methods helpers misc</PackageTags>
     <PackageIcon>icon.png</PackageIcon>
     <PackageReleaseNotes>
-      2.2.0:
-      - [Feature] Added the object.IsEqualToAll() extension methods
-      - [Fix] Cleaned up and fixed documentation
-      - [Fix] Compiler flags for deterministic builds
-      2.1.0:
-      - [Feature] Add equalityhelper to simplify implementations of IEquetable&lt;T&gt; (#33)
+			2.3.0:
+			- [Feature] Add IComparable&lt;T&gt;.IsLessThan()
+			- [Feature] Add IComparable&lt;T&gt;.IsBetween()
+			- [Feature] Add IComparable&lt;T&gt;.IsGreaterThan()
+			2.2.0:
+			- [Feature] Added the object.IsEqualToAll() extension methods
+			- [Fix] Cleaned up and fixed documentation
+			- [Fix] Compiler flags for deterministic builds
+			2.1.0:
+			- [Feature] Add equalityhelper to simplify implementations of IEquetable&lt;T&gt; (#33)
       2.0.2:
       - [Feature] Enabled deterministic builds (#28)
       2.0.1:
@@ -49,8 +41,8 @@
       - [Feature] Added an interface IBloomFilter to the BloomFilter
     </PackageReleaseNotes>
 
-    <Version>2.2.0</Version>
-    <AssemblyVersion>2.2.0.0</AssemblyVersion> <!-- Only increase on minor or major versions to avoid binding problems-->
+    <Version>2.3.0</Version>
+    <AssemblyVersion>2.3.0.0</AssemblyVersion> <!-- Only increase on minor or major versions to avoid binding problems-->
   </PropertyGroup>
 
   <ItemGroup>
@@ -61,8 +53,16 @@
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
   </ItemGroup>
 
-  <PropertyGroup Condition="'$(TF_BUILD)' == 'true'">
-    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
-    <Deterministic>true</Deterministic>
-  </PropertyGroup>
+	<!-- SourceLink-->
+	<PropertyGroup>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<DebugType>embedded</DebugType>
+	</PropertyGroup>
+
+	<!-- Deterministic builds -->
+	<PropertyGroup Condition="'$(TF_BUILD)' == 'true'">
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+		<Deterministic>true</Deterministic>
+	</PropertyGroup>
 </Project>

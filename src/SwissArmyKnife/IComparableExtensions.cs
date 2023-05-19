@@ -10,8 +10,8 @@ namespace SwissArmyKnife
         #region IsBetween()
 
         /// <summary>
-        /// Checks whether the object is equal to or between the supplied upper
-        /// and lower values
+        /// Checks whether the object is equal to or between the supplied lower
+        /// and upper values
         /// </summary>
         /// <param name="value">
         /// </param>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SwissArmyKnife
 {
@@ -196,6 +197,168 @@ namespace SwissArmyKnife
 
             return result;
         }
+
+        #endregion
+
+        #region  IsAnyOf
+
+        /// <summary>
+        /// Checks if the string is equal to the supplied value
+        /// </summary>
+        /// <param name="source">
+        /// </param>
+        /// <param name="comparisonType">
+        /// One of the enumeration values that specifies how the strings will be compared
+        /// </param>
+        /// <param name="value">
+        /// The value to check the object against
+        /// </param>
+        /// <returns>
+        /// True if the object is equal to the value, false otherwise
+        /// </returns>
+        public static bool IsAnyOf(this string source, StringComparison comparisonType, string value) =>
+            source.Equals(value, comparisonType);
+
+        /// <summary>
+        /// Checks if the string is equal to any of the supplied values
+        /// </summary>
+        /// <param name="source">
+        /// </param>
+        /// <param name="comparisonType">
+        /// One of the enumeration values that specifies how the strings will be compared
+        /// </param>
+        /// <param name="value0">
+        /// The first value to check the string against
+        /// </param>
+        /// <param name="value1">
+        /// The second value to check the string against
+        /// </param>
+        /// <returns>
+        /// True if the string is equal to any of the values, false otherwise
+        /// </returns>
+        public static bool IsAnyOf(this string source, StringComparison comparisonType, string value0, string value1) =>
+            source.Equals(value0, comparisonType)
+            || source.Equals(value1, comparisonType);
+
+        /// <summary>
+        /// Checks if the string is equal to any of the supplied values
+        /// </summary>
+        /// <param name="source">
+        /// </param>
+        /// <param name="comparisonType">
+        /// One of the enumeration values that specifies how the strings will be compared
+        /// </param>
+        /// <param name="value0">
+        /// The first value to check the string against
+        /// </param>
+        /// <param name="value1">
+        /// The second value to check the string against
+        /// </param>
+        /// <param name="value2">
+        /// The third value to check the string against
+        /// </param>
+        /// <returns>
+        /// True if the string is equal to any of the values, false otherwise
+        /// </returns>
+        public static bool IsAnyOf(this string source, StringComparison comparisonType, string value0, string value1, string value2) =>
+            source.Equals(value0, comparisonType)
+            || source.Equals(value1, comparisonType)
+            || source.Equals(value2, comparisonType);
+
+        /// <summary>
+        /// Checks if the string is equal to any of the supplied values
+        /// </summary>
+        /// <param name="source">
+        /// </param>
+        /// <param name="comparisonType">
+        /// One of the enumeration values that specifies how the strings will be compared
+        /// </param>
+        /// <param name="value0">
+        /// The first value to check the string against
+        /// </param>
+        /// <param name="value1">
+        /// The second value to check the string against
+        /// </param>
+        /// <param name="value2">
+        /// The third value to check the string against
+        /// </param>
+        /// <param name="value3">
+        /// The third value to check the string against
+        /// </param>
+        /// <returns>
+        /// True if the string is equal to any of the values, false otherwise
+        /// </returns>
+        public static bool IsAnyOf(this string source, StringComparison comparisonType, string value0, string value1, string value2, string value3) =>
+            source.Equals(value0, comparisonType)
+            || source.Equals(value1, comparisonType)
+            || source.Equals(value2, comparisonType)
+            || source.Equals(value3, comparisonType);
+
+        /// <summary>
+        /// Checks if the string is equal to any of the supplied values
+        /// </summary>
+        /// <param name="source">
+        /// </param>
+        /// <param name="comparisonType">
+        /// One of the enumeration values that specifies how the strings will be compared
+        /// </param>
+        /// <param name="values">
+        /// The values to check the string against
+        /// </param>
+        /// <returns>
+        /// True if the string is equal to any of the values, false otherwise
+        /// </returns>
+        public static bool IsAnyOf(this string source, StringComparison comparisonType, params string[] values) =>
+            IsAnyOfInternal(source, comparisonType, values);
+
+        /// <summary>
+        /// Checks if the string is equal to any of the supplied values
+        /// </summary>
+        /// <param name="source">
+        /// </param>
+        /// <param name="comparisonType">
+        /// One of the enumeration values that specifies how the strings will be compared
+        /// </param>
+        /// <param name="values">
+        /// The values to check the string against
+        /// </param>
+        /// <returns>
+        /// True if the string is equal to any of the values, false otherwise
+        /// </returns>
+        public static bool IsAnyOf(this string source, StringComparison comparisonType, IEnumerable<string> values) =>
+            IsAnyOfInternal(source, comparisonType, values);
+
+        /// <summary>
+        /// Checks if the string is equal to any of the supplied values
+        /// </summary>
+        /// <param name="source">
+        /// The current object to compare the values against
+        /// </param>
+        /// <param name="comparisonType">
+        /// One of the enumeration values that specifies how the strings will be compared
+        /// </param>
+        /// <param name="values">
+        /// The values to check the string against
+        /// </param>
+        /// <returns>
+        /// True if the string is equal to any of the values, false otherwise
+        /// </returns>
+        private static bool IsAnyOfInternal(string source, StringComparison comparisonType, IEnumerable<string> values)
+        {
+            var result = false;
+
+            foreach (var currentValue in values)
+            {
+                result = source.Equals(currentValue, comparisonType);
+
+                if (result)
+                    break;
+            }
+
+            return result;
+        }
+
+
 
         #endregion
     }

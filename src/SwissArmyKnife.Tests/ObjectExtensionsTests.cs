@@ -11,8 +11,8 @@ namespace SwissArmyKnife.Tests
         [Fact]
         public void StringIsAnyOfSingleValue_Successful()
         {
-            var t1 = "test".IsAnyOf("test");
-            var t2 = "test".IsAnyOf("not test");
+            var t1 = "test".IsAnyOf<string>("test");
+            var t2 = "test".IsAnyOf<string>("not test");
 
             Assert.True(t1);
             Assert.False(t2);
@@ -21,8 +21,8 @@ namespace SwissArmyKnife.Tests
         [Fact]
         public void StringIsAnyOfTwoValues_Successful()
         {
-            var t1 = "test".IsAnyOf("test", "fake");
-            var t2 = "test".IsAnyOf("not test", "fake");
+            var t1 = "test".IsAnyOf<string>("test", "fake");
+            var t2 = "test".IsAnyOf<string>("not test", "fake");
 
             Assert.True(t1);
             Assert.False(t2);
@@ -31,8 +31,8 @@ namespace SwissArmyKnife.Tests
         [Fact]
         public void StringIsAnyOfThreeValues_Successful()
         {
-            var t1 = "test".IsAnyOf("test", "fake0", "fake1");
-            var t2 = "test".IsAnyOf("not test", "fake0", "fake1");
+            var t1 = "test".IsAnyOf<string>("test", "fake0", "fake1");
+            var t2 = "test".IsAnyOf<string>("not test", "fake0", "fake1");
 
             Assert.True(t1);
             Assert.False(t2);
@@ -41,8 +41,8 @@ namespace SwissArmyKnife.Tests
         [Fact]
         public void StringIsAnyOfFourValues_Successful()
         {
-            var t1 = "test".IsAnyOf("test", "fake0", "fake1", "fake2");
-            var t2 = "test".IsAnyOf("not test", "fake0", "fake1", "fake2");
+            var t1 = "test".IsAnyOf<string>("test", "fake0", "fake1", "fake2");
+            var t2 = "test".IsAnyOf<string>("not test", "fake0", "fake1", "fake2");
 
             Assert.True(t1);
             Assert.False(t2);
@@ -51,8 +51,8 @@ namespace SwissArmyKnife.Tests
         [Fact]
         public void StringIsAnyOfManyValues_Successful()
         {
-            var t1 = "test".IsAnyOf("test", "fake0", "fake1", "fake2", "fake3");
-            var t2 = "test".IsAnyOf("not test", "fake0", "fake1", "fake2", "fake3");
+            var t1 = "test".IsAnyOf<string>("test", "fake0", "fake1", "fake2", "fake3");
+            var t2 = "test".IsAnyOf<string>("not test", "fake0", "fake1", "fake2", "fake3");
 
             Assert.True(t1);
             Assert.False(t2);

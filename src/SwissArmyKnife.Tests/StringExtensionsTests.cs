@@ -283,6 +283,58 @@ namespace SwissArmyKnife.Tests
 
             Assert.False(s.Contains("ipsum", StringComparison.Ordinal));
         }
-#endregion
+        #endregion
+
+        #region IsAnyOf()
+        [Fact]
+        public void StringIsAnyOfSingleValue_Successful()
+        {
+            var t1 = "test".IsAnyOf(StringComparison.InvariantCultureIgnoreCase, "test");
+            var t2 = "test".IsAnyOf(StringComparison.InvariantCultureIgnoreCase, "not test");
+
+            Assert.True(t1);
+            Assert.False(t2);
+        }
+
+        [Fact]
+        public void StringIsAnyOfTwoValues_Successful()
+        {
+            var t1 = "test".IsAnyOf(StringComparison.InvariantCultureIgnoreCase, "test", "fake");
+            var t2 = "test".IsAnyOf(StringComparison.InvariantCultureIgnoreCase, "not test", "fake");
+
+            Assert.True(t1);
+            Assert.False(t2);
+        }
+
+        [Fact]
+        public void StringIsAnyOfThreeValues_Successful()
+        {
+            var t1 = "test".IsAnyOf(StringComparison.InvariantCultureIgnoreCase, "test", "fake0", "fake1");
+            var t2 = "test".IsAnyOf(StringComparison.InvariantCultureIgnoreCase, "not test", "fake0", "fake1");
+
+            Assert.True(t1);
+            Assert.False(t2);
+        }
+
+        [Fact]
+        public void StringIsAnyOfFourValues_Successful()
+        {
+            var t1 = "test".IsAnyOf(StringComparison.InvariantCultureIgnoreCase, "test", "fake0", "fake1", "fake2");
+            var t2 = "test".IsAnyOf(StringComparison.InvariantCultureIgnoreCase, "not test", "fake0", "fake1", "fake2");
+
+            Assert.True(t1);
+            Assert.False(t2);
+        }
+
+        [Fact]
+        public void StringIsAnyOfManyValues_Successful()
+        {
+            var t1 = "test".IsAnyOf(StringComparison.InvariantCultureIgnoreCase, "test", "fake0", "fake1", "fake2", "fake3");
+            var t2 = "test".IsAnyOf(StringComparison.InvariantCultureIgnoreCase, "not test", "fake0", "fake1", "fake2", "fake3");
+
+            Assert.True(t1);
+            Assert.False(t2);
+        }
+        #endregion
     }
 }

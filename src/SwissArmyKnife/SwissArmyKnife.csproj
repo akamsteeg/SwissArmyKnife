@@ -21,6 +21,7 @@
 			- [Feature] Add IComparable&lt;T&gt;.IsLessThan()
 			- [Feature] Add IComparable&lt;T&gt;.IsBetween()
 			- [Feature] Add IComparable&lt;T&gt;.IsGreaterThan()
+			- [Feature] Add string.IsAnyOf(StringComparison, ...)
 			2.2.0:
 			- [Feature] Added the object.IsEqualToAll() extension methods
 			- [Fix] Cleaned up and fixed documentation

@@ -14,7 +14,7 @@
     <Copyright>Copyright Alex Kamsteeg (https://www.atlex.nl)</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/akamsteeg/SwissArmyKnife</PackageProjectUrl>
-    <PackageTags>utility utitilies extension extensions method methods helpers misc</PackageTags>
+    <PackageTags>utility utitilies extension extensions method methods helper helpers misc miscellaneous</PackageTags>
     <PackageIcon>icon.png</PackageIcon>
     <PackageReleaseNotes>
 			2.3.0:

@@ -47,7 +47,7 @@ namespace SwissArmyKnife.Benchmarks
               .AddDiagnoser(MemoryDiagnoser.Default);
 
             config.AddJob(
-              Job.Default.WithToolchain(CsProjCoreToolchain.NetCoreApp31).AsBaseline(),
+              Job.Default.WithToolchain(CsProjCoreToolchain.NetCoreApp60).AsBaseline(),
               Job.Default.WithToolchain(CsProjClassicNetToolchain.Net48)
               );
 

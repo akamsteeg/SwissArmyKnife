@@ -193,7 +193,7 @@ namespace SwissArmyKnife
             if (value == null) // No string.IsNullOrEmpty() because Contains(string) returns true when the input is an empty string and we mimick that here
                 throw new ArgumentNullException(nameof(value));
 
-            var result = (value == string.Empty || (source.IndexOf(value, comparisonType) != -1));
+            var result = (value.Length == 0 || (source.IndexOf(value, comparisonType) != -1));
 
             return result;
         }

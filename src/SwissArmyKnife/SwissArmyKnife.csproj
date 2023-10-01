@@ -20,6 +20,8 @@
     <PackageTags>utility utitilies extension extensions method methods helper helpers misc miscellaneous</PackageTags>
     <PackageIcon>icon.png</PackageIcon>
     <PackageReleaseNotes>
+			2.3.1:
+			- [Bug] Restore strong naming (#36)
 			2.3.0:
 			- [Feature] Add IComparable&lt;T&gt;.IsLessThan()
 			- [Feature] Add IComparable&lt;T&gt;.IsBetween()
@@ -45,8 +47,8 @@
       - [Feature] Added an interface IBloomFilter to the BloomFilter
     </PackageReleaseNotes>
 
-    <Version>2.3.0</Version>
-    <AssemblyVersion>2.3.0.0</AssemblyVersion> <!-- Only increase on minor or major versions to avoid binding problems-->
+    <Version>2.3.1</Version>
+    <AssemblyVersion>2.3.1.0</AssemblyVersion> <!-- Only increase on minor or major versions to avoid binding problems-->
   </PropertyGroup>
 
   <ItemGroup>

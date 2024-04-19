@@ -1,10 +1,14 @@
 ﻿using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Running;
-using SwissArmyKnife.Benchmarks.Benches.Extensions;
 using System;
 using BenchmarkDotNet.Diagnosers;
 using BenchmarkDotNet.Toolchains.CsProj;
+using BenchmarkDotNet.Columns;
+using BenchmarkDotNet.Order;
+using BenchmarkDotNet.Reports;
+using BenchmarkDotNet.Validators;
+using System.Reflection;
 
 namespace SwissArmyKnife.Benchmarks
 {
@@ -13,30 +17,9 @@ namespace SwissArmyKnife.Benchmarks
         private static void Main(string[] args)
         {
             var config = GetConfig();
-            var benchmarks = GetBenchmarks();
-
-            for (var i = 0; i < benchmarks.Length; i++)
-            {
-                var typeToRun = benchmarks[i];
-                BenchmarkRunner.Run(typeToRun, config);
-            }
-
-            //BenchmarkRunner.Run<StringExtensionsBenchmarks>(config);
-        }
-
-        private static Type[] GetBenchmarks()
-        {
-            var result = new Type[]
-            {
-                // Extensions
-                typeof(ObjectExtensionsBenchmarks),
-                typeof(IComparableExtensionsBenchmarks),
-                typeof(StringBuilderExtensionsBenchmarks),
-                typeof(StringExtensionsBenchmarks),
-                typeof(IntExtensionsBenchmarks),
-            };
-
-            return result;
+            BenchmarkSwitcher
+              .FromAssembly(Assembly.GetExecutingAssembly())
+              .Run(args, config);
         }
 
         private static IConfig GetConfig()
@@ -47,9 +30,21 @@ namespace SwissArmyKnife.Benchmarks
               .AddDiagnoser(MemoryDiagnoser.Default);
 
             config.AddJob(
-              Job.Default.WithToolchain(CsProjCoreToolchain.NetCoreApp60).AsBaseline(),
-              Job.Default.WithToolchain(CsProjClassicNetToolchain.Net48)
+              Job.Default.WithToolchain(CsProjCoreToolchain.NetCoreApp80).AsBaseline(),
+              Job.Default.WithToolchain(CsProjCoreToolchain.NetCoreApp60)
               );
+
+            if (Environment.OSVersion.Platform == PlatformID.Win32NT)
+            {
+                config.AddJob(Job.Default.WithToolchain(CsProjClassicNetToolchain.Net481));
+            }
+
+            config.SummaryStyle = SummaryStyle.Default
+              .WithRatioStyle(RatioStyle.Percentage);
+
+            config.AddValidator(JitOptimizationsValidator.FailOnError); // Fail when any of the referenced assemblies are not optimized
+
+            config.WithOrderer(new DefaultOrderer(SummaryOrderPolicy.FastestToSlowest));
 
             return config;
         }

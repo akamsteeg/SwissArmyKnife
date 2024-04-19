@@ -90,7 +90,7 @@ namespace SwissArmyKnife.Tests
         [Fact]
         public void FormatStringWithDoubleAsArg_Successful()
         {
-#if NETCOREAPP3_1_OR_GREATER
+#if NET6_0_OR_GREATER
             CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
 #else
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture; // Ensure a dot in the string representation of a double
